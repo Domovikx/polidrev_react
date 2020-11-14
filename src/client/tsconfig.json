@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": false,
+
+    "jsx": "react",
+    "noImplicitAny": true,
+
+    "outDir": "./build",
+    "rootDir": "./src",
+    "removeComments": true,
+
+    "noEmitOnError": true,
+    "strict": true,
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "moduleResolution": "node",
+    "plugins": []
+  },
+  "include": ["./src/**/**/*"],
+  "exclude": ["node_modules", ".vscode"]
+}

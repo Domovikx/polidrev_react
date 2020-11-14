@@ -1,0 +1,19 @@
+{
+  "name": "polidrev_react",
+  "version": "1.0.0",
+  "description": "",
+  "author": "domovikx <domovikx@gmail.com>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domovikx/polidrev_react.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Domovikx/polidrev_react/issues"
+  },
+  "homepage": "https://github.com/Domovikx/polidrev_react#readme"
+}
