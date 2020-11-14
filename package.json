@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Domovikx/polidrev_react.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Domovikx/polidrev_react/issues"
   },

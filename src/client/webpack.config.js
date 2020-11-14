@@ -5,14 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-
   devServer: { port: 4200 },
 
   entry: './src/components/index.tsx',
 
   output: {
-    filename: '[hash:8].[name].js',
+    filename: '[hash]_[name].js',
     path: path.resolve(__dirname, 'build'),
   },
 
@@ -47,9 +45,9 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: 'src/components/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/components/index.html' }),
     new MiniCssExtractPlugin({
-      filename: './src/main.css',
+      filename: './src/components/main.css',
     }),
     new CleanWebpackPlugin(),
     new TerserPlugin(),
