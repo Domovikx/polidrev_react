@@ -20,7 +20,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "cSpell.enabledLanguageIds": ["javascript", "typescript", "typescriptreact", "markdown", "yml", "vue"],
+  "cSpell.enabledLanguageIds": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "yml",
+    "vue"
+  ],
   "cSpell.showStatus": true,
-  "cSpell.words": ["corejs"]
+
+  "cSpell.words": ["corejs", "removebg"]
 }

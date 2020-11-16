@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import logoImg from './favicon-removebg-preview.png';
+import logoImg from '../assets/images/favicon-removebg-preview.png';
 
 export interface Props {}
 

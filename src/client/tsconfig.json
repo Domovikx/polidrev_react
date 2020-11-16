@@ -22,8 +22,8 @@
     "moduleResolution": "node",
     "plugins": [],
 
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["node_modules/@types", "tsconfig.d.ts"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tsconfig.d.ts"],
   "exclude": ["node_modules", ".vscode"]
 }
