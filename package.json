@@ -1,0 +1,20 @@
+{
+  "name": "polidrev_react",
+  "version": "1.0.0",
+  "description": "",
+  "author": "domovikx <domovikx@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "npm run start --prefix src/client",
+    "build": "npm run build --prefix src/client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domovikx/polidrev_react.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Domovikx/polidrev_react/issues"
+  },
+  "homepage": "https://github.com/Domovikx/polidrev_react#readme"
+}
