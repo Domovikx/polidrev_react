@@ -2,15 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
-  devServer: { port: 4200 },
+const fileNames = '[hash]_[name]';
 
-  entry: './src/components/index.tsx',
+module.exports = {
+  devServer: {
+    port: 4200,
+    open: true,
+  },
+
+  entry: './src/index.tsx',
 
   output: {
-    filename: '[hash]_[name].js',
+    filename: `${fileNames}.js`,
     path: path.resolve(__dirname, 'build'),
   },
 
@@ -29,27 +35,44 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx)$/i,
         loader: 'awesome-typescript-loader',
       },
       {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
+        test: /\.html$/i,
+        use: ['html-loader'],
       },
       {
-        test: /\.css$/,
-        loader: 'css-loader',
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/i,
+        use: ['file-loader'],
       },
     ],
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/components/index.html' }),
-    new MiniCssExtractPlugin({
-      filename: './src/components/main.css',
-    }),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new MiniCssExtractPlugin({ filename: `${fileNames}.css` }),
     new CleanWebpackPlugin(),
     new TerserPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'public', to: 'public' }],
+    }),
   ],
 };

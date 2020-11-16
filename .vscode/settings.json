@@ -6,6 +6,10 @@
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
 
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
   "explorer.compactFolders": false,
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": true,
@@ -16,14 +20,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "cSpell.enabledLanguageIds": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "markdown",
-    "yml",
-    "vue"
-  ],
+  "cSpell.enabledLanguageIds": ["javascript", "typescript", "typescriptreact", "markdown", "yml", "vue"],
   "cSpell.showStatus": true,
   "cSpell.words": ["corejs"]
 }

@@ -7,6 +7,6 @@ export interface HelloWorldProps {
 
 export const App = ({ userName, lang }: HelloWorldProps) => (
   <h1>
-    Hi {userName} from React! Welcome to {lang}! Its work. 222
+    Hi {userName} from React! Welcome to {lang}!
   </h1>
 );
