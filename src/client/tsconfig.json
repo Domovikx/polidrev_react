@@ -6,6 +6,7 @@
 
     "jsx": "react",
     "noImplicitAny": true,
+    "noResolve": false,
 
     "outDir": "./build",
     "rootDir": "./src",
@@ -19,8 +20,10 @@
     "forceConsistentCasingInFileNames": true,
 
     "moduleResolution": "node",
-    "plugins": []
+    "plugins": [],
+
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
-  "include": ["./src/**/**/*"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", ".vscode"]
 }
