@@ -8,6 +8,11 @@
     "start": "npm run start --prefix src/client",
     "build": "npm run build --prefix src/client"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build --prefix src/client"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Domovikx/polidrev_react.git"
@@ -16,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Domovikx/polidrev_react/issues"
   },
-  "homepage": "https://github.com/Domovikx/polidrev_react#readme"
+  "homepage": "https://github.com/Domovikx/polidrev_react#readme",
+  "devDependencies": {
+    "husky": "^4.3.0"
+  }
 }
