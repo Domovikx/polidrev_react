@@ -1,81 +1,96 @@
 const path = require('path');
+require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const fileNames = '[hash]_[name]';
+module.exports = (env = {}) => {
+  const { mode = 'production' } = env;
+  const modeOption = mode === 'production' ? 'production' : 'development';
+  const isProd = mode === 'production' ? true : false;
 
-module.exports = {
-  devServer: {
-    port: 4200,
-    open: true,
-  },
+  const fileNames = '[hash]_[name]';
+  const port = process.env.PORT;
 
-  entry: './src/index.tsx',
+  const cssStyleLoaders = () => {
+    return [
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+      'css-loader',
+    ];
+  };
 
-  output: {
-    filename: `${fileNames}.js`,
-    path: path.resolve(__dirname, 'build'),
-  },
+  return {
+    mode: modeOption,
 
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
+    devServer: {
+      port,
+      open: true,
+      hot: true,
+      progress: true,
     },
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
 
-  resolve: {
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
-  },
+    entry: './src/index.tsx',
 
-  module: {
-    rules: [
-      {
-        test: /\.(ts|tsx)$/i,
-        loader: 'awesome-typescript-loader',
+    output: {
+      filename: `${fileNames}.js`,
+      path: path.resolve(__dirname, 'build'),
+    },
+
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
       },
-      {
-        test: /\.html$/i,
-        use: ['html-loader'],
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'images',
+      minimize: true,
+    },
+
+    resolve: {
+      extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.(ts|tsx)$/i,
+          loader: 'awesome-typescript-loader',
         },
-      },
-    ],
-  },
+        {
+          test: /\.html$/i,
+          use: ['html-loader'],
+        },
+        {
+          test: /\.css$/i,
+          use: cssStyleLoaders(),
+        },
+        {
+          test: /\.s[ac]ss$/i, // TODO: возможно, можно будет удалить
+          use: [
+            ...cssStyleLoaders(),
+            {
+              loader: 'sass-loader',
+              options: {
+                implementation: require('sass'),
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          loader: 'file-loader',
+          options: {
+            outputPath: 'images',
+          },
+        },
+      ],
+    },
 
-  plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new MiniCssExtractPlugin({ filename: `${fileNames}.css` }),
-    new CleanWebpackPlugin(),
-    new TerserPlugin(),
-    new CopyPlugin({
-      patterns: [{ from: 'public', to: 'public' }],
-    }),
-  ],
+    plugins: [
+      new HtmlWebpackPlugin({ template: './src/index.html' }),
+      new MiniCssExtractPlugin({ filename: `${fileNames}.css` }), // TODO: возможно, можно будет удалить
+      new CleanWebpackPlugin(),
+      new CopyPlugin({
+        patterns: [{ from: 'public', to: 'public' }],
+      }),
+    ],
+  };
 };
