@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": false,
+
+    "jsx": "react",
+    "noImplicitAny": true,
+    "noResolve": false,
+
+    "outDir": "./build",
+    "rootDir": "./src",
+    "removeComments": true,
+
+    "noEmitOnError": true,
+    "strict": true,
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "moduleResolution": "node",
+    "plugins": [],
+
+    "typeRoots": ["node_modules/@types", "src/types"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/types"],
+  "exclude": ["node_modules", ".vscode"]
+}
