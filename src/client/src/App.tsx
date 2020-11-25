@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Img } from './Img';
+import Img from './components/Img';
 
 export interface HelloWorldProps {
   userName: string;
