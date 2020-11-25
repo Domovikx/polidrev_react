@@ -1,17 +1,15 @@
 import * as React from 'react';
 
-import Img from './components/Img';
+import Footer from './parts/Footer';
+import Header from './parts/Header';
 
-export interface HelloWorldProps {
-  userName: string;
-  lang: string;
-}
+import { Routing } from './Routing';
+import { BrowserRouter } from 'react-router-dom';
 
-export const App = ({ userName, lang }: HelloWorldProps) => (
-  <>
-    <h1>
-      Hi {userName} from React! Welcome to {lang}!
-    </h1>
-    <Img></Img>
-  </>
+export const App = () => (
+  <BrowserRouter>
+    <Header>{}</Header>
+    <Routing></Routing>
+    <Footer></Footer>
+  </BrowserRouter>
 );

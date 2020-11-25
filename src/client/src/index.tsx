@@ -5,7 +5,4 @@ import { App } from './App';
 
 import './main.scss';
 
-ReactDOM.render(
-  <App userName="Developers" lang="TypeScript" />,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.querySelector('#root'));

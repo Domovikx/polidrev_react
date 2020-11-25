@@ -28,6 +28,7 @@ module.exports = (env = {}) => {
       open: true,
       hot: true,
       progress: true,
+      historyApiFallback: true,
     },
 
     entry: './src/index.tsx',
