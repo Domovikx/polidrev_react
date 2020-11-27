@@ -20,7 +20,7 @@ export const Header = (props: Props) => {
         <AppBar>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              Scroll to Hide App Bar
+              Polidrev
             </Typography>
             <>
               {/* TODO: Navbar */}
