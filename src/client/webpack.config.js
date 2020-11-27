@@ -28,11 +28,15 @@ module.exports = (env = {}) => {
       open: true,
       hot: true,
       progress: true,
+
+      historyApiFallback: true,
     },
 
     entry: './src/index.tsx',
 
     output: {
+      publicPath: '/',
+
       filename: `${fileNames}.js`,
       path: path.resolve(__dirname, 'build'),
     },
