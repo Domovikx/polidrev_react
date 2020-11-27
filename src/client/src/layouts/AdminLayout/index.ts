@@ -1,3 +1,3 @@
-import { AdminLayout } from './MainLayout';
+import { AdminLayout } from './AdminLayout';
 
 export default AdminLayout;

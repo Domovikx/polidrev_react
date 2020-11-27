@@ -1,9 +1,3 @@
-/**
- * TODO 1 :
- * http://localhost:4200/SoftFurniture/any - не ловит 404
- * не работает со вложенностью
- */
-
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -22,17 +16,19 @@ export const Routing = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/PageNotFound" component={PageNotFound} />
+        <Route path={['/PageNotFound', '/404']} component={PageNotFound} />
 
         <Route path="/admin/">
           <AdminLayout>
             <Switch>
               <Route path="/admin" exact component={Admin} />
+              <Route path="/admin/s" component={SoftFurniture} />
+              <Route path="*" component={PageNotFound} />
             </Switch>
           </AdminLayout>
         </Route>
 
-        <Route path="/">
+        <Route>
           <MainLayout>
             <Switch>
               <Route path="/" exact component={Home} />
@@ -40,9 +36,7 @@ export const Routing = () => {
               <Route path="/CabinetFurniture" component={CabinetFurniture} />
               <Route path="/WhereToBuy" component={WhereToBuy} />
               <Route path="/Payment" component={Payment} />
-
-              {/* TODO 1 */}
-              <Route path="" component={PageNotFound} />
+              <Route path="*" component={PageNotFound} />
             </Switch>
           </MainLayout>
         </Route>
