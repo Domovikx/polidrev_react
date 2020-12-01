@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { CssBaseline } from '@material-ui/core';
 
 import Footer from '../../parts/Footer';
 import Header from '../../parts/Header';
@@ -7,6 +8,7 @@ import Header from '../../parts/Header';
 export const MainLayout = ({ children }: Props) => {
   return (
     <>
+      <CssBaseline />
       <Header>{}</Header>
       {children}
       Links by tests <br />
