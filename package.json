@@ -6,7 +6,13 @@
   "private": true,
   "scripts": {
     "start": "npm run start --prefix src/client",
-    "build": "npm run build --prefix src/client"
+    "build": "npm run build --prefix src/client",
+    "deploy": "npm run build --prefix src/client & npm run deploy --prefix src/client"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build --prefix src/client"
+    }
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Domovikx/polidrev_react/issues"
   },
-  "homepage": "https://github.com/Domovikx/polidrev_react#readme"
+  "homepage": "https://github.com/Domovikx/polidrev_react#readme",
+  "devDependencies": {
+    "husky": "^4.3.0"
+  }
 }
