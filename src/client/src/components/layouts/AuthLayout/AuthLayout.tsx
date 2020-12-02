@@ -1,9 +1,10 @@
+import { CssBaseline } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
 export const AuthLayout = ({ children }: Props) => {
   return (
     <>
-      Auth Layout
+      <CssBaseline />
       {children}
     </>
   );
