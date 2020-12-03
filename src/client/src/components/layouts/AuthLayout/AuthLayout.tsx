@@ -4,6 +4,8 @@ import React, { ReactElement } from 'react';
 export const AuthLayout = ({ children }: Props) => {
   return (
     <>
+      {/* TODO: Temporary marker for testing*/}
+      AuthLayout
       <CssBaseline />
       {children}
     </>

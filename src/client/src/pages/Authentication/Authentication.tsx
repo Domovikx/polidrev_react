@@ -3,24 +3,25 @@ import React from 'react';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
 import { useFormik } from 'formik';
 import { useStyles } from './Authentication.styles';
-import { Avatar, Container, Grid, Typography } from '@material-ui/core';
+import { Avatar, Container, Grid, Icon, Typography } from '@material-ui/core';
 import { routes } from '../../constants/routes';
 import { Link } from 'react-router-dom';
+
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 const validationSchema = yup.object({
   email: yup
     .string()
-    .required('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required'),
+    .required('Введите email')
+    .email('Введите правильный email'),
+
   password: yup
     .string()
-    .required('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .required('Введите ваш password')
+    .min(6, 'Ваш пароль должен быть минимум 6 символов'),
 });
 
 export const Authentication = () => {
@@ -30,8 +31,11 @@ export const Authentication = () => {
     initialValues: {
       email: '',
       password: '',
+      confirmPassword: '',
     },
-    validationSchema: validationSchema,
+
+    validationSchema,
+
     onSubmit: (values) => {
       console.log('onSubmit :>> ', JSON.stringify(values, null, 2));
     },
@@ -40,7 +44,13 @@ export const Authentication = () => {
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        <Avatar
+          className={
+            !formik.isValid || !formik.dirty
+              ? classes.errorIcon
+              : classes.successIcon
+          }
+        >
           <LockOutlinedIcon />
         </Avatar>
 
@@ -52,9 +62,6 @@ export const Authentication = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
-                fullWidth
-                id="email"
                 name="email"
                 label="Email"
                 value={formik.values.email}
@@ -62,13 +69,13 @@ export const Authentication = () => {
                 onBlur={formik.handleBlur}
                 error={formik.touched.email && Boolean(formik.errors.email)}
                 helperText={formik.touched.email && formik.errors.email}
+                fullWidth
+                variant="outlined"
               />
             </Grid>
+
             <Grid item xs={12}>
               <TextField
-                variant="outlined"
-                fullWidth
-                id="password"
                 name="password"
                 label="Password"
                 type="password"
@@ -79,25 +86,30 @@ export const Authentication = () => {
                   formik.touched.password && Boolean(formik.errors.password)
                 }
                 helperText={formik.touched.password && formik.errors.password}
+                fullWidth
+                variant="outlined"
               />
             </Grid>
+
             <Grid item xs={12}>
               <Button
-                variant="contained"
-                fullWidth
                 type="submit"
+                disabled={!formik.isValid || !formik.dirty}
+                fullWidth
                 color="primary"
+                variant="contained"
                 className={classes.submit}
               >
                 Авторизация
               </Button>
             </Grid>
+
             <Grid item container justify="flex-end">
               <Grid item>
                 <Button
-                  className={classes.link}
                   component={Link}
                   to={routes.registration}
+                  className={classes.link}
                 >
                   Еще нет аккаунта? Регистрация
                 </Button>

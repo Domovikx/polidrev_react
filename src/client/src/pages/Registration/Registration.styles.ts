@@ -7,10 +7,7 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
+
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
@@ -20,5 +17,13 @@ export const useStyles = makeStyles((theme) => ({
   },
   link: {
     textTransform: 'initial',
+  },
+  successIcon: {
+    margin: theme.spacing(1),
+    backgroundColor: '#4CAF50',
+  },
+  errorIcon: {
+    margin: theme.spacing(1),
+    backgroundColor: '#f44336',
   },
 }));

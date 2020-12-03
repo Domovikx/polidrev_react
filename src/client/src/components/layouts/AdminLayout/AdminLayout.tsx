@@ -3,7 +3,8 @@ import React, { ReactElement } from 'react';
 export const AdminLayout = ({ children }: Props) => {
   return (
     <>
-      <div>AdminLayout</div>
+      {/* TODO: Temporary marker for testing*/}
+      AdminLayout
       {children}
     </>
   );
