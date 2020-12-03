@@ -1,5 +1,20 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { Routing } from './Routing';
+import { rootReducer } from './store/rootReducer';
 
-export const App = () => <Routing />;
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(), // TODO: this moment for Middleware
+  ),
+);
+
+export const App = () => (
+  <Provider store={store}>
+    <Routing />
+  </Provider>
+);

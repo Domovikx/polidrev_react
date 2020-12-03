@@ -96,6 +96,7 @@ export const Authentication = () => {
                 type="submit"
                 disabled={!formik.isValid || !formik.dirty}
                 fullWidth
+                size="large"
                 color="primary"
                 variant="contained"
                 className={classes.submit}

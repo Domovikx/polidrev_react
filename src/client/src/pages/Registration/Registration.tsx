@@ -4,13 +4,18 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-import { useFormik } from 'formik';
+import { Avatar, Container, Grid, Typography } from '@material-ui/core';
 import { useStyles } from './Registration.styles';
-import { Avatar, Container, Grid, Icon, Typography } from '@material-ui/core';
-import { routes } from '../../constants/routes';
+import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
+import { routes } from '../../constants/routes';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
+import { useReducer } from 'react';
+import { authInitialState, authReducer } from '../../store/auth/authReducer';
+import { authRegister } from '../../store/auth/authActions';
+import { RegisterData } from '../../store/auth/authTypes';
 
 const validationSchema = yup.object({
   email: yup
@@ -32,17 +37,19 @@ const validationSchema = yup.object({
 export const Registration = () => {
   const classes = useStyles();
 
+  const [state, dispatch] = useReducer(authReducer, authInitialState);
+
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
       confirmPassword: '',
-    },
+    } as RegisterData,
 
     validationSchema,
 
     onSubmit: (values) => {
-      console.log('onSubmit :>> ', JSON.stringify(values, null, 2));
+      dispatch(authRegister(values));
     },
   });
 
@@ -123,6 +130,7 @@ export const Registration = () => {
                 type="submit"
                 disabled={!formik.isValid || !formik.dirty}
                 fullWidth
+                size="large"
                 color="primary"
                 variant="contained"
                 className={classes.submit}
