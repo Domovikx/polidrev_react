@@ -3,10 +3,10 @@
  * https://console.firebase.google.com/project/polidrev-react/authentication/users
  */
 
+import firebase from 'firebase/app';
+
 import { ActionType } from '../actionTypes';
 import { RegisterData } from './authTypes';
-
-import firebase from 'firebase/app';
 
 export const authRegister = ({ email, password }: RegisterData) => {
   try {
@@ -17,21 +17,28 @@ export const authRegister = ({ email, password }: RegisterData) => {
     throw Error;
   }
 
-  return { type: ActionType.AUTH_REGISTER, payload: 'response' };
+  return {
+    type: ActionType.AUTH_REGISTER,
+    payload: 'temp message createUserWithEmailAndPassword',
+  };
 };
 
-export const authLogin = (registerData: RegisterData) => {
-  return { type: ActionType.AUTH_LOGIN, payload: registerData };
+export const authLogin = ({ email, password }: RegisterData) => {
+  try {
+    firebase.auth().signInWithEmailAndPassword(email, password);
+    // TODO: create a notification
+  } catch (error) {
+    // TODO: create a notification
+    throw Error;
+  }
+
+  return {
+    type: ActionType.AUTH_LOGIN,
+    payload: 'temp message signInWithEmailAndPassword',
+  };
 };
 
-export const authLogout = (registerData: RegisterData) => {
-  return { type: ActionType.AUTH_LOGOUT, payload: registerData };
-};
-
-const registerHendler = () => {
-  console.log('registerHendler :>> ');
-};
-
-const authSuccess = (token: string) => {
-  console.log('authSuccess :>> ');
+export const authLogout = () => {
+  firebase.auth().signOut();
+  return { type: ActionType.AUTH_LOGOUT, payload: 'temp message signOut' };
 };
