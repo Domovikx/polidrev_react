@@ -1,47 +1,26 @@
+/**
+ * For develop
+ * https://console.firebase.google.com/project/polidrev-react/authentication/users
+ */
+
 import { ActionType } from '../actionTypes';
 import { RegisterData } from './authTypes';
 
-import axios from 'axios';
-
-// TODO: Keys are temporarily here
-const apiKey = 'AIzaSyDcCLzE9x3JjTPT49kRCPfcUsRCuIL0SGA';
-const urlSignIn = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyDcCLzE9x3JjTPT49kRCPfcUsRCuIL0SGA`;
+import firebase from 'firebase/app';
 
 export const authRegister = ({ email, password }: RegisterData) => {
-  const authData = {
-    email,
-    password,
-    returnSecureToken: true,
-  };
-
-  console.log('authData :>> ', authData);
-
-  let response;
-
   try {
-    response = axios.post(urlSignIn, authData);
-    console.log('response :>> ', response);
+    firebase.auth().createUserWithEmailAndPassword(email, password);
+    // TODO: create a notification
   } catch (error) {
-    throw error;
+    // TODO: create a notification
+    throw Error;
   }
 
-  return { type: ActionType.AUTH_REGISTER, payload: response };
+  return { type: ActionType.AUTH_REGISTER, payload: 'response' };
 };
 
 export const authLogin = (registerData: RegisterData) => {
-  // const authData = {
-  //   email,
-  //   password,
-  //   returnSecureToken: true,
-  // };
-
-  // try {
-  //   const response = await axios.post(urlSignIn, authData);
-  //   console.log('response :>> ', response);
-  // } catch (error) {
-  //   throw error;
-  // }
-
   return { type: ActionType.AUTH_LOGIN, payload: registerData };
 };
 
@@ -50,27 +29,9 @@ export const authLogout = (registerData: RegisterData) => {
 };
 
 const registerHendler = () => {
-  const firebaseConfig = {
-    apiKey: 'AIzaSyDcCLzE9x3JjTPT49kRCPfcUsRCuIL0SGA',
-    authDomain: 'polidrev-react.firebaseapp.com',
-    databaseURL: 'https://polidrev-react.firebaseio.com',
-    projectId: 'polidrev-react',
-    storageBucket: 'polidrev-react.appspot.com',
-    messagingSenderId: '218117830377',
-    appId: '1:218117830377:web:f835b0f62f786be2826278',
-    measurementId: 'G-MKT5TS1MXB',
-  };
+  console.log('registerHendler :>> ');
 };
 
 const authSuccess = (token: string) => {
-  const firebaseConfig = {
-    apiKey: 'AIzaSyDcCLzE9x3JjTPT49kRCPfcUsRCuIL0SGA',
-    authDomain: 'polidrev-react.firebaseapp.com',
-    databaseURL: 'https://polidrev-react.firebaseio.com',
-    projectId: 'polidrev-react',
-    storageBucket: 'polidrev-react.appspot.com',
-    messagingSenderId: '218117830377',
-    appId: '1:218117830377:web:f835b0f62f786be2826278',
-    measurementId: 'G-MKT5TS1MXB',
-  };
+  console.log('authSuccess :>> ');
 };

@@ -48,8 +48,8 @@ export const Registration = () => {
 
     validationSchema,
 
-    onSubmit: (values) => {
-      dispatch(authRegister(values));
+    onSubmit: (registerData) => {
+      dispatch(authRegister(registerData));
     },
   });
 
