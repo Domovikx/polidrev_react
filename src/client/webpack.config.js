@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv').config();
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -89,6 +89,7 @@ module.exports = (env = {}) => {
     },
 
     plugins: [
+      new Dotenv(),
       new HtmlWebpackPlugin({ template: './src/index.html' }),
       new MiniCssExtractPlugin({ filename: `${fileNames}.css` }), // TODO: возможно, можно будет удалить
       new CleanWebpackPlugin(),
