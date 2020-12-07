@@ -5,18 +5,21 @@ export const authInitialState = {
   token: null,
 };
 
-export const authReducer = (state = authInitialState, action: Action) => {
-  switch (action.type) {
+export const authReducer = (
+  state = authInitialState,
+  { type, payload }: Action,
+) => {
+  switch (type) {
     case ActionType.AUTH_REGISTER:
-      console.log(ActionType.AUTH_REGISTER, action.payload);
+      console.log(ActionType.AUTH_REGISTER, payload);
       break;
 
     case ActionType.AUTH_LOGIN:
-      console.log(ActionType.AUTH_LOGIN, action.payload);
+      console.log(ActionType.AUTH_LOGIN, payload);
       break;
 
     case ActionType.AUTH_LOGOUT:
-      console.log(ActionType.AUTH_LOGOUT, action.payload);
+      console.log(ActionType.AUTH_LOGOUT, payload);
       break;
 
     default:
