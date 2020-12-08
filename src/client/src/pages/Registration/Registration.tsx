@@ -1,37 +1,26 @@
-import React from 'react';
-
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-
-import { Avatar, Container, Grid, Typography } from '@material-ui/core';
-import { useStyles } from './Registration.styles';
-import { useFormik } from 'formik';
-import { Link } from 'react-router-dom';
-import { routes } from '../../constants/routes';
-
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
+import { authRegister } from '../../store/auth/auth.actions';
+import { Avatar, Container, Grid, Typography } from '@material-ui/core';
+import { emailValidation } from '../../validation/email.validation';
+import { fieldName } from '../../constants/fieldName';
+import { fieldType } from '../../constants/fieldType';
+import { Link } from 'react-router-dom';
+import { passwordConfirmValidation } from '../../validation/passwordConfirm.validation';
+import { passwordValidation } from '../../validation/password.validation';
+import { routes } from '../../constants/routes';
+import { useFormik } from 'formik';
 import { useReducer } from 'react';
-import { authInitialState, authReducer } from '../../store/auth/authReducer';
-import { authRegister } from '../../store/auth/authActions';
-import { RegisterData } from '../../store/auth/authTypes';
+import { useStyles } from './Registration.styles';
 
 const validationSchema = yup.object({
-  email: yup
-    .string()
-    .required('Введите email')
-    .email('Введите правильный email'),
-
-  password: yup
-    .string()
-    .required('Введите ваш password')
-    .min(6, 'Ваш пароль должен быть минимум 6 символов'),
-
-  confirmPassword: yup
-    .string()
-    .required('Это поле обязательно')
-    .oneOf([yup.ref('password')], 'Пароли не совпадают'),
+  email: emailValidation,
+  password: passwordValidation(6),
+  passwordConfirm: passwordConfirmValidation('password'),
 });
 
 export const Registration = () => {
@@ -43,8 +32,8 @@ export const Registration = () => {
     initialValues: {
       email: '',
       password: '',
-      confirmPassword: '',
-    } as RegisterData,
+      passwordConfirm: '',
+    },
 
     validationSchema,
 
@@ -74,7 +63,7 @@ export const Registration = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                name="email"
+                name={fieldName.email}
                 label="Email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
@@ -88,9 +77,9 @@ export const Registration = () => {
 
             <Grid item xs={12}>
               <TextField
-                name="password"
+                name={fieldName.password}
+                type={fieldType.password}
                 label="Password"
-                type="password"
                 autoComplete="new-password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
@@ -106,19 +95,19 @@ export const Registration = () => {
 
             <Grid item xs={12}>
               <TextField
-                name="confirmPassword"
-                label="ConfirmPassword"
-                type="password"
-                value={formik.values.confirmPassword}
+                name={fieldName.passwordConfirm}
+                type={fieldType.password}
+                label="Password confirm"
+                value={formik.values.passwordConfirm}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={
-                  formik.touched.confirmPassword &&
-                  Boolean(formik.errors.confirmPassword)
+                  formik.touched.passwordConfirm &&
+                  Boolean(formik.errors.passwordConfirm)
                 }
                 helperText={
-                  formik.touched.confirmPassword &&
-                  formik.errors.confirmPassword
+                  formik.touched.passwordConfirm &&
+                  formik.errors.passwordConfirm
                 }
                 fullWidth
                 variant="outlined"
@@ -127,7 +116,7 @@ export const Registration = () => {
 
             <Grid item xs={12}>
               <Button
-                type="submit"
+                type={fieldType.submit}
                 disabled={!formik.isValid || !formik.dirty}
                 fullWidth
                 size="large"

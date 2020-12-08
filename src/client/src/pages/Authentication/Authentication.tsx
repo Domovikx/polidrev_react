@@ -1,31 +1,21 @@
-import React from 'react';
-
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
-
+import { Avatar, Container, Grid, Typography } from '@material-ui/core';
+import { emailValidation } from '../../validation/email.validation';
+import { fieldName } from '../../constants/fieldName';
+import { fieldType } from '../../constants/fieldType';
+import { Link } from 'react-router-dom';
+import { passwordValidation } from '../../validation/password.validation';
+import { routes } from '../../constants/routes';
 import { useFormik } from 'formik';
 import { useStyles } from './Authentication.styles';
-import { Avatar, Container, Grid, Typography } from '@material-ui/core';
-import { routes } from '../../constants/routes';
-import { Link } from 'react-router-dom';
-import { PASSWORD_MIN_LENGTH } from '../../constants/auth';
-
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 const validationSchema = yup.object({
-  email: yup
-    .string()
-    .required('Введите email')
-    .email('Введите правильный email'),
-
-  password: yup
-    .string()
-    .required('Введите ваш password')
-    .min(
-      PASSWORD_MIN_LENGTH,
-      `Ваш пароль должен быть минимум ${PASSWORD_MIN_LENGTH} символов`,
-    ),
+  email: emailValidation,
+  password: passwordValidation(6),
 });
 
 export const Authentication = () => {
@@ -66,7 +56,7 @@ export const Authentication = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                name="email"
+                name={fieldName.email}
                 label="Email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
@@ -80,9 +70,9 @@ export const Authentication = () => {
 
             <Grid item xs={12}>
               <TextField
-                name="password"
+                name={fieldName.password}
+                type={fieldType.password}
                 label="Password"
-                type="password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -97,7 +87,7 @@ export const Authentication = () => {
 
             <Grid item xs={12}>
               <Button
-                type="submit"
+                type={fieldType.submit}
                 disabled={!formik.isValid || !formik.dirty}
                 fullWidth
                 size="large"

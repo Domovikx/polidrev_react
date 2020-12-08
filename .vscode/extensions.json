@@ -15,6 +15,7 @@
     "ionutvmi.path-autocomplete",
     "coenraads.bracket-pair-colorizer",
     "naumovs.color-highlight",
-    "shd101wyy.markdown-preview-enhanced"
+    "shd101wyy.markdown-preview-enhanced",
+    "miclo.sort-typescript-imports"
   ]
 }
