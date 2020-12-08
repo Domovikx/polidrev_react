@@ -6,9 +6,10 @@ import TextField from '@material-ui/core/TextField';
 
 import { useFormik } from 'formik';
 import { useStyles } from './Authentication.styles';
-import { Avatar, Container, Grid, Icon, Typography } from '@material-ui/core';
+import { Avatar, Container, Grid, Typography } from '@material-ui/core';
 import { routes } from '../../constants/routes';
 import { Link } from 'react-router-dom';
+import { PASSWORD_MIN_LENGTH } from '../../constants/auth';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
@@ -21,7 +22,10 @@ const validationSchema = yup.object({
   password: yup
     .string()
     .required('Введите ваш password')
-    .min(6, 'Ваш пароль должен быть минимум 6 символов'),
+    .min(
+      PASSWORD_MIN_LENGTH,
+      `Ваш пароль должен быть минимум ${PASSWORD_MIN_LENGTH} символов`,
+    ),
 });
 
 export const Authentication = () => {
