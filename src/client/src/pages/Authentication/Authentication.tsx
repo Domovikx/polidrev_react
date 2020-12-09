@@ -7,6 +7,7 @@ import { Avatar, Container, Grid, Typography } from '@material-ui/core';
 import { emailValidation } from '../../validation/email.validation';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
+import { FormValues } from './Authentication.types';
 import { Link } from 'react-router-dom';
 import { passwordValidation } from '../../validation/password.validation';
 import { routes } from '../../constants/routes';
@@ -21,15 +22,14 @@ const validationSchema = yup.object({
 export const Authentication = () => {
   const classes = useStyles();
 
+  const initialValues: FormValues = {
+    email: '',
+    password: '',
+  };
+
   const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-      confirmPassword: '',
-    },
-
+    initialValues,
     validationSchema,
-
     onSubmit: (values) => {
       console.log('onSubmit :>> ', JSON.stringify(values, null, 2));
     },

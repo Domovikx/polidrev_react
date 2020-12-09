@@ -1,4 +1,5 @@
 export enum fieldType {
-  submit = 'submit',
   password = 'password',
+  submit = 'submit',
+  text = 'text',
 }
