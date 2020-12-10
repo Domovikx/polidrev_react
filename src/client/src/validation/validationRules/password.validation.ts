@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { PASSWORD_MIN_LENGTH } from '../constants/auth';
+import { PASSWORD_MIN_LENGTH } from '../../constants/auth';
 
 export const passwordValidation = (minLength = PASSWORD_MIN_LENGTH) =>
   yup

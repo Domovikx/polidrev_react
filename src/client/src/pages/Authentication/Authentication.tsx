@@ -1,23 +1,17 @@
-import * as yup from 'yup';
-import Button from '@material-ui/core/Button';
+import FormikTextField from '../../components/common/Form/FormikTextField';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { Avatar, Container, Grid, Typography } from '@material-ui/core';
-import { emailValidation } from '../../validation/email.validation';
+import React, { useReducer } from 'react';
+import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
+import { authLogin } from '../../store/auth/auth.actions';
+import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
+import { Form, Formik, FormikProps } from 'formik';
 import { FormValues } from './Authentication.types';
 import { Link } from 'react-router-dom';
-import { passwordValidation } from '../../validation/password.validation';
 import { routes } from '../../constants/routes';
-import { useFormik } from 'formik';
 import { useStyles } from './Authentication.styles';
-
-const validationSchema = yup.object({
-  email: emailValidation,
-  password: passwordValidation(6),
-});
+import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
 
 export const Authentication = () => {
   const classes = useStyles();
@@ -27,92 +21,210 @@ export const Authentication = () => {
     password: '',
   };
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-    onSubmit: (values) => {
-      console.log('onSubmit :>> ', JSON.stringify(values, null, 2));
-    },
-  });
+  const [state, dispatch] = useReducer(authReducer, authInitialState);
+
+  const submitHandler = (formValues: FormValues) => {
+    dispatch(authLogin(formValues));
+  };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <div className={classes.paper}>
-        <Avatar
-          className={
-            !formik.isValid || !formik.dirty
-              ? classes.errorIcon
-              : classes.successIcon
-          }
-        >
-          <LockOutlinedIcon />
-        </Avatar>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={(v) => submitHandler(v)}
+    >
+      {(props: FormikProps<any>) => {
+        const { isValid, dirty } = props;
 
-        <Typography component="h1" variant="h5">
-          Авторизация
-        </Typography>
-
-        <form className={classes.form} onSubmit={formik.handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                name={fieldName.email}
-                label="Email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
-                fullWidth
-                variant="outlined"
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                name={fieldName.password}
-                type={fieldType.password}
-                label="Password"
-                value={formik.values.password}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={
-                  formik.touched.password && Boolean(formik.errors.password)
-                }
-                helperText={formik.touched.password && formik.errors.password}
-                fullWidth
-                variant="outlined"
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <Button
-                type={fieldType.submit}
-                disabled={!formik.isValid || !formik.dirty}
-                fullWidth
-                size="large"
-                color="primary"
-                variant="contained"
-                className={classes.submit}
-              >
-                Авторизация
-              </Button>
-            </Grid>
-
-            <Grid item container justify="flex-end">
-              <Grid item>
-                <Button
-                  component={Link}
-                  to={routes.registration}
-                  className={classes.link}
+        return (
+          <Form>
+            <Container component="main" maxWidth="xs">
+              <div className={classes.paper}>
+                <Avatar
+                  className={
+                    !isValid || !dirty ? classes.errorIcon : classes.successIcon
+                  }
                 >
-                  Еще нет аккаунта? Регистрация
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-    </Container>
+                  <LockOutlinedIcon />
+                </Avatar>
+
+                <Typography
+                  component="h1"
+                  variant="h5"
+                  className={classes.typography}
+                >
+                  Авторизация
+                </Typography>
+
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <FormikTextField
+                      formikkey={fieldName.email}
+                      type={fieldType.text}
+                      label="Email"
+                      variant="outlined"
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <FormikTextField
+                      formikkey={fieldName.password}
+                      type={fieldType.password}
+                      label="Password"
+                      variant="outlined"
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <Button
+                      type={fieldType.submit}
+                      disabled={!isValid || !dirty}
+                      fullWidth
+                      size="large"
+                      color="primary"
+                      variant="contained"
+                      className={classes.submit}
+                    >
+                      Авторизация
+                    </Button>
+                  </Grid>
+                </Grid>
+
+                <Grid item container justify="flex-end">
+                  <Grid item>
+                    <Button
+                      component={Link}
+                      to={routes.registration}
+                      className={classes.link}
+                    >
+                      Еще нет аккаунта? Регистрация
+                    </Button>
+                  </Grid>
+                </Grid>
+              </div>
+            </Container>
+          </Form>
+        );
+      }}
+    </Formik>
   );
 };
+
+// import * as yup from 'yup';
+// import Button from '@material-ui/core/Button';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import React from 'react';
+// import TextField from '@material-ui/core/TextField';
+// import { Avatar, Container, Grid, Typography } from '@material-ui/core';
+// import { emailValidation } from '../../validation/email.validation';
+// import { fieldName } from '../../constants/fieldName';
+// import { fieldType } from '../../constants/fieldType';
+// import { FormValues } from './Authentication.types';
+// import { Link } from 'react-router-dom';
+// import { passwordValidation } from '../../validation/password.validation';
+// import { routes } from '../../constants/routes';
+// import { useFormik } from 'formik';
+// import { useStyles } from './Authentication.styles';
+
+// const validationSchema = yup.object({
+//   email: emailValidation,
+//   password: passwordValidation(6),
+// });
+
+// export const Authentication = () => {
+//   const classes = useStyles();
+
+//   const initialValues: FormValues = {
+//     email: '',
+//     password: '',
+//   };
+
+//   const formik = useFormik({
+//     initialValues,
+//     validationSchema,
+//     onSubmit: (values) => {
+//       console.log('onSubmit :>> ', JSON.stringify(values, null, 2));
+//     },
+//   });
+
+//   return (
+//     <Container component="main" maxWidth="xs">
+//       <div className={classes.paper}>
+//         <Avatar
+//           className={
+//             !formik.isValid || !formik.dirty
+//               ? classes.errorIcon
+//               : classes.successIcon
+//           }
+//         >
+//           <LockOutlinedIcon />
+//         </Avatar>
+
+//         <Typography component="h1" variant="h5">
+//           Авторизация
+//         </Typography>
+
+//         <form className={classes.form} onSubmit={formik.handleSubmit}>
+//           <Grid container spacing={2}>
+//             <Grid item xs={12}>
+//               <TextField
+//                 name={fieldName.email}
+//                 label="Email"
+//                 value={formik.values.email}
+//                 onChange={formik.handleChange}
+//                 onBlur={formik.handleBlur}
+//                 error={formik.touched.email && Boolean(formik.errors.email)}
+//                 helperText={formik.touched.email && formik.errors.email}
+//                 fullWidth
+//                 variant="outlined"
+//               />
+//             </Grid>
+
+//             <Grid item xs={12}>
+//               <TextField
+//                 name={fieldName.password}
+//                 type={fieldType.password}
+//                 label="Password"
+//                 value={formik.values.password}
+//                 onChange={formik.handleChange}
+//                 onBlur={formik.handleBlur}
+//                 error={
+//                   formik.touched.password && Boolean(formik.errors.password)
+//                 }
+//                 helperText={formik.touched.password && formik.errors.password}
+//                 fullWidth
+//                 variant="outlined"
+//               />
+//             </Grid>
+
+//             <Grid item xs={12}>
+//               <Button
+//                 type={fieldType.submit}
+//                 disabled={!formik.isValid || !formik.dirty}
+//                 fullWidth
+//                 size="large"
+//                 color="primary"
+//                 variant="contained"
+//                 className={classes.submit}
+//               >
+//                 Авторизация
+//               </Button>
+//             </Grid>
+
+//             <Grid item container justify="flex-end">
+//               <Grid item>
+//                 <Button
+//                   component={Link}
+//                   to={routes.registration}
+//                   className={classes.link}
+//                 >
+//                   Еще нет аккаунта? Регистрация
+//                 </Button>
+//               </Grid>
+//             </Grid>
+//           </Grid>
+//         </form>
+//       </div>
+//     </Container>
+//   );
+// };

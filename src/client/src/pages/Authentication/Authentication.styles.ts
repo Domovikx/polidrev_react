@@ -25,4 +25,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     backgroundColor: '#f44336',
   },
+  typography: {
+    marginBottom: theme.spacing(3),
+  },
 }));

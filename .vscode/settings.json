@@ -36,6 +36,7 @@
     "appspot",
     "corejs",
     "firebaseapp",
+    "formikkey",
     "removebg"
   ]
 }
