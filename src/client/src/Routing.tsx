@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import { routes } from './constants/routes';
 
 import AdminLayout from './components/layouts/AdminLayout';
 import MainLayout from './components/layouts/MainLayout';
+import AuthLayout from './components/layouts/AuthLayout';
 
 import Loader from './components/common/Loader';
 
@@ -14,8 +20,12 @@ const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
 const Payment = React.lazy(() => import('./pages/Payment'));
 const SoftFurniture = React.lazy(() => import('./pages/SoftFurniture'));
 const WhereToBuy = React.lazy(() => import('./pages/WhereToBuy'));
-const Admin = React.lazy(() => import('./pages/Admin'));
 const CabinetFurniture = React.lazy(() => import('./pages/CabinetFurniture'));
+
+const Admin = React.lazy(() => import('./pages/Admin'));
+
+const Authentication = React.lazy(() => import('./pages/Authentication'));
+const Registration = React.lazy(() => import('./pages/Registration'));
 
 export const Routing = () => {
   return (
@@ -31,14 +41,24 @@ export const Routing = () => {
             <AdminLayout>
               <Switch>
                 <Route path={routes.admin} exact component={Admin} />
-                {/* TODO: temp route */}
-                <Route
-                  path={routes.adminRelative + 's'}
-                  component={SoftFurniture}
-                />
                 <Route path={routes.all} component={PageNotFound} />
               </Switch>
             </AdminLayout>
+          </Route>
+
+          <Route path={routes.authRelative}>
+            <AuthLayout>
+              <Switch>
+                <Route
+                  path={routes.authentication}
+                  component={Authentication}
+                />
+                <Route path={routes.registration} component={Registration} />
+
+                <Redirect from={routes.auth} to={routes.authentication} />
+                <Redirect from={routes.all} to={routes.authentication} />
+              </Switch>
+            </AuthLayout>
           </Route>
 
           <Route>
