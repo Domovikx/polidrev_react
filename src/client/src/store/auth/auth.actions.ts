@@ -24,7 +24,6 @@ export const authRegister = ({ email, password }: RegisterData) => {
 
 export const authLogin = ({ email, password }: RegisterData) => {
   try {
-    console.log('signInWithEmailAndPassword :>> ');
     firebase.auth().signInWithEmailAndPassword(email, password);
     // TODO: create a notification
   } catch (error) {

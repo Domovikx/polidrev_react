@@ -34,7 +34,7 @@ export const Registration = () => {
       validationSchema={validationSchema}
       onSubmit={(v) => submitHandler(v)}
     >
-      {(props: FormikProps<any>) => {
+      {(props: FormikProps<FormValues>) => {
         const { isValid, dirty } = props;
 
         return (

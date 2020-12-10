@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --env.mode=development",
     "build": "webpack --env.mode=production",
-    "deploy": "firebase deploy"
+    "deploy": "npm run build & firebase deploy"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run start --prefix src/client",
     "build": "npm run build --prefix src/client",
-    "deploy": "npm run build --prefix src/client & npm run deploy --prefix src/client"
+    "deploy": "npm run deploy --prefix src/client"
   },
   "husky": {
     "hooks": {
