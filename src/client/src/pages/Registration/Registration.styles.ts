@@ -19,11 +19,11 @@ export const useStyles = makeStyles((theme) => ({
   },
   successIcon: {
     margin: theme.spacing(1),
-    backgroundColor: '#4CAF50',
+    backgroundColor: theme.palette.success.light,
   },
   errorIcon: {
     margin: theme.spacing(1),
-    backgroundColor: '#f44336',
+    backgroundColor: theme.palette.error.main,
   },
   typography: {
     marginBottom: theme.spacing(3),
