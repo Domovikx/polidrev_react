@@ -1,17 +1,13 @@
 import * as React from 'react';
-
 import firebase from 'firebase/app';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { firebaseConfig } from './config/firebaseConfig';
+import { Provider } from 'react-redux';
+import { rootReducer } from './store/root.reducer';
+import { Routing } from './Routing';
 import 'firebase/auth';
 import 'firebase/database';
-
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
-import { Routing } from './Routing';
-import { rootReducer } from './store/rootReducer';
-
-import { firebaseConfig } from './config/firebaseConfig';
 
 firebase.initializeApp(firebaseConfig);
 

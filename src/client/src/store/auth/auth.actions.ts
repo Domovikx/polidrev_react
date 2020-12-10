@@ -5,8 +5,7 @@
 
 import firebase from 'firebase/app';
 
-import { ActionType } from '../actionTypes';
-import { RegisterData } from './authTypes';
+import { AUTH, RegisterData } from './auth.types';
 
 export const authRegister = ({ email, password }: RegisterData) => {
   try {
@@ -18,13 +17,14 @@ export const authRegister = ({ email, password }: RegisterData) => {
   }
 
   return {
-    type: ActionType.AUTH_REGISTER,
+    type: AUTH.REGISTER,
     payload: 'temp message createUserWithEmailAndPassword',
   };
 };
 
 export const authLogin = ({ email, password }: RegisterData) => {
   try {
+    console.log('signInWithEmailAndPassword :>> ');
     firebase.auth().signInWithEmailAndPassword(email, password);
     // TODO: create a notification
   } catch (error) {
@@ -33,12 +33,12 @@ export const authLogin = ({ email, password }: RegisterData) => {
   }
 
   return {
-    type: ActionType.AUTH_LOGIN,
+    type: AUTH.LOGIN,
     payload: 'temp message signInWithEmailAndPassword',
   };
 };
 
 export const authLogout = () => {
   firebase.auth().signOut();
-  return { type: ActionType.AUTH_LOGOUT, payload: 'temp message signOut' };
+  return { type: AUTH.LOGOUT, payload: 'temp message signOut' };
 };
