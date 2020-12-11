@@ -3,9 +3,11 @@ import firebase from 'firebase/app';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { firebaseConfig } from './config/firebaseConfig';
+import { greenTheme } from './themes/green.theme';
 import { Provider } from 'react-redux';
 import { rootReducer } from './store/root.reducer';
 import { Routing } from './Routing';
+import { ThemeProvider } from '@material-ui/core/styles';
 import 'firebase/auth';
 import 'firebase/database';
 
@@ -19,7 +21,9 @@ const store = createStore(
 );
 
 export const App = () => (
-  <Provider store={store}>
-    <Routing />
-  </Provider>
+  <ThemeProvider theme={greenTheme}>
+    <Provider store={store}>
+      <Routing />
+    </Provider>
+  </ThemeProvider>
 );
