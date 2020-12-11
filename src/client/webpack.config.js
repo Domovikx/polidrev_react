@@ -11,7 +11,7 @@ module.exports = (env = {}) => {
   const modeOption = mode === 'production' ? 'production' : 'development';
   const isProd = mode === 'production' ? true : false;
 
-  const fileNames = '[hash]_[name]';
+  const fileNames = '[contenthash]_[name]';
   const port = process.env.PORT;
 
   const cssStyleLoaders = () => {
@@ -80,11 +80,20 @@ module.exports = (env = {}) => {
           ],
         },
         {
-          test: /\.(png|jpe?g|gif|webp)$/i,
-          loader: 'file-loader',
-          options: {
-            outputPath: 'images',
-          },
+          test: /\.(png|jpe?g|webp|git|svg|)$/i,
+          use: [
+            {
+              loader: `img-optimize-loader`,
+              options: {
+                outputPath: 'images',
+                name: '[contenthash:8].[ext]',
+                compress: {
+                  webp: true,
+                  disableOnDevelopment: true,
+                },
+              },
+            },
+          ],
         },
       ],
     },
