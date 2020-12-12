@@ -7,4 +7,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   Container: {
     display: 'flex',
   },
+  img: {
+    maxHeight: '45px',
+  },
 }));
