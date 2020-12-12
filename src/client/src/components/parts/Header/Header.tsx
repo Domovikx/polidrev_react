@@ -1,8 +1,8 @@
 import AppBar from '@material-ui/core/AppBar';
-import BurgerMenuBtn from '../../common/BurgerMenuBtn';
 import HideOnScroll from '../../common/HideOnScroll';
 import imgLogoPolidrev from '../../../assets/images/logo-polidrev.png';
 import Navbar from '../../common/Navbar';
+import NavigationDrawerMenu from '../../common/NavigationDrawerMenu';
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import useTheme from '@material-ui/core/styles/useTheme';
@@ -29,7 +29,7 @@ export const Header = (props: Props) => {
               />
             </Button>
             {mdUp && <Navbar />}
-            {!mdUp && <BurgerMenuBtn />}
+            {!mdUp && <NavigationDrawerMenu />}
           </Container>
         </AppBar>
       </HideOnScroll>

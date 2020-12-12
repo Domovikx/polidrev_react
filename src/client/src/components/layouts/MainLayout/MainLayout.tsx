@@ -1,7 +1,7 @@
 import Footer from '../../parts/Footer';
 import Header from '../../parts/Header';
 import React, { ReactElement } from 'react';
-import { Box, Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { useStyles } from './MainLayout.styles';
 
 export const MainLayout = ({ children }: Props) => {

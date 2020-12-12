@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   Container: {
     display: 'flex',
+    alignItems: 'center',
   },
   img: {
     maxHeight: '45px',
