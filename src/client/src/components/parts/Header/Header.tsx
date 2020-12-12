@@ -1,4 +1,5 @@
 import AppBar from '@material-ui/core/AppBar';
+import BurgerMenuBtn from '../../common/BurgerMenuBtn';
 import HideOnScroll from '../../common/HideOnScroll';
 import imgLogoPolidrev from '../../../assets/images/logo-polidrev.png';
 import Navbar from '../../common/Navbar';
@@ -16,22 +17,14 @@ export const Header = (props: Props) => {
     <>
       <HideOnScroll {...props}>
         <AppBar>
-          <Container>
-            <Toolbar>
-              <Button
-                className={classes.logoBtn}
-                component={NavLink}
-                to="/"
-                color="inherit"
-              >
-                <img
-                  src={imgLogoPolidrev}
-                  alt="Polidrev"
-                  className={classes.logo}
-                />
-              </Button>
-              <Navbar />
-            </Toolbar>
+          <Container className={classes.Container}>
+            <Button className={classes.logoBtn} component={NavLink} to="/">
+              <img src={imgLogoPolidrev} alt="Polidrev" />
+            </Button>
+
+            <Navbar />
+
+            <BurgerMenuBtn />
           </Container>
         </AppBar>
       </HideOnScroll>

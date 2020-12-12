@@ -1,10 +1,7 @@
 import { makeStyles, Theme } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-  logoBtn: {
-    marginRight: 'auto',
-  },
-  Container: {
-    display: 'flex',
+  MenuIcon: {
+    color: theme.palette.primary.contrastText,
   },
 }));
