@@ -9,10 +9,10 @@ export const MainLayout = ({ children }: Props) => {
 
   return (
     <Box className={classes.container}>
-      <Container className={classes.content}>
+      <Box className={classes.content}>
         <Header>{}</Header>
         <Box>{children}</Box>
-      </Container>
+      </Box>
       <Footer className={classes.footer}></Footer>
     </Box>
   );

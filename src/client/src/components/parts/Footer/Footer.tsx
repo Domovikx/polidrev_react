@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Container } from '@material-ui/core';
+import { Box, Button, Container } from '@material-ui/core';
 import { useStyles } from './Footer.styles';
 
 export const Footer = (props: any) => {
@@ -7,7 +7,14 @@ export const Footer = (props: any) => {
 
   return (
     <Box className={classes.container}>
-      <Container>Footer</Container>
+      <Container>
+        <Button className={classes.btn} href="tel:+375(33)-675-54-75">
+          +375(33)675-54-75
+        </Button>
+        <Button className={classes.btn} href="tel:+375(29)-652-71-51">
+          +375(29)652-71-51
+        </Button>
+      </Container>
     </Box>
   );
 };
