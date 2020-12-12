@@ -11,8 +11,7 @@ export const Navbar = () => {
       <Button
         component={NavLink}
         to="/SoftFurniture"
-        color="inherit"
-        className={classes.navBtn}
+        className={classes.btn}
         activeClassName={classes.active}
       >
         Мягкая мебель
@@ -20,8 +19,7 @@ export const Navbar = () => {
       <Button
         component={NavLink}
         to="/CabinetFurniture"
-        color="inherit"
-        className={classes.navBtn}
+        className={classes.btn}
         activeClassName={classes.active}
       >
         Корпусная мебель
@@ -29,8 +27,7 @@ export const Navbar = () => {
       <Button
         component={NavLink}
         to="/WhereToBuy"
-        color="inherit"
-        className={classes.navBtn}
+        className={classes.btn}
         activeClassName={classes.active}
       >
         Где купить
@@ -38,8 +35,7 @@ export const Navbar = () => {
       <Button
         component={NavLink}
         to="/Payment"
-        color="inherit"
-        className={classes.navBtn}
+        className={classes.btn}
         activeClassName={classes.active}
       >
         Оплата

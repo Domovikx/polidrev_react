@@ -1,7 +1,13 @@
 import * as React from 'react';
+import { Box, Container } from '@material-ui/core';
+import { useStyles } from './Footer.styles';
 
-export interface Props {}
+export const Footer = (props: any) => {
+  const classes = useStyles();
 
-export const Footer = ({}: Props) => {
-  return <div>Footer</div>;
+  return (
+    <Box className={classes.container}>
+      <Container>Footer</Container>
+    </Box>
+  );
 };

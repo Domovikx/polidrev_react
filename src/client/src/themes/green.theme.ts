@@ -5,6 +5,7 @@ export const greenTheme = createMuiTheme({
     type: 'light',
     primary: {
       main: '#004d40',
+      contrastText: 'rgba(255, 255, 255, 0.8)',
     },
   },
 });

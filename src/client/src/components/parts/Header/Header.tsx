@@ -4,7 +4,7 @@ import imgLogoPolidrev from '../../../assets/images/logo-polidrev.png';
 import Navbar from '../../common/Navbar';
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
-import { Button } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { Props } from './Header.types';
 import { useStyles } from './Header.styles';
@@ -16,22 +16,23 @@ export const Header = (props: Props) => {
     <>
       <HideOnScroll {...props}>
         <AppBar>
-          <Toolbar>
-            <Button
-              className={classes.logoBtn}
-              component={NavLink}
-              to="/"
-              color="inherit"
-            >
-              <span
-                className={classes.logo}
-                style={{
-                  backgroundImage: `url(${imgLogoPolidrev})`,
-                }}
-              />
-            </Button>
-            <Navbar />
-          </Toolbar>
+          <Container>
+            <Toolbar>
+              <Button
+                className={classes.logoBtn}
+                component={NavLink}
+                to="/"
+                color="inherit"
+              >
+                <img
+                  src={imgLogoPolidrev}
+                  alt="Polidrev"
+                  className={classes.logo}
+                />
+              </Button>
+              <Navbar />
+            </Toolbar>
+          </Container>
         </AppBar>
       </HideOnScroll>
       <Toolbar />

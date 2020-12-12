@@ -5,7 +5,6 @@ export const useStyles = makeStyles(() => ({
     marginRight: 'auto',
   },
   logo: {
-    height: '55px',
-    width: '262px',
+    maxHeight: '45px',
   },
 }));
