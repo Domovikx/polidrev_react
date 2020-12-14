@@ -5,15 +5,16 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
 import { Anchor } from './NavigationDrawerMenu.types';
 import { Box, IconButton } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { useStyles } from './NavigationDrawerMenu.styles';
+
 import {
   HomeIcon,
   MapIcon,
+  MenuIcon,
   SofaIcon,
   WalletOutlineIcon,
   WardrobeOutlineIcon,
