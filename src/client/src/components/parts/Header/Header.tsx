@@ -28,8 +28,7 @@ export const Header = (props: Props) => {
                 className={classes.img}
               />
             </Button>
-            {mdUp && <Navbar />}
-            {!mdUp && <NavigationDrawerMenu />}
+            {mdUp ? <Navbar /> : <NavigationDrawerMenu />}
           </Container>
         </AppBar>
       </HideOnScroll>
