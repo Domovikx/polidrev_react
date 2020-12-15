@@ -1,7 +1,12 @@
 import * as React from 'react';
+import OnFade from '../../components/common/OnFade';
 
 export interface Props {}
 
 export const CabinetFurniture = ({}: Props) => {
-  return <div>CabinetFurniture</div>;
+  return (
+    <OnFade>
+      <div>CabinetFurniture</div>
+    </OnFade>
+  );
 };

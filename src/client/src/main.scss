@@ -1,5 +1,15 @@
 $body-color: lightslategray;
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: grid;
+}
+
 body {
   color: $body-color;
   font-family: 'Roboto', sans-serif;

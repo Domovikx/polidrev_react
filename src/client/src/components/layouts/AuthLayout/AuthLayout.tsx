@@ -1,14 +1,13 @@
-import { CssBaseline } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
 export const AuthLayout = ({ children }: Props) => {
   return (
-    <>
+    <Container>
       {/* TODO: Temporary marker for testing*/}
       AuthLayout
-      <CssBaseline />
       {children}
-    </>
+    </Container>
   );
 };
 

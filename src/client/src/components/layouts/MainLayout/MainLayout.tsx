@@ -1,27 +1,20 @@
-import React, { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
-
 import Footer from '../../parts/Footer';
 import Header from '../../parts/Header';
+import React, { ReactElement } from 'react';
+import { Box } from '@material-ui/core';
+import { useStyles } from './MainLayout.styles';
 
 export const MainLayout = ({ children }: Props) => {
+  const classes = useStyles();
+
   return (
-    <>
-      <CssBaseline />
-      <Header>{}</Header>
-      {children}
-      Links by tests <br />
-      <Link to="/admin">/admin</Link> <br />
-      <Link to="/admin/">/admin/</Link> <br />
-      <Link to="/admin/s">/admin/s</Link> <br />
-      <Link to="/admin/asdfasdfafgsfg">/admin/asdfasdfafgsfg</Link> <br />
-      <Link to="/SoftFurniture/asdfasdfafgsfg">
-        /SoftFurniture/asdfasdfafgsfg
-      </Link>{' '}
-      <br />
-      <Footer></Footer>
-    </>
+    <Box className={classes.container}>
+      <Box className={classes.content}>
+        <Header>{}</Header>
+        <Box>{children}</Box>
+      </Box>
+      <Footer className={classes.footer}></Footer>
+    </Box>
   );
 };
 

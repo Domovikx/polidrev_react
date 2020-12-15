@@ -1,20 +1,12 @@
 import * as React from 'react';
-import { Suspense } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
-import { routes } from './constants/routes';
-
 import AdminLayout from './components/layouts/AdminLayout';
-import MainLayout from './components/layouts/MainLayout';
 import AuthLayout from './components/layouts/AuthLayout';
-
-import Loader from './components/common/Loader';
-
 import Home from './pages/Home';
+import Loader from './components/common/Loader';
+import MainLayout from './components/layouts/MainLayout';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { routes } from './constants/routes';
+import { Suspense } from 'react';
 
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
 const Payment = React.lazy(() => import('./pages/Payment'));
@@ -29,7 +21,7 @@ const Registration = React.lazy(() => import('./pages/Registration'));
 
 export const Routing = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Switch>
           <Route
@@ -78,6 +70,6 @@ export const Routing = () => {
           </Route>
         </Switch>
       </Suspense>
-    </Router>
+    </BrowserRouter>
   );
 };
