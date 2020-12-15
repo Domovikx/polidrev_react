@@ -1,3 +1,4 @@
+// TODO: change interfaces
 export interface PlaceMark {
   geometry: [];
   hintContent?: string;

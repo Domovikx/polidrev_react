@@ -18,7 +18,7 @@ import {
   SofaIcon,
   WalletOutlineIcon,
   WardrobeOutlineIcon,
-} from '../Icons';
+} from '../../../assets/Icons';
 
 export const NavigationDrawerMenu = () => {
   const classes = useStyles();

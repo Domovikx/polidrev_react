@@ -1,6 +1,6 @@
 import React from 'react';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
-import { Props } from './YandexMap.types';
+// import { Props } from './YandexMap.types';
 import { uid } from 'uid';
 import { useTheme } from '@material-ui/core';
 
@@ -10,6 +10,7 @@ import { useTheme } from '@material-ui/core';
  * https://yandex.ru/dev/maps/jsapi/doc/2.1/dg/concepts/geoobjects.html/
  */
 
+// TODO: any to props
 export const YandexMap = ({ center, zoom, placeMarks }: any) => {
   const theme = useTheme();
 
@@ -30,6 +31,7 @@ export const YandexMap = ({ center, zoom, placeMarks }: any) => {
           controls: ['zoomControl', 'fullscreenControl'],
         }}
       >
+        {/* // TODO: any to props */}
         {placeMarks.map(({ geometry, hintContent }: any) => (
           <Placemark
             key={uid()}

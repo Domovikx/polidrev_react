@@ -8,7 +8,7 @@ import { fieldType } from '../../constants/fieldType';
 import { Form, Formik, FormikProps } from 'formik';
 import { FormValues } from './Registration.types';
 import { Link } from 'react-router-dom';
-import { LockOutlineIcon } from '../../components/common/Icons';
+import { LockOutlineIcon } from '../../assets/Icons';
 import { routes } from '../../constants/routes';
 import { useStyles } from './Registration.styles';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
