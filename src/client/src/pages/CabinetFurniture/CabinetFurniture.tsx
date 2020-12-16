@@ -1,7 +1,12 @@
 import * as React from 'react';
+import CommonFade from '../../components/common/CommonFade';
 
 export interface Props {}
 
 export const CabinetFurniture = ({}: Props) => {
-  return <div>CabinetFurniture</div>;
+  return (
+    <CommonFade>
+      <div>CabinetFurniture</div>
+    </CommonFade>
+  );
 };

@@ -5,7 +5,7 @@ export interface RegisterData {
 }
 
 export enum AUTH {
-  REGISTER = 'AUTH_REGISTER',
-  LOGIN = 'AUTH_LOGIN',
-  LOGOUT = 'AUTH_LOGOUT',
+  REGISTER = 'AUTH.REGISTER',
+  LOGIN = 'AUTH.LOGIN',
+  LOGOUT = 'AUTH.LOGOUT',
 }

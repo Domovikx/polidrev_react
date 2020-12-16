@@ -1,5 +1,4 @@
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import React, { useReducer } from 'react';
 import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
 import { authRegister } from '../../store/auth/auth.actions';
@@ -9,7 +8,8 @@ import { fieldType } from '../../constants/fieldType';
 import { Form, Formik, FormikProps } from 'formik';
 import { FormValues } from './Registration.types';
 import { Link } from 'react-router-dom';
-import { routes } from '../../constants/routes';
+import { Locations } from '../../constants/locations';
+import { LockOutlineIcon } from '../../assets/Icons';
 import { useStyles } from './Registration.styles';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
 
@@ -46,7 +46,7 @@ export const Registration = () => {
                     !isValid || !dirty ? classes.errorIcon : classes.successIcon
                   }
                 >
-                  <LockOutlinedIcon />
+                  <LockOutlineIcon />
                 </Avatar>
 
                 <Typography
@@ -105,7 +105,7 @@ export const Registration = () => {
                   <Grid item>
                     <Button
                       component={Link}
-                      to={routes.authentication}
+                      to={Locations.Auth_Authentication}
                       className={classes.link}
                     >
                       У Вас уже есть аккаунт? Войти
