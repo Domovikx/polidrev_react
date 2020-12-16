@@ -1,16 +1,14 @@
 import * as React from 'react';
+import CommonFade from '../../components/common/CommonFade';
 import img from '../../assets/images/forest-1607774432667-4004.jpg';
-import OnFade from '../../components/common/OnFade';
 import { Box, Container } from '@material-ui/core';
 import { useStyles } from './Home.styles';
 
-export interface Props {}
-
-export const Home = ({}: Props) => {
+export const Home = () => {
   const classes = useStyles();
 
   return (
-    <OnFade>
+    <CommonFade>
       <Box>
         <Container>
           <p>
@@ -75,6 +73,6 @@ export const Home = ({}: Props) => {
           style={{ backgroundImage: `url(${img})` }}
         />
       </Box>
-    </OnFade>
+    </CommonFade>
   );
 };

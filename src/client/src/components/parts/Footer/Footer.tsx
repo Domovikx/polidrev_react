@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Box, Button, Container } from '@material-ui/core';
+import { Props } from './Footer.types';
 import { useStyles } from './Footer.styles';
 
-export const Footer = (props: any) => {
+export const Footer = (props: Props) => {
   const classes = useStyles();
 
   return (

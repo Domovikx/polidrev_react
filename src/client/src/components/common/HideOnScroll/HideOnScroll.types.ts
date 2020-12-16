@@ -1,4 +1,3 @@
 export interface Props {
-  window?: () => Window;
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }

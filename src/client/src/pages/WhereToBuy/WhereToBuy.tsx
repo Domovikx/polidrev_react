@@ -1,8 +1,7 @@
 import * as React from 'react';
+import CommonFade from '../../components/common/CommonFade';
 import EnterpriseMap from '../../components/common/EnterpriseMap';
-import OnFade from '../../components/common/OnFade';
 import StoresMap from '../../components/common/StoresMap';
-import { uid } from 'uid';
 import { useStyles } from './WhereToBuy.styles';
 import {
   Box,
@@ -19,7 +18,7 @@ export const WhereToBuy = () => {
   const upMd = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <OnFade>
+    <CommonFade>
       <Box>
         <Container>
           <Typography variant="h6" component="h2">
@@ -50,11 +49,11 @@ export const WhereToBuy = () => {
         </Container>
 
         {upLg ? (
-          <Container className={classes.map} key={uid()}>
+          <Container className={classes.map}>
             <StoresMap />
           </Container>
         ) : (
-          <Box className={classes.map} key={uid()}>
+          <Box className={classes.map}>
             <StoresMap />
           </Box>
         )}
@@ -73,16 +72,16 @@ export const WhereToBuy = () => {
         </Container>
 
         {upLg && (
-          <Container className={classes.map} key={uid()}>
+          <Container className={classes.map}>
             <EnterpriseMap />
           </Container>
         )}
         {upMd && !upLg && (
-          <Box className={classes.map} key={uid()}>
+          <Box className={classes.map}>
             <EnterpriseMap />
           </Box>
         )}
       </Box>
-    </OnFade>
+    </CommonFade>
   );
 };

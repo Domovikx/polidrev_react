@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
+import { Locations } from '../../../constants/locations';
 import { NavLink } from 'react-router-dom';
 import { useStyles } from './Navbar.styles';
 
@@ -10,7 +11,7 @@ export const Navbar = () => {
     <>
       <Button
         component={NavLink}
-        to="/SoftFurniture"
+        to={Locations.SoftFurniture}
         className={classes.btn}
         activeClassName={classes.active}
       >
@@ -18,7 +19,7 @@ export const Navbar = () => {
       </Button>
       <Button
         component={NavLink}
-        to="/CabinetFurniture"
+        to={Locations.CabinetFurniture}
         className={classes.btn}
         activeClassName={classes.active}
       >
@@ -26,7 +27,7 @@ export const Navbar = () => {
       </Button>
       <Button
         component={NavLink}
-        to="/WhereToBuy"
+        to={Locations.WhereToBuy}
         className={classes.btn}
         activeClassName={classes.active}
       >
@@ -34,7 +35,7 @@ export const Navbar = () => {
       </Button>
       <Button
         component={NavLink}
-        to="/Payment"
+        to={Locations.Payment}
         className={classes.btn}
         activeClassName={classes.active}
       >

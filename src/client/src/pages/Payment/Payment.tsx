@@ -1,17 +1,17 @@
-import { Container } from '@material-ui/core';
 import * as React from 'react';
-import OnFade from '../../components/common/OnFade';
+import CommonFade from '../../components/common/CommonFade';
 import PaymentMethods from '../../components/common/PaymentMethods';
+import { Container } from '@material-ui/core';
 
 export const Payment = () => {
   return (
-    <OnFade>
+    <CommonFade>
       <>
         <Container>
           <PaymentMethods />
           {/*TODO: <CreditConditions /> */}
         </Container>
       </>
-    </OnFade>
+    </CommonFade>
   );
 };

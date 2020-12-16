@@ -1,14 +1,13 @@
 import clsx from 'clsx';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import Link from './Link';
 import React from 'react';
 import { Anchor } from './NavigationDrawerMenu.types';
 import { Box, IconButton } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { LinkProps } from './Link/Link.types';
+import { Locations } from '../../../constants/locations';
+import { uid } from 'uid';
 import { useStyles } from './NavigationDrawerMenu.styles';
 
 import {
@@ -43,6 +42,37 @@ export const NavigationDrawerMenu = () => {
     setState({ ...state, [anchor]: open });
   };
 
+  const NavLinksValue: LinkProps[] = [
+    {
+      tittle: 'Home',
+      location: Locations.Index,
+      icon: <HomeIcon />,
+    },
+    {
+      tittle: 'Divider',
+    },
+    {
+      tittle: 'Мягкая мебель',
+      location: Locations.SoftFurniture,
+      icon: <SofaIcon />,
+    },
+    {
+      tittle: 'Корпусная мебель',
+      location: Locations.CabinetFurniture,
+      icon: <WardrobeOutlineIcon />,
+    },
+    {
+      tittle: 'Где купить',
+      location: Locations.WhereToBuy,
+      icon: <MapIcon />,
+    },
+    {
+      tittle: 'Оплата',
+      location: Locations.Payment,
+      icon: <WalletOutlineIcon />,
+    },
+  ];
+
   const list = (anchor: Anchor) => (
     <Box
       className={clsx(classes.list, {
@@ -52,40 +82,12 @@ export const NavigationDrawerMenu = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <ListItem button to="/" component={NavLink}>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary={'Home'} />
-      </ListItem>
-      <Divider />
-      <List>
-        {/* TODO: refactoring, use array and map */}
-        <ListItem button to="/SoftFurniture" component={NavLink}>
-          <ListItemIcon>
-            <SofaIcon />
-          </ListItemIcon>
-          <ListItemText primary={'Мягкая мебель'} />
-        </ListItem>
-        <ListItem button to="/CabinetFurniture" component={NavLink}>
-          <ListItemIcon>
-            <WardrobeOutlineIcon />
-          </ListItemIcon>
-          <ListItemText primary={'Корпусная мебель'} />
-        </ListItem>
-        <ListItem button to="/WhereToBuy" component={NavLink}>
-          <ListItemIcon>
-            <MapIcon />
-          </ListItemIcon>
-          <ListItemText primary={'Где купить'} />
-        </ListItem>
-        <ListItem button to="/Payment" component={NavLink}>
-          <ListItemIcon>
-            <WalletOutlineIcon />
-          </ListItemIcon>
-          <ListItemText primary={'Оплата'} />
-        </ListItem>
-      </List>
+      {NavLinksValue.map((item: LinkProps) => {
+        if (item.tittle?.toLocaleLowerCase() === 'divider') {
+          return <Divider key={uid()} />;
+        }
+        return <Link {...item} key={uid()} />;
+      })}
     </Box>
   );
 

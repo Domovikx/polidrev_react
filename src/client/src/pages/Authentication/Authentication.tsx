@@ -8,8 +8,8 @@ import { fieldType } from '../../constants/fieldType';
 import { Form, Formik, FormikProps } from 'formik';
 import { FormValues } from './Authentication.types';
 import { Link } from 'react-router-dom';
+import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
-import { routes } from '../../constants/routes';
 import { useStyles } from './Authentication.styles';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
 
@@ -94,7 +94,7 @@ export const Authentication = () => {
                   <Grid item>
                     <Button
                       component={Link}
-                      to={routes.registration}
+                      to={Locations.Auth_Registration}
                       className={classes.link}
                     >
                       Еще нет аккаунта? Регистрация
