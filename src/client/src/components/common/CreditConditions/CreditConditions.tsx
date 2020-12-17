@@ -74,15 +74,18 @@ export const CreditConditions = () => {
             return (
               <Box key={uid()} className={classes.listItem}>
                 <img src={img} alt={alt} className={classes.img} />
-                <Typography
-                  variant="body1"
-                  color="textPrimary"
-                  className={classes.text}
-                >
+                <div className={classes.text}>
                   {text.map((string) => (
-                    <p className={classes.paragraph}>{string}</p>
+                    <Typography
+                      variant="body1"
+                      color="textPrimary"
+                      key={uid()}
+                      className={classes.paragraph}
+                    >
+                      {string}
+                    </Typography>
                   ))}
-                </Typography>
+                </div>
               </Box>
             );
           })}
