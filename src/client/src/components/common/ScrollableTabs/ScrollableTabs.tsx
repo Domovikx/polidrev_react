@@ -12,7 +12,7 @@ interface TabPanelProps {
   value: any;
 }
 
-function TabPanel(props: TabPanelProps) {
+const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -30,14 +30,14 @@ function TabPanel(props: TabPanelProps) {
       )}
     </div>
   );
-}
+};
 
-function a11yProps(index: any) {
+const a11yProps = (index: any) => {
   return {
     id: `full-width-tab-${index}`,
     'aria-controls': `full-width-tabpanel-${index}`,
   };
-}
+};
 
 export const ScrollableTabs = () => {
   const classes = useStyles();

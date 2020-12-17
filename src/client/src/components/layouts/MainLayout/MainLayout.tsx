@@ -1,6 +1,7 @@
 import Footer from '../../parts/Footer';
 import Header from '../../parts/Header';
 import React from 'react';
+import ScrollTop from '../../common/ScrollTop';
 import { Box } from '@material-ui/core';
 import { Props } from './MainLayout.types';
 import { useStyles } from './MainLayout.styles';
@@ -14,7 +15,10 @@ export const MainLayout = ({ children }: Props) => {
         <Header />
         <Box>{children}</Box>
       </Box>
+
       <Footer className={classes.footer} />
+
+      <ScrollTop />
     </Box>
   );
 };
