@@ -37,12 +37,7 @@ export const PaymentMethods = () => {
   return (
     <CommonFade>
       <Box pt={3}>
-        <Typography
-          color="textPrimary"
-          variant="h6"
-          component="h2"
-          className={classes.tittle}
-        >
+        <Typography variant="h6" component="h2" className={classes.tittle}>
           Удобные способы оплаты
         </Typography>
 
@@ -51,11 +46,7 @@ export const PaymentMethods = () => {
             return (
               <Box key={uid()} className={classes.paper}>
                 <img src={img} alt={text} className={classes.img} />
-                <Typography
-                  variant="body1"
-                  className={classes.text}
-                  color="textPrimary"
-                >
+                <Typography variant="body1" className={classes.text}>
                   {text}
                 </Typography>
               </Box>

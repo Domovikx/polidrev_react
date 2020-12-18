@@ -60,12 +60,7 @@ export const CreditConditions = () => {
   return (
     <CommonFade>
       <Box pt={3}>
-        <Typography
-          color="textPrimary"
-          variant="h6"
-          component="h2"
-          className={classes.tittle}
-        >
+        <Typography variant="h6" component="h2" className={classes.tittle}>
           Рассрочка платежа
         </Typography>
 
@@ -78,7 +73,6 @@ export const CreditConditions = () => {
                   {text.map((string) => (
                     <Typography
                       variant="body1"
-                      color="textPrimary"
                       key={uid()}
                       className={classes.paragraph}
                     >

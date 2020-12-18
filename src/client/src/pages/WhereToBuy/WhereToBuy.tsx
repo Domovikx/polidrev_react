@@ -7,6 +7,7 @@ import {
   Box,
   Container,
   List,
+  ListItem,
   Typography,
   useMediaQuery,
   useTheme,
@@ -23,38 +24,36 @@ export const WhereToBuy = () => {
       <Box>
         <Box pt={3}>
           <Container>
-            <Typography variant="h6" component="h2" color="textPrimary">
+            <Typography variant="h6" component="h2">
               Где купить мебель "Полидрев"
             </Typography>
 
-            <Typography variant="body1" color="textPrimary">
-              <List>
-                <li>
-                  <b>ООО "БелАртМебель" :</b>
-                </li>
-                <li>ул.Чкалова, 19/1</li>
-                <li>пр-т Московский, 64</li>
-                <li>ул.39-й Армии, 22</li>
-                <li>ул.Ленина, 48</li>
-                <li>ул.Советской Армии, 4</li>
-              </List>
+            <List>
+              <ListItem>
+                <b>ООО "БелАртМебель" :</b>
+              </ListItem>
+              <ListItem>ул.Чкалова, 19/1</ListItem>
+              <ListItem>пр-т Московский, 64</ListItem>
+              <ListItem>ул.39-й Армии, 22</ListItem>
+              <ListItem>ул.Ленина, 48</ListItem>
+              <ListItem>ул.Советской Армии, 4</ListItem>
+            </List>
 
-              <List>
-                <li>
-                  <b>Торговый Дом (г.Полоцк) :</b>
-                </li>
-                <li>г.Полоцк ул.Гоголя,16</li>
-              </List>
+            <List>
+              <ListItem>
+                <b>Торговый Дом (г.Полоцк) :</b>
+              </ListItem>
+              <ListItem>г.Полоцк ул.Гоголя,16</ListItem>
+            </List>
 
-              <List>
-                <li>
-                  <b>ОАО "Витебский Хозторг" :</b>
-                </li>
-                <li>ул.1-я Пролетарская, 3</li>
-                <li>ул.Чкалова, 17/2</li>
-                <li>г.Новополоцк ул.Молодежная, 40</li>
-              </List>
-            </Typography>
+            <List>
+              <ListItem>
+                <b>ОАО "Витебский Хозторг" :</b>
+              </ListItem>
+              <ListItem>ул.1-я Пролетарская, 3</ListItem>
+              <ListItem>ул.Чкалова, 17/2</ListItem>
+              <ListItem>г.Новополоцк ул.Молодежная, 40</ListItem>
+            </List>
           </Container>
         </Box>
 
@@ -70,23 +69,21 @@ export const WhereToBuy = () => {
 
         <Box pt={3}>
           <Container>
-            <Typography variant="h6" component="h2" color="textPrimary">
+            <Typography variant="h6" component="h2">
               Склад-магазин "Полидрев"
             </Typography>
 
-            <Typography variant="body1" color="textPrimary">
-              <List>
-                <li>
-                  <b>Витебский район, аг. Октябрьская, ул.Октябрьская, 7</b>
-                </li>
-                <li>
-                  Время работы склад-магазина: <br />
-                  Пн-Пт: с 8.30 до 18.30 (без обеда) <br />
-                  Суббота: с 09.30 до 14.30. <br />
-                  Воскресенье: Выходной
-                </li>
-              </List>
-            </Typography>
+            <List>
+              <ListItem>
+                <b>Витебский район, аг. Октябрьская, ул.Октябрьская, 7</b>
+              </ListItem>
+              <ListItem>
+                Время работы склад-магазина: <br />
+                Пн-Пт: с 8.30 до 18.30 (без обеда) <br />
+                Суббота: с 09.30 до 14.30. <br />
+                Воскресенье: Выходной
+              </ListItem>
+            </List>
           </Container>
         </Box>
 
