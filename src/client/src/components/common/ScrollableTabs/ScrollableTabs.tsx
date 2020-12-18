@@ -2,8 +2,12 @@ import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import { Box, Typography, useTheme } from '@material-ui/core';
+import { Box, Container, Typography, useTheme } from '@material-ui/core';
 import { useStyles } from './ScrollableTabs.styles';
+
+/**
+ * TODO: This Component in progress
+ */
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -53,7 +57,7 @@ export const ScrollableTabs = () => {
   };
 
   return (
-    <div className={classes.wrapper}>
+    <Container className={classes.wrapper}>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -106,6 +110,6 @@ export const ScrollableTabs = () => {
           Item 9
         </TabPanel>
       </SwipeableViews>
-    </div>
+    </Container>
   );
 };

@@ -1,4 +1,6 @@
 import React, { ErrorInfo } from 'react';
+import { Button, Grid } from '@material-ui/core';
+import { Locations } from '../../../constants/locations';
 
 export class ErrorBoundary extends React.Component {
   state = { hasError: false };
@@ -13,7 +15,12 @@ export class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return (
+        <Grid container direction="column" justify="center" alignItems="center">
+          <h1>Что-то пошло не так. Произошла ошибка.</h1>
+          <Button href={Locations.Index}>Вернуться на главную страницу</Button>
+        </Grid>
+      );
     }
 
     return this.props.children;

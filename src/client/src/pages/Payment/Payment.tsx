@@ -7,12 +7,10 @@ import { Container } from '@material-ui/core';
 export const Payment = () => {
   return (
     <CommonFade>
-      <>
-        <Container>
-          <PaymentMethods />
-          <CreditConditions />
-        </Container>
-      </>
+      <Container>
+        <PaymentMethods />
+        <CreditConditions />
+      </Container>
     </CommonFade>
   );
 };
