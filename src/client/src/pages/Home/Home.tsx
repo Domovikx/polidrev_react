@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { Box, Container, List, ListItem, Typography } from '@material-ui/core';
+
 import CommonFade from '../../components/common/CommonFade';
 import img from '../../assets/images/forest-1607774432667-4004.jpg';
-import { Box, Container, List, ListItem, Typography } from '@material-ui/core';
+
 import { useStyles } from './Home.styles';
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   const classes = useStyles();
 
   return (

@@ -1,9 +1,10 @@
 import React from 'react';
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger/useScrollTrigger';
+
 import { Props } from './HideOnScroll.types';
 
-export const HideOnScroll = ({ children }: Props) => {
+export const HideOnScroll = ({ children }: Props): JSX.Element => {
   const trigger = useScrollTrigger();
 
   return (

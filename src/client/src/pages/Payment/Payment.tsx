@@ -1,16 +1,15 @@
 import * as React from 'react';
+import { Container } from '@material-ui/core';
+
 import CommonFade from '../../components/common/CommonFade';
 import CreditConditions from '../../components/common/CreditConditions';
 import PaymentMethods from '../../components/common/PaymentMethods';
-import { Container } from '@material-ui/core';
 
-export const Payment = () => {
-  return (
-    <CommonFade>
-      <Container>
-        <PaymentMethods />
-        <CreditConditions />
-      </Container>
-    </CommonFade>
-  );
-};
+export const Payment = (): JSX.Element => (
+  <CommonFade>
+    <Container>
+      <PaymentMethods />
+      <CreditConditions />
+    </Container>
+  </CommonFade>
+);

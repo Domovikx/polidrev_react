@@ -1,8 +1,4 @@
 import * as React from 'react';
-import CommonFade from '../../components/common/CommonFade';
-import EnterpriseMap from '../../components/common/EnterpriseMap';
-import StoresMap from '../../components/common/StoresMap';
-import { useStyles } from './WhereToBuy.styles';
 import {
   Box,
   Container,
@@ -13,7 +9,13 @@ import {
   useTheme,
 } from '@material-ui/core';
 
-export const WhereToBuy = () => {
+import CommonFade from '../../components/common/CommonFade';
+import EnterpriseMap from '../../components/common/EnterpriseMap';
+import StoresMap from '../../components/common/StoresMap';
+
+import { useStyles } from './WhereToBuy.styles';
+
+export const WhereToBuy = (): JSX.Element => {
   const classes = useStyles();
   const theme = useTheme();
   const upLg = useMediaQuery(theme.breakpoints.up('lg'));

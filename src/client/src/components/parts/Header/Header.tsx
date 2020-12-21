@@ -1,17 +1,19 @@
 import AppBar from '@material-ui/core/AppBar';
-import HideOnScroll from '../../common/HideOnScroll';
-import imgLogoPolidrev from '../../../assets/images/logo-polidrev.png';
-import Navbar from '../../common/Navbar';
-import NavigationDrawerMenu from '../../common/NavigationDrawerMenu';
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import useTheme from '@material-ui/core/styles/useTheme';
 import { Button, Container, useMediaQuery } from '@material-ui/core';
-import { Locations } from '../../../constants/locations';
 import { NavLink } from 'react-router-dom';
+
+import HideOnScroll from '../../common/HideOnScroll';
+import imgLogoPolidrev from '../../../assets/images/logo-polidrev.png';
+import Navbar from '../../common/Navbar';
+import NavigationDrawerMenu from '../../common/NavigationDrawerMenu';
+import { Locations } from '../../../constants/locations';
+
 import { useStyles } from './Header.styles';
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   const classes = useStyles();
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));

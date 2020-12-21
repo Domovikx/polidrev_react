@@ -1,4 +1,4 @@
 export interface ListItemValue {
-  img: any;
+  img: string;
   text: string;
 }

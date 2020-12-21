@@ -17,8 +17,8 @@ export const authRegister = ({ email, password }: RegisterData) => {
   }
 
   return {
-    type: AUTH.REGISTER,
     payload: 'temp message createUserWithEmailAndPassword',
+    type: AUTH.REGISTER,
   };
 };
 
@@ -32,12 +32,12 @@ export const authLogin = ({ email, password }: RegisterData) => {
   }
 
   return {
-    type: AUTH.LOGIN,
     payload: 'temp message signInWithEmailAndPassword',
+    type: AUTH.LOGIN,
   };
 };
 
 export const authLogout = () => {
   firebase.auth().signOut();
-  return { type: AUTH.LOGOUT, payload: 'temp message signOut' };
+  return { payload: 'temp message signOut', type: AUTH.LOGOUT };
 };

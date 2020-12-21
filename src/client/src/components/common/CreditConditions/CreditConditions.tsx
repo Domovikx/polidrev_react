@@ -1,20 +1,21 @@
-import CommonFade from '../CommonFade';
 import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
-import { ListItemValue } from './CreditConditions.types';
-import { uid } from 'uid';
-import { useStyles } from './CreditConditions.styles';
+
+import CommonFade from '../CommonFade';
 import {
   imgCardBelGazProm,
   imgCardBPS,
   imgCardMTB,
 } from '../../../assets/Images';
 
+import { ListItemValue } from './CreditConditions.types';
+import { useStyles } from './CreditConditions.styles';
+
 // TODO: values to DB
 const values: ListItemValue[] = [
   {
-    img: imgCardBelGazProm,
     alt: 'Рассрочка по «Карте покупок»',
+    img: imgCardBelGazProm,
     text: [
       `Рассрочка по «Карте покупок»`,
       `Производите оплату «Картой покупок» и получайте, 2 месяца
@@ -25,8 +26,8 @@ const values: ListItemValue[] = [
     ],
   },
   {
-    img: imgCardMTB,
     alt: 'Халва Max/Mix',
+    img: imgCardMTB,
     text: [
       `Халва Max/Mix`,
       `Карта рассрочки «Халва» от МТБанка — это 2 месяца рассрочки на любой товар в нашем интернет- магазине без переплат. Купить в рассрочку по «Халве» и «Карте покупок» просто, оплата возможна несколькими способами:`,
@@ -36,8 +37,8 @@ const values: ListItemValue[] = [
     ],
   },
   {
-    img: imgCardBPS,
     alt: 'Карта Fun',
+    img: imgCardBPS,
     text: [
       `Карта Fun`,
       `Производите оплату.`,
@@ -54,7 +55,7 @@ const values: ListItemValue[] = [
   },
 ];
 
-export const CreditConditions = () => {
+export const CreditConditions = (): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -65,24 +66,22 @@ export const CreditConditions = () => {
         </Typography>
 
         <Grid className={classes.list}>
-          {values.map(({ img, alt, text }: ListItemValue) => {
-            return (
-              <Box key={uid()} className={classes.listItem}>
-                <img src={img} alt={alt} className={classes.img} />
-                <div className={classes.text}>
-                  {text.map((string) => (
-                    <Typography
-                      variant="body1"
-                      key={uid()}
-                      className={classes.paragraph}
-                    >
-                      {string}
-                    </Typography>
-                  ))}
-                </div>
-              </Box>
-            );
-          })}
+          {values.map(({ img, alt, text }: ListItemValue, index) => (
+            <Box key={index} className={classes.listItem}>
+              <img src={img} alt={alt} className={classes.img} />
+              <div className={classes.text}>
+                {text.map((string, index) => (
+                  <Typography
+                    variant="body1"
+                    key={index}
+                    className={classes.paragraph}
+                  >
+                    {string}
+                  </Typography>
+                ))}
+              </div>
+            </Box>
+          ))}
         </Grid>
       </Box>
     </CommonFade>

@@ -1,19 +1,21 @@
-import FormikTextField from '../../components/common/Form/FormikTextField';
 import React, { useReducer } from 'react';
+import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
+import { Form, Formik, FormikProps } from 'formik';
+import { Link } from 'react-router-dom';
+
+import FormikTextField from '../../components/common/Form/FormikTextField';
 import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
 import { authRegister } from '../../store/auth/auth.actions';
-import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
-import { Form, Formik, FormikProps } from 'formik';
-import { FormValues } from './Registration.types';
-import { Link } from 'react-router-dom';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
-import { useStyles } from './Registration.styles';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
 
-export const Registration = () => {
+import { FormValues } from './Registration.types';
+import { useStyles } from './Registration.styles';
+
+export const Registration = (): JSX.Element => {
   const classes = useStyles();
 
   const initialValues: FormValues = {

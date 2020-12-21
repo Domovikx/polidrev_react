@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { TextField } from '@material-ui/core';
 import { useField } from 'formik';
+
 import { Props } from './FormikTextField.types';
 
-export const FormikTextField = (props: Props) => {
+export const FormikTextField = (props: Props): JSX.Element => {
   const { formikkey, type, label } = props;
   const [field, meta] = useField(formikkey);
 

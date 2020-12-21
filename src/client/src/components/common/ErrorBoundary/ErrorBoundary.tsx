@@ -1,19 +1,20 @@
 import React, { ErrorInfo } from 'react';
 import { Button, Grid } from '@material-ui/core';
+
 import { Locations } from '../../../constants/locations';
 
 export class ErrorBoundary extends React.Component {
   state = { hasError: false };
 
-  static getDerivedStateFromError(error: Error) {
+  static getDerivedStateFromError(): { hasError: boolean } {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, info: ErrorInfo) {
+  componentDidCatch(error: Error, info: ErrorInfo): void {
     console.log('error, info :>> ', error, info);
   }
 
-  render() {
+  render(): JSX.Element | React.ReactNode | null | undefined {
     if (this.state.hasError) {
       return (
         <Grid container direction="column" justify="center" alignItems="center">

@@ -1,10 +1,12 @@
 import * as React from 'react';
-import CommonFade from '../../components/common/CommonFade';
 import { Box, Container, List, ListItem, Typography } from '@material-ui/core';
+
+import CommonFade from '../../components/common/CommonFade';
 import { imgCustomCutting } from '../../assets/Images';
+
 import { useStyles } from './CabinetFurniture.styles';
 
-export const CabinetFurniture = () => {
+export const CabinetFurniture = (): JSX.Element => {
   const classes = useStyles();
 
   return (

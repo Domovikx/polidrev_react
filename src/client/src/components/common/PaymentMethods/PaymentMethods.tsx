@@ -1,15 +1,16 @@
-import CommonFade from '../CommonFade';
 import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
-import { ListItemValue } from './PaymentMethods.types';
-import { uid } from 'uid';
-import { useStyles } from './PaymentMethods.styles';
+
+import CommonFade from '../CommonFade';
 import {
   imgCash,
   imgCardPayment,
   imgErip,
   imgInternetBank,
 } from '../../../assets/Images';
+
+import { ListItemValue } from './PaymentMethods.types';
+import { useStyles } from './PaymentMethods.styles';
 
 // TODO: to DB
 const values: ListItemValue[] = [
@@ -31,7 +32,7 @@ const values: ListItemValue[] = [
   },
 ];
 
-export const PaymentMethods = () => {
+export const PaymentMethods = (): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -42,16 +43,14 @@ export const PaymentMethods = () => {
         </Typography>
 
         <Grid className={classes.list}>
-          {values.map(({ img, text }: ListItemValue) => {
-            return (
-              <Box key={uid()} className={classes.paper}>
-                <img src={img} alt={text} className={classes.img} />
-                <Typography variant="body1" className={classes.text}>
-                  {text}
-                </Typography>
-              </Box>
-            );
-          })}
+          {values.map(({ img, text }: ListItemValue, index) => (
+            <Box key={index} className={classes.paper}>
+              <img src={img} alt={text} className={classes.img} />
+              <Typography variant="body1" className={classes.text}>
+                {text}
+              </Typography>
+            </Box>
+          ))}
         </Grid>
       </Box>
     </CommonFade>
