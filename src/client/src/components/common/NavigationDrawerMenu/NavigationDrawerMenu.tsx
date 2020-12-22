@@ -1,15 +1,11 @@
 import clsx from 'clsx';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
-import Link from './Link';
 import React from 'react';
-import { Anchor } from './NavigationDrawerMenu.types';
 import { Box, IconButton } from '@material-ui/core';
-import { LinkProps } from './Link/Link.types';
-import { Locations } from '../../../constants/locations';
 import { uid } from 'uid';
-import { useStyles } from './NavigationDrawerMenu.styles';
 
+import { Locations } from '../../../constants/locations';
 import {
   HomeIcon,
   MapIcon,
@@ -19,13 +15,18 @@ import {
   WardrobeOutlineIcon,
 } from '../../../assets/Icons';
 
-export const NavigationDrawerMenu = () => {
+import Link from './Link';
+import { Anchor } from './NavigationDrawerMenu.types';
+import { LinkProps } from './Link/Link.types';
+import { useStyles } from './NavigationDrawerMenu.styles';
+
+export const NavigationDrawerMenu = (): JSX.Element => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
-    left: false,
     bottom: false,
+    left: false,
     right: false,
+    top: false,
   });
 
   const toggleDrawer = (anchor: Anchor, open: boolean) => (
@@ -44,32 +45,32 @@ export const NavigationDrawerMenu = () => {
 
   const NavLinksValue: LinkProps[] = [
     {
-      tittle: 'Home',
-      location: Locations.Index,
       icon: <HomeIcon />,
+      location: Locations.Index,
+      title: 'Home',
     },
     {
-      tittle: 'Divider',
+      title: 'Divider',
     },
     {
-      tittle: 'Мягкая мебель',
-      location: Locations.SoftFurniture,
       icon: <SofaIcon />,
+      location: Locations.SoftFurniture,
+      title: 'Мягкая мебель',
     },
     {
-      tittle: 'Корпусная мебель',
-      location: Locations.CabinetFurniture,
       icon: <WardrobeOutlineIcon />,
+      location: Locations.CabinetFurniture,
+      title: 'Корпусная мебель',
     },
     {
-      tittle: 'Где купить',
-      location: Locations.WhereToBuy,
       icon: <MapIcon />,
+      location: Locations.WhereToBuy,
+      title: 'Где купить',
     },
     {
-      tittle: 'Оплата',
-      location: Locations.Payment,
       icon: <WalletOutlineIcon />,
+      location: Locations.Payment,
+      title: 'Оплата',
     },
   ];
 
@@ -83,7 +84,7 @@ export const NavigationDrawerMenu = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       {NavLinksValue.map((item: LinkProps) => {
-        if (item.tittle?.toLocaleLowerCase() === 'divider') {
+        if (item.title?.toLocaleLowerCase() === 'divider') {
           return <Divider key={uid()} />;
         }
         return <Link {...item} key={uid()} />;

@@ -1,5 +1,5 @@
 export interface ListItemValue {
-  img: any;
+  img: string;
   alt: string;
   text: string[];
 }

@@ -1,11 +1,11 @@
-// TODO: change interfaces
-export interface PlaceMark {
-  geometry: [];
-  hintContent?: string;
-}
+import { PlacemarkGeometry } from 'react-yandex-maps';
 
 export interface Props {
-  center: [number, number];
+  center: PlacemarkGeometry;
   zoom: number;
-  placeMarks: [PlaceMark];
+  placeMarks: PlaceMark[];
+}
+export interface PlaceMark {
+  geometry: PlacemarkGeometry;
+  hintContent?: string;
 }

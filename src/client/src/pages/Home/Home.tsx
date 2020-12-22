@@ -1,10 +1,13 @@
 import * as React from 'react';
+import { Box, Container, Typography } from '@material-ui/core';
+
 import CommonFade from '../../components/common/CommonFade';
 import img from '../../assets/images/forest-1607774432667-4004.jpg';
-import { Box, Container, List, ListItem, Typography } from '@material-ui/core';
+
+import TradePointsVitebskList from './Lists/TradePointsVitebskList';
 import { useStyles } from './Home.styles';
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -40,14 +43,7 @@ export const Home = () => {
             предприятия г.Витебска и Витебской области:
           </Typography>
 
-          <List>
-            <ListItem>Торговый Дом «Витязь</ListItem>
-            <ListItem>
-              ОАО «Витебский Хозторг» в г.Витебск и в г.Новополоцк
-            </ListItem>
-            <ListItem>ОАО «Дом торговли» г.Полоцка</ListItem>
-            <ListItem>ООО "БелАртМебель"</ListItem>
-          </List>
+          <TradePointsVitebskList />
 
           <Typography variant="body1">
             На предприятии с 28 ноября 2019 года работает

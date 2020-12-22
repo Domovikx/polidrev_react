@@ -3,18 +3,13 @@ import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import { Box, Container, Typography, useTheme } from '@material-ui/core';
+
+import { TabPanelProps } from './ScrollableTabs.types';
 import { useStyles } from './ScrollableTabs.styles';
 
 /**
  * TODO: This Component in progress
  */
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  dir?: string;
-  index: any;
-  value: any;
-}
 
 const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
@@ -36,19 +31,21 @@ const TabPanel = (props: TabPanelProps) => {
   );
 };
 
-const a11yProps = (index: any) => {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
-};
+const a11yProps = (index: number) => ({
+  'aria-controls': `full-width-tabpanel-${index}`,
+  id: `full-width-tab-${index}`,
+});
 
-export const ScrollableTabs = () => {
+export const ScrollableTabs = (): JSX.Element => {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+  const handleChange = (
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    event: React.ChangeEvent<{}>,
+    newValue: number,
+  ): void => {
     setValue(newValue);
   };
 

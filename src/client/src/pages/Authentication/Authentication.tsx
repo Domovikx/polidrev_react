@@ -1,20 +1,27 @@
-import FormikTextField from '../../components/common/Form/FormikTextField';
 import React, { useReducer } from 'react';
+import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
+import { Form, Formik, FormikProps } from 'formik';
+import { Link } from 'react-router-dom';
+
+import CommonEndAdornment from '../../components/common/CommonEndAdornment';
+import FormikTextField from '../../components/common/Form/FormikTextField';
 import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
 import { authLogin } from '../../store/auth/auth.actions';
-import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
-import { Form, Formik, FormikProps } from 'formik';
-import { FormValues } from './Authentication.types';
-import { Link } from 'react-router-dom';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
-import { useStyles } from './Authentication.styles';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
 
-export const Authentication = () => {
+import { FormValues, LocalState } from './Authentication.types';
+import { useStyles } from './Authentication.styles';
+
+export const Authentication = (): JSX.Element => {
   const classes = useStyles();
+
+  const [values, setValues] = React.useState<LocalState>({
+    showPassword: false,
+  });
 
   const initialValues: FormValues = {
     email: '',
@@ -25,6 +32,10 @@ export const Authentication = () => {
 
   const submitHandler = (formValues: FormValues) => {
     dispatch(authLogin(formValues));
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
   };
 
   return (
@@ -69,9 +80,21 @@ export const Authentication = () => {
                   <Grid item xs={12}>
                     <FormikTextField
                       formikkey={fieldName.password}
-                      type={fieldType.password}
+                      type={
+                        values.showPassword
+                          ? fieldType.text
+                          : fieldType.password
+                      }
                       label="Password"
                       variant="outlined"
+                      InputProps={{
+                        endAdornment: (
+                          <CommonEndAdornment
+                            showPassword={values.showPassword}
+                            handleClick={handleClickShowPassword}
+                          />
+                        ),
+                      }}
                     />
                   </Grid>
 

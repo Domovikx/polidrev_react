@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+
 import { emailValidation } from '../validationRules/email.validation';
 import { passwordValidation } from '../validationRules/password.validation';
 

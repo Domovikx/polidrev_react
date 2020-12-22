@@ -5,6 +5,11 @@ import MenuIcon from 'mdi-react/MenuIcon';
 import SofaIcon from 'mdi-react/SofaIcon';
 import WalletOutlineIcon from 'mdi-react/WalletOutlineIcon';
 import WardrobeOutlineIcon from 'mdi-react/WardrobeOutlineIcon';
+import { IconButton } from '@material-ui/core';
+import {
+  Visibility as VisibilityIcon,
+  VisibilityOff as VisibilityOffIcon,
+} from '@material-ui/icons';
 
 export {
   HomeIcon,
@@ -14,4 +19,7 @@ export {
   WalletOutlineIcon,
   LockOutlineIcon,
   MenuIcon,
+  IconButton,
+  VisibilityIcon,
+  VisibilityOffIcon,
 };

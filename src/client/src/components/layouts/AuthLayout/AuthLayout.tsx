@@ -1,16 +1,8 @@
+import React from 'react';
 import { Container } from '@material-ui/core';
-import React, { ReactElement } from 'react';
 
-export const AuthLayout = ({ children }: Props) => {
-  return (
-    <Container>
-      {/* TODO: Temporary marker for testing*/}
-      AuthLayout
-      {children}
-    </Container>
-  );
-};
+import { Props } from './AuthLayout.types';
 
-interface Props {
-  children: ReactElement;
-}
+export const AuthLayout = ({ children }: Props): JSX.Element => (
+  <Container>{children}</Container>
+);

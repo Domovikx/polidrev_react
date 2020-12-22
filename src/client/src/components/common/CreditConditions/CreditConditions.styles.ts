@@ -1,35 +1,35 @@
 import { makeStyles, Theme } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme: Theme) => ({
+  img: {
+    borderRadius: '16px',
+    boxShadow: theme.shadows[3],
+    margin: `0 0 ${theme.spacing(1)}px`,
+    maxHeight: '175px',
+    maxWidth: '280px',
+  },
   list: {
     display: 'grid',
+    gap: theme.spacing(3),
     gridColumn: 1,
     gridRow: 2,
-    gap: theme.spacing(3),
   },
   listItem: {
+    columnGap: theme.spacing(3),
     display: 'grid',
     gridTemplate: `repeat(auto-fit, minmax(100px, auto)) / repeat(
           auto-fit,
           minmax(300px, auto)
         )`,
-    columnGap: theme.spacing(3),
   },
-  img: {
-    maxWidth: '280px',
-    maxHeight: '175px',
-    borderRadius: '16px',
-    boxShadow: theme.shadows[3],
-    margin: `0 0 ${theme.spacing(1)}px`,
-  },
-  tittle: {
+  paragraph: {
     margin: `0 0 ${theme.spacing(1)}px`,
   },
   text: {
-    padding: 0,
     margin: 0,
+    padding: 0,
   },
-  paragraph: {
+  title: {
     margin: `0 0 ${theme.spacing(1)}px`,
   },
 }));
