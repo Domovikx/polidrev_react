@@ -1,8 +1,8 @@
 import React from 'react';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
-// import { Props } from './YandexMap.types';
-import { uid } from 'uid';
 import { useTheme } from '@material-ui/core';
+
+import { PlaceMark, Props } from './YandexMap.types';
 
 /**
  * https://react-yandex-maps.now.sh/migration
@@ -10,8 +10,7 @@ import { useTheme } from '@material-ui/core';
  * https://yandex.ru/dev/maps/jsapi/doc/2.1/dg/concepts/geoobjects.html/
  */
 
-// TODO: any to props
-export const YandexMap = ({ center, zoom, placeMarks }: any) => {
+export const YandexMap = ({ center, zoom, placeMarks }: Props): JSX.Element => {
   const theme = useTheme();
 
   return (
@@ -27,23 +26,24 @@ export const YandexMap = ({ center, zoom, placeMarks }: any) => {
         ]}
         state={{
           center,
-          zoom,
           controls: ['zoomControl', 'fullscreenControl'],
+          zoom,
         }}
       >
-        {/* // TODO: any to props */}
-        {placeMarks.map(({ geometry, hintContent }: any) => (
-          <Placemark
-            key={uid()}
-            geometry={geometry}
-            properties={{
-              hintContent,
-            }}
-            options={{
-              iconColor: theme.palette.primary.main,
-            }}
-          />
-        ))}
+        {placeMarks.map(
+          ({ geometry, hintContent }: PlaceMark, index: number) => (
+            <Placemark
+              key={index}
+              geometry={geometry}
+              properties={{
+                hintContent,
+              }}
+              options={{
+                iconColor: theme.palette.primary.main,
+              }}
+            />
+          ),
+        )}
       </Map>
     </YMaps>
   );

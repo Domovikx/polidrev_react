@@ -1,7 +1,8 @@
 import React from 'react';
+
 import YandexMap from '../YandexMap';
 
-export const StoresMap = () => {
+export const StoresMap = (): JSX.Element => {
   //TODO: to DB
   const center = [55.184217, 30.202869];
   const zoom = 11;
@@ -44,7 +45,7 @@ export const StoresMap = () => {
     },
   ];
 
-  const props = { center, zoom, placeMarks };
+  const props = { center, placeMarks, zoom };
 
   return <YandexMap {...props} />;
 };

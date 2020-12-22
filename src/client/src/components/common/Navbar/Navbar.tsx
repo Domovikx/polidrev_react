@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { Locations } from '../../../constants/locations';
 import { NavLink } from 'react-router-dom';
+
+import { Locations } from '../../../constants/locations';
+
 import { useStyles } from './Navbar.styles';
 
-export const Navbar = () => {
+export const Navbar = (): JSX.Element => {
   const classes = useStyles();
 
   return (

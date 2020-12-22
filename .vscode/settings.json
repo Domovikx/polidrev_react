@@ -1,6 +1,12 @@
 {
   "cSpell.language": "en, ru",
   "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescriptreact"
+  ],
 
   "workbench.tree.indent": 20,
   "editor.minimap.enabled": false,
@@ -35,6 +41,7 @@
     "Karto",
     "Placemark",
     "Polidrev",
+    "Scrollable",
     "appspot",
     "clsx",
     "corejs",
@@ -43,9 +50,11 @@
     "formikkey",
     "lightgray",
     "removebg",
+    "swipeable",
     "webp",
     "ЕАЭС",
     "ЕРИП",
+    "ЛДСП",
     "Полидрев",
     "Хозторг"
   ]

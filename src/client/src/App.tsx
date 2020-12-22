@@ -3,12 +3,15 @@ import firebase from 'firebase/app';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { CssBaseline } from '@material-ui/core';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import { ErrorBoundary } from './components/common/ErrorBoundary/ErrorBoundary';
 import { firebaseConfig } from './config/firebaseConfig';
 import { greenTheme } from './themes/green.theme';
-import { Provider } from 'react-redux';
 import { rootReducer } from './store/root.reducer';
 import { Routing } from './Routing';
-import { ThemeProvider } from '@material-ui/core/styles';
+
 import 'firebase/auth';
 import 'firebase/database';
 
@@ -21,13 +24,13 @@ const store = createStore(
   ),
 );
 
-export const App = () => (
-  <>
+export const App = (): JSX.Element => (
+  <ErrorBoundary>
     <CssBaseline />
     <ThemeProvider theme={greenTheme}>
       <Provider store={store}>
         <Routing />
       </Provider>
     </ThemeProvider>
-  </>
+  </ErrorBoundary>
 );

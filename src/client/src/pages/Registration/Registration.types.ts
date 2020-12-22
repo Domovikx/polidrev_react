@@ -3,3 +3,7 @@ export interface FormValues {
   password: string;
   passwordConfirm: string;
 }
+
+export interface LocalState {
+  showPassword: boolean;
+}

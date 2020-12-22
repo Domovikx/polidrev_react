@@ -1,27 +1,62 @@
 /**
- * source
+ * Source
  * https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
+ * https://thesoreon.com/blog/how-to-set-up-eslint-with-typescript-in-vs-code
  */
 
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  extends: [
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+  ],
+
+  ignorePatterns: ['.eslintrc.js'],
+
+  parser: '@typescript-eslint/parser',
+
   parserOptions: {
-    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
+      jsx: true,
     },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['sort-keys-fix'],
+  rules: {
+    'arrow-body-style': ['error', 'as-needed'],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+        ],
+        'newlines-between': 'always',
+        pathGroups: [
+          {
+            group: 'internal',
+            pattern: '~/**',
+          },
+        ],
+      },
+    ],
+    'react/display-name': 0,
+    'react/prop-types': ['off'],
+    'sort-keys-fix/sort-keys-fix': 'warn',
   },
   settings: {
     react: {
-      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: 'detect',
     },
   },
-  extends: [
-    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-  ],
-  rules: {},
 };

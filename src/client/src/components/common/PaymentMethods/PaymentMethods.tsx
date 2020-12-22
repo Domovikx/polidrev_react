@@ -1,5 +1,7 @@
 import React from 'react';
-import { useStyles } from './PaymentMethods.styles';
+import { Box, Grid, Typography } from '@material-ui/core';
+
+import CommonFade from '../CommonFade';
 import {
   imgCash,
   imgCardPayment,
@@ -7,9 +9,11 @@ import {
   imgInternetBank,
 } from '../../../assets/Images';
 
-/** !!! file in progress */
+import { ListItemValue } from './PaymentMethods.types';
+import { useStyles } from './PaymentMethods.styles';
 
-const paymentDB = [
+// TODO: to DB
+const values: ListItemValue[] = [
   {
     img: imgCash,
     text: 'Наличными',
@@ -28,19 +32,27 @@ const paymentDB = [
   },
 ];
 
-export const PaymentMethods = () => {
+export const PaymentMethods = (): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <>
-      {paymentDB.map(({ img, text }) => {
-        return (
-          <div>
-            <img src={img} alt={text} className={classes.img} />
-            <p>{text}</p>
-          </div>
-        );
-      })}
-    </>
+    <CommonFade>
+      <Box pt={3}>
+        <Typography variant="h6" component="h2" className={classes.title}>
+          Удобные способы оплаты
+        </Typography>
+
+        <Grid className={classes.list}>
+          {values.map(({ img, text }: ListItemValue, index) => (
+            <Box key={index} className={classes.paper}>
+              <img src={img} alt={text} className={classes.img} />
+              <Typography variant="body1" className={classes.text}>
+                {text}
+              </Typography>
+            </Box>
+          ))}
+        </Grid>
+      </Box>
+    </CommonFade>
   );
 };

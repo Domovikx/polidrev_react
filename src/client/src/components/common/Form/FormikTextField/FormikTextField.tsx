@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { TextField } from '@material-ui/core';
 import { useField } from 'formik';
+
 import { Props } from './FormikTextField.types';
 
-export const FormikTextField = (props: Props) => {
+export const FormikTextField = (props: Props): JSX.Element => {
   const { formikkey, type, label } = props;
   const [field, meta] = useField(formikkey);
 
@@ -16,7 +16,7 @@ export const FormikTextField = (props: Props) => {
       value={field.value}
       onBlur={field.onBlur}
       onChange={field.onChange}
-      helperText={meta.touched && meta.error}
+      helperText={(meta.touched && meta.error) || ' '}
       error={meta.touched && Boolean(meta.error)}
       fullWidth
       {...props}

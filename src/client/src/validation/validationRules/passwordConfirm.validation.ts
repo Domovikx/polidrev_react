@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const passwordConfirmValidation = (ref = 'password') =>
+export const passwordConfirmValidation = (ref = 'password'): yup.StringSchema =>
   yup
     .string()
     .required('Это поле обязательно')
