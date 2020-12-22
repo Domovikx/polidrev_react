@@ -1,7 +1,7 @@
-import { makeStyles, Theme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme: Theme) => ({
-  Container: {
+export const useStyles = makeStyles(() => ({
+  container: {
     alignItems: 'center',
     display: 'flex',
   },
@@ -10,5 +10,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   logoBtn: {
     marginRight: 'auto',
+  },
+  wrapper: {
+    right: `calc((100vw - 100%)*-1)`,
+    width: `100vw`,
   },
 }));

@@ -3,6 +3,7 @@ import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
 import { Link } from 'react-router-dom';
 
+import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
 import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
 import { authLogin } from '../../store/auth/auth.actions';
@@ -12,11 +13,15 @@ import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
 
-import { FormValues } from './Authentication.types';
+import { FormValues, LocalState } from './Authentication.types';
 import { useStyles } from './Authentication.styles';
 
 export const Authentication = (): JSX.Element => {
   const classes = useStyles();
+
+  const [values, setValues] = React.useState<LocalState>({
+    showPassword: false,
+  });
 
   const initialValues: FormValues = {
     email: '',
@@ -27,6 +32,10 @@ export const Authentication = (): JSX.Element => {
 
   const submitHandler = (formValues: FormValues) => {
     dispatch(authLogin(formValues));
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
   };
 
   return (
@@ -71,9 +80,21 @@ export const Authentication = (): JSX.Element => {
                   <Grid item xs={12}>
                     <FormikTextField
                       formikkey={fieldName.password}
-                      type={fieldType.password}
+                      type={
+                        values.showPassword
+                          ? fieldType.text
+                          : fieldType.password
+                      }
                       label="Password"
                       variant="outlined"
+                      InputProps={{
+                        endAdornment: (
+                          <CommonEndAdornment
+                            showPassword={values.showPassword}
+                            handleClick={handleClickShowPassword}
+                          />
+                        ),
+                      }}
                     />
                   </Grid>
 

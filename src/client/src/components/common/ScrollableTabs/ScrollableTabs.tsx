@@ -42,12 +42,10 @@ export const ScrollableTabs = (): JSX.Element => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (
-    // TODO type
     // eslint-disable-next-line @typescript-eslint/ban-types
     event: React.ChangeEvent<{}>,
     newValue: number,
   ): void => {
-    console.log('event :>> ', event);
     setValue(newValue);
   };
 

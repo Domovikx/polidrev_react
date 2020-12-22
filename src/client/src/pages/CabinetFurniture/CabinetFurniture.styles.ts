@@ -8,9 +8,4 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: '400px',
     width: '100%',
   },
-  list: {
-    display: 'grid',
-    gridTemplateColumns: `repeat(auto-fill, minmax(250px, 1fr))`,
-    margin: `15px 0`,
-  },
 }));

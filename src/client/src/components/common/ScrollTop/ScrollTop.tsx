@@ -6,12 +6,12 @@ import { Fab, useScrollTrigger } from '@material-ui/core';
 import { Props } from './ScrollTop.types';
 import { useStyles } from './ScrollTop.styles';
 
-function Scroll({ children }: Props) {
+const Scroll = ({ children }: Props): JSX.Element => {
   const classes = useStyles();
   const trigger = useScrollTrigger();
 
   const handleClick = () => {
-    window[`scrollTo`]({ behavior: `smooth`, top: 0 });
+    window.scrollTo({ behavior: `smooth`, top: 0 });
   };
 
   return (
@@ -21,7 +21,7 @@ function Scroll({ children }: Props) {
       </div>
     </Zoom>
   );
-}
+};
 
 export const ScrollTop = (): JSX.Element => (
   <Scroll>

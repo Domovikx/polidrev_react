@@ -29,7 +29,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     margin: 0,
     padding: 0,
   },
-  tittle: {
+  title: {
     margin: `0 0 ${theme.spacing(1)}px`,
   },
 }));

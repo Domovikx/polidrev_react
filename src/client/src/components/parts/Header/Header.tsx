@@ -21,8 +21,8 @@ export const Header = (): JSX.Element => {
   return (
     <>
       <HideOnScroll>
-        <AppBar>
-          <Container className={classes.Container}>
+        <AppBar className={classes.wrapper}>
+          <Container className={classes.container}>
             <Button
               className={classes.logoBtn}
               component={NavLink}

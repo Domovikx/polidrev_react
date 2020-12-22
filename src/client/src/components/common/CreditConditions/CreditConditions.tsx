@@ -61,7 +61,7 @@ export const CreditConditions = (): JSX.Element => {
   return (
     <CommonFade>
       <Box pt={3}>
-        <Typography variant="h6" component="h2" className={classes.tittle}>
+        <Typography variant="h6" component="h2" className={classes.title}>
           Рассрочка платежа
         </Typography>
 

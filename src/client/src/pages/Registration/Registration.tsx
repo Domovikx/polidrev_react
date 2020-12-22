@@ -3,6 +3,7 @@ import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
 import { Link } from 'react-router-dom';
 
+import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
 import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
 import { authRegister } from '../../store/auth/auth.actions';
@@ -12,11 +13,15 @@ import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
 
-import { FormValues } from './Registration.types';
+import { FormValues, LocalState } from './Registration.types';
 import { useStyles } from './Registration.styles';
 
 export const Registration = (): JSX.Element => {
   const classes = useStyles();
+
+  const [values, setValues] = React.useState<LocalState>({
+    showPassword: false,
+  });
 
   const initialValues: FormValues = {
     email: '',
@@ -28,6 +33,10 @@ export const Registration = (): JSX.Element => {
 
   const submitHandler = (formValues: FormValues) => {
     dispatch(authRegister(formValues));
+  };
+
+  const handleClickShowPassword = (): void => {
+    setValues({ ...values, showPassword: !values.showPassword });
   };
 
   return (
@@ -72,19 +81,43 @@ export const Registration = (): JSX.Element => {
                   <Grid item xs={12}>
                     <FormikTextField
                       formikkey={fieldName.password}
-                      type={fieldType.password}
+                      type={
+                        values.showPassword
+                          ? fieldType.text
+                          : fieldType.password
+                      }
                       label="Password"
                       variant="outlined"
                       autoComplete="new-password"
+                      InputProps={{
+                        endAdornment: (
+                          <CommonEndAdornment
+                            showPassword={values.showPassword}
+                            handleClick={handleClickShowPassword}
+                          />
+                        ),
+                      }}
                     />
                   </Grid>
 
                   <Grid item xs={12}>
                     <FormikTextField
                       formikkey={fieldName.passwordConfirm}
-                      type={fieldType.password}
+                      type={
+                        values.showPassword
+                          ? fieldType.text
+                          : fieldType.password
+                      }
                       label="Password confirm"
                       variant="outlined"
+                      InputProps={{
+                        endAdornment: (
+                          <CommonEndAdornment
+                            showPassword={values.showPassword}
+                            handleClick={handleClickShowPassword}
+                          />
+                        ),
+                      }}
                     />
                   </Grid>
 

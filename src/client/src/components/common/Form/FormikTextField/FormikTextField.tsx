@@ -16,7 +16,7 @@ export const FormikTextField = (props: Props): JSX.Element => {
       value={field.value}
       onBlur={field.onBlur}
       onChange={field.onChange}
-      helperText={meta.touched && meta.error}
+      helperText={(meta.touched && meta.error) || ' '}
       error={meta.touched && Boolean(meta.error)}
       fullWidth
       {...props}
