@@ -1,4 +1,5 @@
 import HomeIcon from 'mdi-react/HomeIcon';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import LockOutlineIcon from 'mdi-react/LockOutlineIcon';
 import MapIcon from 'mdi-react/MapIcon';
 import MenuIcon from 'mdi-react/MenuIcon';
@@ -22,4 +23,5 @@ export {
   IconButton,
   VisibilityIcon,
   VisibilityOffIcon,
+  KeyboardArrowUpIcon,
 };

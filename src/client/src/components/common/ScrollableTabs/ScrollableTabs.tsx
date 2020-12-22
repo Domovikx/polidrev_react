@@ -41,11 +41,7 @@ export const ScrollableTabs = (): JSX.Element => {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    event: React.ChangeEvent<{}>,
-    newValue: number,
-  ): void => {
+  const handleChange = (newValue: number): void => {
     setValue(newValue);
   };
 
@@ -57,7 +53,7 @@ export const ScrollableTabs = (): JSX.Element => {
     <Container className={classes.wrapper}>
       <Tabs
         value={value}
-        onChange={handleChange}
+        onChange={(event, value) => handleChange(value)}
         indicatorColor="primary"
         textColor="primary"
         variant="scrollable"

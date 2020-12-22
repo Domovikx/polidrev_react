@@ -4,7 +4,6 @@
  * https://thesoreon.com/blog/how-to-set-up-eslint-with-typescript-in-vs-code
  */
 
-// eslint-disable-next-line no-undef
 module.exports = {
   extends: [
     'eslint:recommended',
@@ -16,6 +15,8 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
   ],
+
+  ignorePatterns: ['.eslintrc.js'],
 
   parser: '@typescript-eslint/parser',
 

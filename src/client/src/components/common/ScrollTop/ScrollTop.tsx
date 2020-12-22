@@ -1,7 +1,7 @@
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import React from 'react';
-import Zoom from '@material-ui/core/Zoom';
-import { Fab, useScrollTrigger } from '@material-ui/core';
+import { Fab, useScrollTrigger, Zoom } from '@material-ui/core';
+
+import { KeyboardArrowUpIcon } from '../../../assets/Icons';
 
 import { Props } from './ScrollTop.types';
 import { useStyles } from './ScrollTop.styles';
