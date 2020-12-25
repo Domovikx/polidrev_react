@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
-import { authRegister } from '../../store/auth/auth.actions';
+import { authReducer, authState } from '../../store/auth/auth.reducer';
+import { authRegisterAction } from '../../store/auth/auth.actions';
+import { AuthRegisterValues } from '../../store/auth/auth.types';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
 
-import { FormValues, LocalState } from './Registration.types';
+import { LocalState } from './Registration.types';
 import { useStyles } from './Registration.styles';
 
 export const Registration = (): JSX.Element => {
@@ -23,16 +24,16 @@ export const Registration = (): JSX.Element => {
     showPassword: false,
   });
 
-  const initialValues: FormValues = {
+  const initialValues: AuthRegisterValues = {
     email: '',
     password: '',
     passwordConfirm: '',
   };
 
-  const [state, dispatch] = useReducer(authReducer, authInitialState);
+  const [state, dispatch] = useReducer(authReducer, authState);
 
-  const submitHandler = (formValues: FormValues) => {
-    dispatch(authRegister(formValues));
+  const submitHandler = (formValues: AuthRegisterValues) => {
+    dispatch(authRegisterAction(formValues));
   };
 
   const handleClickShowPassword = (): void => {
@@ -45,7 +46,7 @@ export const Registration = (): JSX.Element => {
       validationSchema={validationSchema}
       onSubmit={(v) => submitHandler(v)}
     >
-      {(props: FormikProps<FormValues>) => {
+      {(props: FormikProps<AuthRegisterValues>) => {
         const { isValid, dirty } = props;
 
         return (

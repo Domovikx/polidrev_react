@@ -16,7 +16,7 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
 
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', 'webpack.config.js'],
 
   parser: '@typescript-eslint/parser',
 

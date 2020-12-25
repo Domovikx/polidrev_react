@@ -5,9 +5,12 @@
 
 import firebase from 'firebase/app';
 
-import { AUTH, RegisterData } from './auth.types';
+import { AUTH, AuthAction, AuthRegisterValues } from './auth.types';
 
-export const authRegister = ({ email, password }: RegisterData) => {
+export const authRegisterAction = ({
+  email,
+  password,
+}: AuthRegisterValues): AuthAction => {
   try {
     firebase.auth().createUserWithEmailAndPassword(email, password);
     // TODO: create a notification
@@ -22,7 +25,10 @@ export const authRegister = ({ email, password }: RegisterData) => {
   };
 };
 
-export const authLogin = ({ email, password }: RegisterData) => {
+export const authLoginAction = ({
+  email,
+  password,
+}: AuthRegisterValues): AuthAction => {
   try {
     firebase.auth().signInWithEmailAndPassword(email, password);
     // TODO: create a notification
@@ -37,7 +43,7 @@ export const authLogin = ({ email, password }: RegisterData) => {
   };
 };
 
-export const authLogout = () => {
+export const authLogoutAction = (): AuthAction => {
   firebase.auth().signOut();
   return { payload: 'temp message signOut', type: AUTH.LOGOUT };
 };

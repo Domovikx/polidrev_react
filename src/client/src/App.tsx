@@ -4,14 +4,14 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { CssBaseline } from '@material-ui/core';
 import { Provider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import { ErrorBoundary } from './components/common/ErrorBoundary/ErrorBoundary';
 import { firebaseConfig } from './config/firebaseConfig';
 import { greenTheme } from './themes/green.theme';
 import { rootReducer } from './store/root.reducer';
 import { Routing } from './Routing';
-
+import ErrorBoundary from './components/common/ErrorBoundary';
 import 'firebase/auth';
 import 'firebase/database';
 
@@ -29,7 +29,9 @@ export const App = (): JSX.Element => (
     <CssBaseline />
     <ThemeProvider theme={greenTheme}>
       <Provider store={store}>
-        <Routing />
+        <SnackbarProvider>
+          <Routing />
+        </SnackbarProvider>
       </Provider>
     </ThemeProvider>
   </ErrorBoundary>

@@ -1,7 +1,12 @@
-export interface RegisterData {
+export interface AuthRegisterValues {
   email: string;
   password: string;
-  confirmPassword?: string;
+  passwordConfirm?: string;
+}
+
+export interface AuthState {
+  test?: string;
+  token?: null | string;
 }
 
 export enum AUTH {
@@ -9,3 +14,8 @@ export enum AUTH {
   LOGIN = 'AUTH.LOGIN',
   LOGOUT = 'AUTH.LOGOUT',
 }
+
+export type AuthAction =
+  | { type: AUTH.REGISTER; payload: string }
+  | { type: AUTH.LOGIN; payload: string }
+  | { type: AUTH.LOGOUT; payload: string };
