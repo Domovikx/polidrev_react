@@ -1,11 +1,11 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import { authReducer, authState } from '../../store/auth/auth.reducer';
 import { authRegisterAction } from '../../store/auth/auth.actions';
 import { AuthRegisterValues } from '../../store/auth/auth.types';
 import { fieldName } from '../../constants/fieldName';
@@ -19,6 +19,7 @@ import { useStyles } from './Registration.styles';
 
 export const Registration = (): JSX.Element => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [values, setValues] = React.useState<LocalState>({
     showPassword: false,
@@ -30,10 +31,8 @@ export const Registration = (): JSX.Element => {
     passwordConfirm: '',
   };
 
-  const [state, dispatch] = useReducer(authReducer, authState);
-
   const submitHandler = (formValues: AuthRegisterValues) => {
-    dispatch(authRegisterAction(formValues));
+    dispatch(authRegisterAction(dispatch, formValues));
   };
 
   const handleClickShowPassword = (): void => {

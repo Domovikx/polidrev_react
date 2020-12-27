@@ -1,35 +1,36 @@
-/**
- * For develop
- * https://console.firebase.google.com/project/polidrev-react/authentication/users
- */
-
 import firebase from 'firebase/app';
-import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
 
 import notificationCreator from '../../components/common/notificationCreator';
 
 import { AUTH, AuthAction, AuthRegisterValues } from './auth.types';
 
-export const authRegisterAction = ({
-  email,
-  password,
-}: AuthRegisterValues): AuthAction => {
+/**
+ * For develop
+ * https://console.firebase.google.com/project/polidrev-react/authentication/users
+ */
+
+export const authRegisterAction = async (
+  dispatch: Dispatch,
+  { email, password }: AuthRegisterValues,
+): Promise<{ payload: string; type: AUTH }> => {
   try {
-    const response: any = firebase
+    // TODO: any
+    const response: any = await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password);
 
-    console.log('response :>> ', response);
-
-    // notificationCreator({
-    //   message: response.i.message,
-    // });
-    // notificationCreator({});
-    // TODO: create a notification
+    notificationCreator({
+      dispatch,
+      message: `${response.user.email} успешно зарегистрирован`,
+      variant: 'success',
+    });
   } catch (error) {
-    // TODO: create a notification
-    console.log('error :>> ', error);
-    notificationCreator({ dispatch: useDispatch(), message: error.message });
+    notificationCreator({
+      dispatch,
+      message: error.message,
+      variant: 'error',
+    });
     throw Error;
   }
 

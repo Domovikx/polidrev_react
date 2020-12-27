@@ -6,13 +6,10 @@ import { useDispatch } from 'react-redux';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import notificationCreator from '../../components/common/notificationCreator';
 import { authLoginAction } from '../../store/auth/auth.actions';
 import { AuthRegisterValues } from '../../store/auth/auth.types';
-import { closeSnackbarAction } from '../../store/notifier/notifier.actions';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
-import { Key } from '../../components/common/notificationCreator/notificationCreator.types';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
@@ -40,20 +37,6 @@ export const Authentication = (): JSX.Element => {
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
-
-  // TODO - remove it after testing
-  const closeSnackbar = (key: Key) => dispatch(closeSnackbarAction(key));
-
-  const handleClick = () => {
-    notificationCreator({
-      dispatch,
-      message: 'message 222',
-      variant: 'warning',
-    });
-  };
-
-  // TODO - remove it
-  const handleDismissAll = () => closeSnackbar(null);
 
   return (
     <>
@@ -150,15 +133,6 @@ export const Authentication = (): JSX.Element => {
           );
         }}
       </Formik>
-
-      {/* TODO: for testing */}
-      <Button variant="contained" onClick={handleClick}>
-        Display snackbar
-      </Button>
-
-      <Button variant="contained" onClick={handleDismissAll}>
-        Dismiss all snackbars
-      </Button>
     </>
   );
 };
