@@ -4,6 +4,9 @@
  */
 
 import firebase from 'firebase/app';
+import { useDispatch } from 'react-redux';
+
+import notificationCreator from '../../components/common/notificationCreator';
 
 import { AUTH, AuthAction, AuthRegisterValues } from './auth.types';
 
@@ -12,10 +15,21 @@ export const authRegisterAction = ({
   password,
 }: AuthRegisterValues): AuthAction => {
   try {
-    firebase.auth().createUserWithEmailAndPassword(email, password);
+    const response: any = firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password);
+
+    console.log('response :>> ', response);
+
+    // notificationCreator({
+    //   message: response.i.message,
+    // });
+    // notificationCreator({});
     // TODO: create a notification
   } catch (error) {
     // TODO: create a notification
+    console.log('error :>> ', error);
+    notificationCreator({ dispatch: useDispatch(), message: error.message });
     throw Error;
   }
 

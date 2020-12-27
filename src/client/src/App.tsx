@@ -11,6 +11,7 @@ import { firebaseConfig } from './config/firebaseConfig';
 import { greenTheme } from './themes/green.theme';
 import { rootReducer } from './store/root.reducer';
 import { Routing } from './Routing';
+import Notifier from './components/common/Notifier';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import 'firebase/auth';
 import 'firebase/database';
@@ -29,7 +30,14 @@ export const App = (): JSX.Element => (
     <CssBaseline />
     <ThemeProvider theme={greenTheme}>
       <Provider store={store}>
-        <SnackbarProvider>
+        <SnackbarProvider
+          anchorOrigin={{
+            horizontal: 'right',
+            vertical: 'top',
+          }}
+          maxSnack={3}
+        >
+          <Notifier />
           <Routing />
         </SnackbarProvider>
       </Provider>

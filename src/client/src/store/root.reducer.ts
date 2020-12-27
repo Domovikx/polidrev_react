@@ -7,3 +7,5 @@ export const rootReducer = combineReducers({
   auth: authReducer,
   notifier: notifierReducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>;

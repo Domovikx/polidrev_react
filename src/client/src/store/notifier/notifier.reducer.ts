@@ -10,9 +10,6 @@ export const notifierReducer = (
 ): NotifierState => {
   switch (type) {
     case NOTIFIER.ENQUEUE_SNACKBAR:
-      // TODO - temp console.log
-      console.log('NOTIFIER.ENQUEUE_SNACKBAR 333:>> ', payload, state);
-
       return {
         ...state,
         notifications: [
@@ -25,28 +22,22 @@ export const notifierReducer = (
       };
 
     case NOTIFIER.CLOSE_SNACKBAR:
-      // TODO - temp console.log
-      console.log('NOTIFIER.CLOSE_SNACKBAR :>> ', payload);
-      // return {
-      //   ...state,
-      //   notifications: state.notifications.map((notification) =>
-      //     action.dismissAll || notification.key === action.key
-      //       ? { ...notification, dismissed: true }
-      //       : { ...notification },
-      //   ),
-      // };
-      return state;
+      return {
+        ...state,
+        notifications: state.notifications.map((notification: any) =>
+          payload.dismissAll || payload.key === notification.key
+            ? { ...notification, dismissed: true }
+            : { ...notification },
+        ),
+      };
 
     case NOTIFIER.REMOVE_SNACKBAR:
-      // TODO - temp console.log
-      console.log('NOTIFIER.REMOVE_SNACKBAR :>> ', payload);
-      // return {
-      //   ...state,
-      //   notifications: state.notifications.filter(
-      //     (notification) => notification.key !== action.key,
-      //   ),
-      // };
-      return state;
+      return {
+        ...state,
+        notifications: state.notifications.filter(
+          (notification: any) => payload.key !== notification.key,
+        ),
+      };
 
     default:
       return state;

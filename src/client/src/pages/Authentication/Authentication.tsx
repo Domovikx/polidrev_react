@@ -1,42 +1,28 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
 import { Link } from 'react-router-dom';
-import { uid } from 'uid';
+import { useDispatch } from 'react-redux';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
+import notificationCreator from '../../components/common/notificationCreator';
 import { authLoginAction } from '../../store/auth/auth.actions';
-import { authReducer, authState } from '../../store/auth/auth.reducer';
 import { AuthRegisterValues } from '../../store/auth/auth.types';
-import {
-  closeSnackbarAction,
-  enqueueSnackbarAction,
-} from '../../store/notifier/notifier.actions';
+import { closeSnackbarAction } from '../../store/notifier/notifier.actions';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
+import { Key } from '../../components/common/notificationCreator/notificationCreator.types';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
-import {
-  notifierReducer,
-  notifierState,
-} from '../../store/notifier/notifier.reducer';
 
 import { LocalState } from './Authentication.types';
 import { useStyles } from './Authentication.styles';
 
-export interface NotificationValues {
-  message: string;
-  options?: {
-    action?: JSX.Element | any;
-    key?: string;
-    variant?: string;
-  };
-}
-
 export const Authentication = (): JSX.Element => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [values, setValues] = React.useState<LocalState>({
     showPassword: false,
@@ -47,41 +33,27 @@ export const Authentication = (): JSX.Element => {
     password: '',
   };
 
-  const [stateAuth, dispatchAuth] = useReducer(authReducer, authState);
-  const [stateNotifier, dispatchNotifier] = useReducer(
-    notifierReducer,
-    notifierState,
-  );
-
   const submitHandler = (formValues: AuthRegisterValues) => {
-    dispatchAuth(authLoginAction(formValues));
+    dispatch(authLoginAction(formValues));
   };
 
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
 
-  // TODO - remove it
-  const enqueueSnackbar = (notification: NotificationValues) => {
-    dispatchNotifier(enqueueSnackbarAction(notification));
-  };
+  // TODO - remove it after testing
+  const closeSnackbar = (key: Key) => dispatch(closeSnackbarAction(key));
+
   const handleClick = () => {
-    enqueueSnackbar({
-      message: 'Failed fetching data. 000',
-      options: {
-        action: (key: string | null) => (
-          <Button onClick={() => closeSnackbarAction(key)}>dismiss me</Button>
-        ),
-        key: uid(),
-        variant: 'warning',
-      },
+    notificationCreator({
+      dispatch,
+      message: 'message 222',
+      variant: 'warning',
     });
   };
 
   // TODO - remove it
-  const handleDismissAll = () => {
-    // closeSnackbarAction();
-  };
+  const handleDismissAll = () => closeSnackbar(null);
 
   return (
     <>

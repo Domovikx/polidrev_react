@@ -1,9 +1,11 @@
-import { NotificationValues } from '../../pages/Authentication/Authentication';
+import { uid } from 'uid';
+
+import { EnqueueSnackbarArgs } from '../../components/common/notificationCreator/notificationCreator.types';
 
 import { NOTIFIER, NotifierAction } from './notifier.types';
 
 export const enqueueSnackbarAction = (
-  notification: NotificationValues,
+  notification: EnqueueSnackbarArgs,
 ): NotifierAction => {
   const key = notification.options && notification.options.key;
 
@@ -11,7 +13,7 @@ export const enqueueSnackbarAction = (
     payload: {
       notification: {
         ...notification,
-        key,
+        key: key || uid(),
       },
     },
     type: NOTIFIER.ENQUEUE_SNACKBAR,
@@ -26,7 +28,7 @@ export const closeSnackbarAction = (key: string | null): NotifierAction => ({
   type: NOTIFIER.CLOSE_SNACKBAR,
 });
 
-export const removeSnackbarAction = (key: string): NotifierAction => ({
+export const removeSnackbarAction = (key: string | number): NotifierAction => ({
   payload: { key },
   type: NOTIFIER.REMOVE_SNACKBAR,
 });
