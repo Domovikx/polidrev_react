@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useSnackbar } from 'notistack';
 
-import { RootState } from '../../../store/root.reducer';
+import { RootState } from '../../../store/store.types';
 import { removeSnackbarAction } from '../../../store/notifier/notifier.actions';
 
 /**

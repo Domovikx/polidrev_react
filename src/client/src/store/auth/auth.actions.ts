@@ -1,44 +1,30 @@
 import firebase from 'firebase/app';
 import { Dispatch } from 'redux';
 
-import notificationCreator from '../../components/common/notificationCreator';
-
-import { AUTH, AuthAction, AuthRegisterValues } from './auth.types';
+import {
+  AUTH,
+  AuthAction,
+  AuthRegisterAction,
+  AuthRegisterValues,
+} from './auth.types';
 
 /**
  * For develop
  * https://console.firebase.google.com/project/polidrev-react/authentication/users
  */
 
-export const authRegisterAction = async (
+export const authRegisterAction: AuthRegisterAction = (
+  // TODO: question about a dispatch, maybe this is a temporary solution
   dispatch: Dispatch,
   { email, password }: AuthRegisterValues,
-): Promise<{ payload: string; type: AUTH }> => {
-  try {
-    // TODO: any
-    const response: any = await firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password);
-
-    notificationCreator({
-      dispatch,
-      message: `${response.user.email} успешно зарегистрирован`,
-      variant: 'success',
-    });
-  } catch (error) {
-    notificationCreator({
-      dispatch,
-      message: error.message,
-      variant: 'error',
-    });
-    throw Error;
-  }
-
-  return {
-    payload: 'temp message createUserWithEmailAndPassword',
-    type: AUTH.REGISTER,
-  };
-};
+) => ({
+  payload: {
+    dispatch,
+    email,
+    password,
+  },
+  type: AUTH.REGISTER,
+});
 
 export const authLoginAction = ({
   email,

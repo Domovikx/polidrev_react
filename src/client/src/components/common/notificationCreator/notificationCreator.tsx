@@ -10,6 +10,7 @@ import {
 
 import { CommonNotificationArgs, Key } from './notificationCreator.types';
 
+// TODO: maybe it's a utility
 export const notificationCreator = ({
   message = 'message',
   variant = 'warning',

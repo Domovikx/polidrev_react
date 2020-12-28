@@ -1,3 +1,10 @@
+import { AnyAction, Dispatch } from 'redux';
+
+export interface AuthRegisterPayload {
+  dispatch: Dispatch<AnyAction>;
+  email: string;
+  password: string;
+}
 export interface AuthRegisterValues {
   email: string;
   password: string;
@@ -16,6 +23,15 @@ export enum AUTH {
 }
 
 export type AuthAction =
-  | { type: AUTH.REGISTER; payload: string }
+  | { type: AUTH.REGISTER; payload: AuthRegisterPayload }
   | { type: AUTH.LOGIN; payload: string }
   | { type: AUTH.LOGOUT; payload: string };
+
+// TODO : temp type
+export type AuthRegisterAction = (
+  dispatch: Dispatch,
+  { email, password }: AuthRegisterValues,
+) => {
+  payload: AuthRegisterPayload;
+  type: AUTH;
+};
