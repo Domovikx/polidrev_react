@@ -32,7 +32,7 @@ export const Registration = (): JSX.Element => {
   };
 
   const submitHandler = (formValues: AuthRegisterValues) => {
-    dispatch(authRegisterAction(dispatch, formValues));
+    dispatch(authRegisterAction(formValues));
   };
 
   const handleClickShowPassword = (): void => {

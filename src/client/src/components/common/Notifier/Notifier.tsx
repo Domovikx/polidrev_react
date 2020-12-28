@@ -5,32 +5,34 @@ import { useSnackbar } from 'notistack';
 import { RootState } from '../../../store/store.types';
 import { removeSnackbarAction } from '../../../store/notifier/notifier.actions';
 
+import { NotificationType } from './Notifier.types';
+
 /**
  * Documentation
  * https://iamhosseindhv.com/notistack/demos#redux-/-mobx-example
  */
 
-let displayed: any = [];
+let displayed: string[] = [];
 
 export const Notifier = (): null => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const dispatch = useDispatch();
 
-  const notifications: any = useSelector(
+  const notifications: NotificationType[] = useSelector(
     (store: RootState) => store.notifier.notifications,
   );
 
-  const storeDisplayed = (id: any) => {
+  const storeDisplayed = (id: string) => {
     displayed = [...displayed, id];
   };
 
-  const removeDisplayed = (id: any) => {
-    displayed = [...displayed.filter((key: any) => id !== key)];
+  const removeDisplayed = (id: string | number) => {
+    displayed = [...displayed.filter((key: string) => id !== key)];
   };
 
   useEffect(() => {
     notifications.forEach(
-      ({ key, message, options = {}, dismissed = false }: any) => {
+      ({ key, message, options, dismissed = false }: NotificationType) => {
         if (dismissed) {
           closeSnackbar(key);
           return;

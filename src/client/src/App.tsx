@@ -23,7 +23,7 @@ firebase.initializeApp(firebaseConfig);
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );

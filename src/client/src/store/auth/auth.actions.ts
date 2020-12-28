@@ -1,40 +1,31 @@
 import firebase from 'firebase/app';
-import { Dispatch } from 'redux';
 
-import {
-  AUTH,
-  AuthAction,
-  AuthRegisterAction,
-  AuthRegisterValues,
-} from './auth.types';
+import { AUTH, AuthAction, AuthRegisterValues } from './auth.types';
 
 /**
  * For develop
  * https://console.firebase.google.com/project/polidrev-react/authentication/users
  */
 
-export const authRegisterAction: AuthRegisterAction = (
-  // TODO: question about a dispatch, maybe this is a temporary solution
-  dispatch: Dispatch,
-  { email, password }: AuthRegisterValues,
-) => ({
+export const authRegisterAction = ({
+  email,
+  password,
+}: AuthRegisterValues): AuthAction => ({
   payload: {
-    dispatch,
     email,
     password,
   },
   type: AUTH.REGISTER,
 });
 
+// TODO: Remake using sagas
 export const authLoginAction = ({
   email,
   password,
 }: AuthRegisterValues): AuthAction => {
   try {
     firebase.auth().signInWithEmailAndPassword(email, password);
-    // TODO: create a notification
   } catch (error) {
-    // TODO: create a notification
     throw Error;
   }
 
@@ -44,6 +35,7 @@ export const authLoginAction = ({
   };
 };
 
+// TODO: Remake using sagas
 export const authLogoutAction = (): AuthAction => {
   firebase.auth().signOut();
   return { payload: 'temp message signOut', type: AUTH.LOGOUT };

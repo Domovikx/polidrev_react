@@ -1,45 +1,38 @@
 import firebase from 'firebase/app';
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, takeEvery } from 'redux-saga/effects';
 
 import notificationCreator from '../../components/common/notificationCreator';
-import { AUTH } from '../../store/auth/auth.types';
+import { AUTH, AuthRegisterArgs } from '../../store/auth/auth.types';
 import { Worker } from '../saga.types';
 
 import { AuthLogoutWorker, AuthWatcher } from './auth.types';
 
-const authCreateUser = async (
-  email: string,
-  password: string,
-  dispatch: any,
-) => {
+function* authCreateUser(email: string, password: string) {
   try {
-    const response = await firebase
+    const response = yield firebase
       .auth()
       .createUserWithEmailAndPassword(email, password);
 
-    notificationCreator({
-      dispatch,
-      message: `${response.user?.email} успешно зарегистрирован`,
-      variant: 'success',
-    });
+    yield notificationCreator(
+      `${response.user.email} успешно зарегистрирован`,
+      'success',
+    );
 
     return response;
-  } catch (error: any) {
-    notificationCreator({
-      dispatch,
-      message: error.message,
-      variant: 'warning',
-    });
+  } catch (error) {
+    yield notificationCreator(error.message, 'warning');
+    return null;
   }
-};
+}
 const authLogout = () => firebase.auth().signOut();
 
-export function* authRegisterWorker(action: any): any {
-  const { payload } = action;
-  const response = yield call(() =>
-    authCreateUser(payload.email, payload.password, payload.dispatch),
-  );
-  console.log('response 2 :>> ', response);
+export function* authRegisterWorker({
+  payload: { email, password },
+}: AuthRegisterArgs): Generator {
+  const response = yield call(() => authCreateUser(email, password));
+  // TODO - если регистрация успешна, тут продолжаю логику
+  // добавить данные в стор, перейти на страницу admin
+  console.log('response :>> ', response);
 }
 
 export function* authLoginWorker(): Worker {
@@ -47,10 +40,9 @@ export function* authLoginWorker(): Worker {
 }
 
 export function* authLogoutWorker(): AuthLogoutWorker {
+  // TODO
   yield call(authLogout);
 }
-
-// WATCHERS //
 
 export function* authWatcher(): AuthWatcher {
   yield takeEvery(AUTH.REGISTER, authRegisterWorker);

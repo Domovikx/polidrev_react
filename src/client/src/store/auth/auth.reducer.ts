@@ -10,19 +10,13 @@ export const authReducer = (
   { type, payload }: AuthAction,
 ): AuthState => {
   switch (type) {
-    case AUTH.REGISTER:
-      // TODO - temp console.log
-      console.log(AUTH.REGISTER, payload);
+    case AUTH.REGISTER: // TODO
       return state;
 
-    case AUTH.LOGIN:
-      // TODO - temp console.log
-      console.log(AUTH.LOGIN, payload);
+    case AUTH.LOGIN: // TODO
       return state;
 
-    case AUTH.LOGOUT:
-      // TODO - temp console.log
-      console.log(AUTH.LOGOUT, payload);
+    case AUTH.LOGOUT: // TODO
       return state;
 
     default:
