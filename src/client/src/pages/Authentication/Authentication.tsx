@@ -1,37 +1,37 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import { authInitialState, authReducer } from '../../store/auth/auth.reducer';
-import { authLogin } from '../../store/auth/auth.actions';
+import { authLoginAction } from '../../store/auth/auth.actions';
+import { AuthRegisterValues } from '../../store/auth/auth.types';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
 
-import { FormValues, LocalState } from './Authentication.types';
+import { LocalState } from './Authentication.types';
 import { useStyles } from './Authentication.styles';
 
 export const Authentication = (): JSX.Element => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const [values, setValues] = React.useState<LocalState>({
     showPassword: false,
   });
 
-  const initialValues: FormValues = {
+  const initialValues: AuthRegisterValues = {
     email: '',
     password: '',
   };
 
-  const [state, dispatch] = useReducer(authReducer, authInitialState);
-
-  const submitHandler = (formValues: FormValues) => {
-    dispatch(authLogin(formValues));
+  const submitHandler = (formValues: AuthRegisterValues) => {
+    dispatch(authLoginAction(formValues));
   };
 
   const handleClickShowPassword = () => {
@@ -44,7 +44,7 @@ export const Authentication = (): JSX.Element => {
       validationSchema={validationSchema}
       onSubmit={(v) => submitHandler(v)}
     >
-      {(props: FormikProps<FormValues>) => {
+      {(props: FormikProps<AuthRegisterValues>) => {
         const { isValid, dirty } = props;
 
         return (

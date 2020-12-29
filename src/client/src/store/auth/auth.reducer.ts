@@ -1,27 +1,23 @@
-import { Action } from '../action.types';
-import { AUTH } from './auth.types';
+import { AUTH, AuthAction, AuthState } from './auth.types';
 
-export const authInitialState = {
+export const authState: AuthState = {
   test: 'test',
   token: null,
 };
 
 export const authReducer = (
-  state = authInitialState,
-  { type, payload }: Action,
-) => {
+  state: AuthState = authState,
+  { type, payload }: AuthAction,
+): AuthState => {
   switch (type) {
-    case AUTH.REGISTER:
-      console.log(AUTH.REGISTER, payload);
-      break;
+    case AUTH.REGISTER: // TODO
+      return state;
 
-    case AUTH.LOGIN:
-      console.log(AUTH.LOGIN, payload);
-      break;
+    case AUTH.LOGIN: // TODO
+      return state;
 
-    case AUTH.LOGOUT:
-      console.log(AUTH.LOGOUT, payload);
-      break;
+    case AUTH.LOGOUT: // TODO
+      return state;
 
     default:
       return state;
