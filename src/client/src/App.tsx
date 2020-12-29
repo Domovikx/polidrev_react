@@ -41,6 +41,7 @@ export const App = (): JSX.Element => (
             vertical: 'top',
           }}
           maxSnack={3}
+          autoHideDuration={10000}
         >
           <Notifier />
           <Routing />

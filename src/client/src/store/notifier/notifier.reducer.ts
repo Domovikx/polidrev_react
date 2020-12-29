@@ -1,7 +1,8 @@
-import { NOTIFIER, NotifierAction, NotifierState } from './notifier.types';
+import { NotifierAction, NotifierState, NOTIFIER } from './notifier.types';
 
 export const notifierState: NotifierState = {
-  notifications: [],
+  message: '',
+  variant: 'default',
 };
 
 export const notifierReducer = (
@@ -9,36 +10,11 @@ export const notifierReducer = (
   { type, payload }: NotifierAction,
 ): NotifierState => {
   switch (type) {
-    case NOTIFIER.ENQUEUE_SNACKBAR:
+    case NOTIFIER.CREATE:
       return {
-        ...state,
-        notifications: [
-          ...state.notifications,
-          {
-            key: payload.key,
-            ...payload.notification,
-          },
-        ],
+        message: payload.message,
+        variant: payload.variant,
       };
-
-    case NOTIFIER.CLOSE_SNACKBAR:
-      return {
-        ...state,
-        notifications: state.notifications.map((notification: any) =>
-          payload.dismissAll || payload.key === notification.key
-            ? { ...notification, dismissed: true }
-            : { ...notification },
-        ),
-      };
-
-    case NOTIFIER.REMOVE_SNACKBAR:
-      return {
-        ...state,
-        notifications: state.notifications.filter(
-          (notification: any) => payload.key !== notification.key,
-        ),
-      };
-
     default:
       return state;
   }

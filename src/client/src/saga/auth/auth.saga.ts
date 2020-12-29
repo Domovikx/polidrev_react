@@ -1,8 +1,8 @@
 import firebase from 'firebase/app';
-import { call, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 
-import notificationCreator from '../../components/common/notificationCreator';
 import { AUTH, AuthRegisterArgs } from '../../store/auth/auth.types';
+import { createNotifierAction } from '../../store/notifier/notifier.actions';
 import { Worker } from '../saga.types';
 
 import { AuthLogoutWorker, AuthWatcher } from './auth.types';
@@ -13,14 +13,16 @@ function* authCreateUser(email: string, password: string) {
       .auth()
       .createUserWithEmailAndPassword(email, password);
 
-    yield notificationCreator(
-      `${response.user.email} успешно зарегистрирован`,
-      'success',
+    yield put(
+      createNotifierAction(
+        `${response.user.email} успешно зарегистрирован`,
+        'success',
+      ),
     );
 
     return response;
   } catch (error) {
-    yield notificationCreator(error.message, 'warning');
+    yield put(createNotifierAction(error.message, 'warning'));
     return null;
   }
 }
