@@ -1,44 +1,25 @@
+export type Message = string | null;
+export type Variant =
+  | 'warning'
+  | 'success'
+  | 'default'
+  | 'error'
+  | 'info'
+  | undefined;
+
 export interface NotifierState {
-  notifications: any; // TODO
+  variant: Variant;
+  message: Message;
 }
 
 export enum NOTIFIER {
-  ENQUEUE_SNACKBAR = 'NOTIFIER.ENQUEUE_SNACKBAR',
-  CLOSE_SNACKBAR = 'NOTIFIER.CLOSE_SNACKBAR',
-  REMOVE_SNACKBAR = 'NOTIFIER.REMOVE_SNACKBAR',
+  CREATE = 'NOTIFIER.CREATE',
 }
 
-// TODO : any
-// divide into separate action
-export type NotifierAction =
-  | {
-      type: NOTIFIER.ENQUEUE_SNACKBAR;
-      payload: any;
-    }
-  | { type: NOTIFIER.CLOSE_SNACKBAR; payload: any }
-  | {
-      type: NOTIFIER.REMOVE_SNACKBAR;
-      payload: any;
-    };
-
-export interface CloseSnackbarPayload {
-  dismissAll: boolean;
-  key: string | null;
-}
-
-export interface EnqueueSnackbarPayload {
-  notification: {
-    key: string;
-    message: string;
-    options: {
-      action(key: string | null): JSX.Element;
-      key?: string | undefined;
-      variant?: string | undefined;
-      autoHideDuration?: string | number | undefined;
-    };
+export type NotifierAction = {
+  type: NOTIFIER.CREATE;
+  payload: {
+    variant: Variant;
+    message: Message;
   };
-}
-
-export interface RemoveSnackbarPayload {
-  key: number | string | null;
-}
+};
