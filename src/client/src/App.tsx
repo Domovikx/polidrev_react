@@ -10,6 +10,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 
 import ErrorBoundary from './components/common/ErrorBoundary';
 import Notifier from './components/common/Notifier';
+import Notifier2 from './components/common/Notifier2';
 import { firebaseConfig } from './config/firebaseConfig';
 import { greenTheme } from './themes/green.theme';
 import { rootReducer } from './store/root.reducer';
@@ -41,8 +42,10 @@ export const App = (): JSX.Element => (
             vertical: 'top',
           }}
           maxSnack={3}
+          autoHideDuration={10000}
         >
           <Notifier />
+          <Notifier2 />
           <Routing />
         </SnackbarProvider>
       </Provider>
