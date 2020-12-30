@@ -1,3 +1,4 @@
+import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from 'mdi-react/HomeIcon';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import LockOutlineIcon from 'mdi-react/LockOutlineIcon';
@@ -13,15 +14,16 @@ import {
 } from '@material-ui/icons';
 
 export {
+  CloseIcon,
   HomeIcon,
-  SofaIcon,
-  WardrobeOutlineIcon,
-  MapIcon,
-  WalletOutlineIcon,
-  LockOutlineIcon,
-  MenuIcon,
   IconButton,
+  KeyboardArrowUpIcon,
+  LockOutlineIcon,
+  MapIcon,
+  MenuIcon,
+  SofaIcon,
   VisibilityIcon,
   VisibilityOffIcon,
-  KeyboardArrowUpIcon,
+  WalletOutlineIcon,
+  WardrobeOutlineIcon,
 };

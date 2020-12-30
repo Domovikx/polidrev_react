@@ -11,6 +11,7 @@ export class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
+    // TODO - temp console.log
     console.log('error, info :>> ', error, info);
   }
 
