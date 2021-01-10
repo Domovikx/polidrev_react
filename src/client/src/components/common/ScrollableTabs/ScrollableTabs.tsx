@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import { Box, Container, Typography, useTheme } from '@material-ui/core';
 
 import { Collection } from '../../../pages/SoftFurniture/SoftFurniture.types';
+import CollectionFurniture from '../CollectionFurniture';
 
 import { ScrollableTabsProps, TabPanelProps } from './ScrollableTabs.types';
 import { useStyles } from './ScrollableTabs.styles';
@@ -24,11 +25,7 @@ const TabPanel = (props: TabPanelProps) => {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box py={3}>{children}</Box>}
     </div>
   );
 };
@@ -80,7 +77,7 @@ export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
             key={index}
             value={index}
           >
-            {item.collection}
+            <CollectionFurniture collection={item} />
           </TabPanel>
         ))}
       </SwipeableViews>
