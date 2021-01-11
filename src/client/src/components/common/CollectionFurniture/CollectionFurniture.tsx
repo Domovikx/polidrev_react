@@ -1,40 +1,34 @@
-import { Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import React from 'react';
+
+import { furnitureCollections } from '../../../mocks/FurnitureCollections';
 
 import { useStyles } from './CollectionFurniture.styles';
 import { CollectionFurnitureProps } from './CollectionFurniture.types';
+import HeaderBox from './HeaderBox';
+import ItemBox from './ItemBox';
 
 export const CollectionFurniture = (
   props: CollectionFurnitureProps,
 ): JSX.Element => {
-  const { collection } = props;
-
+  const { collection, currentValue, id } = props;
   const classes = useStyles();
-  const theme = useTheme();
-  const smUp = useMediaQuery(theme.breakpoints.up('sm'));
+
+  // TODO - move to DB
+  const furnitureCollection =
+    furnitureCollections[collection.collection] || null;
 
   return (
-    <Grid className={classes.grid}>
-      <div className={classes.center}>
-        <img
-          alt={collection.title}
-          className={classes.img}
-          src={collection.img}
-        />
-        <Typography variant="h6" component="h2" className={classes.title}>
-          {collection.title}
-        </Typography>
-      </div>
-      <div>
-        {smUp && (
-          <Typography variant="h6" component="h2" className={classes.title}>
-            {collection.subtitle}
-          </Typography>
-        )}
-        <Typography variant="body1" className={classes.paragraph}>
-          {collection.description}
-        </Typography>
-      </div>
-    </Grid>
+    <>
+      <HeaderBox collection={collection} />
+
+      {furnitureCollection && currentValue === id && (
+        <Grid className={classes.grid}>
+          {furnitureCollection.map((item: any, index: number) => (
+            <ItemBox key={index} item={item} />
+          ))}
+        </Grid>
+      )}
+    </>
   );
 };

@@ -2,17 +2,13 @@ import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import { Box, Container, Typography, useTheme } from '@material-ui/core';
+import { Box, Container, useTheme } from '@material-ui/core';
 
 import { Collection } from '../../../pages/SoftFurniture/SoftFurniture.types';
 import CollectionFurniture from '../CollectionFurniture';
 
 import { ScrollableTabsProps, TabPanelProps } from './ScrollableTabs.types';
 import { useStyles } from './ScrollableTabs.styles';
-
-/**
- * TODO: This Component in progress
- */
 
 const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
@@ -59,6 +55,7 @@ export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
         textColor="primary"
         variant="scrollable"
         scrollButtons="on"
+        classes={{ flexContainer: classes.flexContainer }}
       >
         {collections?.map((item: Collection, index) => (
           <Tab label={item.title} key={index} {...a11yProps(index)} />
@@ -77,7 +74,11 @@ export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
             key={index}
             value={index}
           >
-            <CollectionFurniture collection={item} />
+            <CollectionFurniture
+              collection={item}
+              currentValue={value}
+              id={index}
+            />
           </TabPanel>
         ))}
       </SwipeableViews>
