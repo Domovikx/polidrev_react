@@ -4,7 +4,6 @@ import {
   CardContent,
   CardHeader,
   Typography,
-  useTheme,
 } from '@material-ui/core';
 import React from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -15,19 +14,9 @@ import { useStyles } from './ItemBox.styles';
 
 export const ItemBox = (props: any): JSX.Element => {
   const { item } = props;
-  const {
-    cost,
-    description,
-    miniDescription,
-    tittle,
-    images,
-    id,
-    lot,
-    key,
-  } = item;
+  const { cost, miniDescription, tittle, images, lot } = item;
 
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <Card className={classes.root}>
@@ -47,7 +36,7 @@ export const ItemBox = (props: any): JSX.Element => {
           {miniDescription}
         </Typography>
         <Typography gutterBottom variant="h5" component="h2" align="right">
-          {cost} р.
+          {cost} {cost && <>р.</>}
         </Typography>
       </CardContent>
     </Card>
