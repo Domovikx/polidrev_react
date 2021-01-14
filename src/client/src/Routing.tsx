@@ -14,6 +14,7 @@ const Payment = React.lazy(() => import('./pages/Payment'));
 const SoftFurniture = React.lazy(() => import('./pages/SoftFurniture'));
 const WhereToBuy = React.lazy(() => import('./pages/WhereToBuy'));
 const CabinetFurniture = React.lazy(() => import('./pages/CabinetFurniture'));
+const CardProduct = React.lazy(() => import('./pages/CardProduct'));
 
 const Admin = React.lazy(() => import('./pages/Admin'));
 
@@ -73,6 +74,8 @@ export const Routing = (): JSX.Element => (
               />
               <Route path={Locations.WhereToBuy} component={WhereToBuy} />
               <Route path={Locations.Payment} component={Payment} />
+              <Route path={Locations.CardProduct_id} component={CardProduct} />
+
               <Route path={Locations.All} component={PageNotFound} />
             </Switch>
           </MainLayout>

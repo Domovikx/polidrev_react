@@ -4,6 +4,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
   avatar: {
     backgroundColor: theme.palette.primary.main,
   },
+  card: {
+    boxShadow: `0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)`,
+    maxWidth: 345,
+  },
+  cardActionArea: {
+    display: 'grid',
+    height: '100%',
+  },
   center: {
     textAlign: 'center',
   },
@@ -18,9 +26,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   paragraph: {
     margin: `0 0 ${theme.spacing(1)}px`,
-  },
-  root: {
-    maxWidth: 345,
   },
   title: {
     margin: `0 0 ${theme.spacing(1)}px`,
