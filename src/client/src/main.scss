@@ -1,3 +1,5 @@
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
+
 $body-color: lightslategray;
 
 html,
@@ -13,4 +15,5 @@ body,
 body {
   color: $body-color;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
