@@ -15,8 +15,7 @@ export const CollectionFurniture = (
   const classes = useStyles();
 
   // TODO - move to DB
-  const furnitureCollection =
-    furnitureCollections[collection.collection] || null;
+  const furnitureCollection = furnitureCollections[collection.collection];
 
   return (
     <>
@@ -24,7 +23,7 @@ export const CollectionFurniture = (
 
       {furnitureCollection && currentValue === id && (
         <Grid className={classes.grid}>
-          {furnitureCollection.map((item: any, index: number) => (
+          {furnitureCollection.map((item, index: number) => (
             <ItemBox key={index} item={item} />
           ))}
         </Grid>

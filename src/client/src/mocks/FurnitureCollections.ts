@@ -1,5 +1,11 @@
-// TODO: temp - data
-export const furnitureCollections: any = {
+import {
+  CollectionsById,
+  FurnitureCollection,
+  FurnitureCollections,
+} from './FurnitureCollections.types';
+
+// TODO - temp mocks data
+export const furnitureCollections: FurnitureCollections = {
   bench: [
     {
       cost: null,
@@ -620,11 +626,12 @@ export const furnitureCollections: any = {
   ],
 };
 
+// TODO - temp mocks data
 export const furnitureCollectionsById = Object.entries(
   furnitureCollections,
-).reduce((products: any, [collectionName, items]: any) => {
-  items.forEach((item: any) => {
-    products[item.id] = { collectionName, ...item };
+).reduce((collectionsById: CollectionsById, [collectionName, items]) => {
+  items.forEach((item: FurnitureCollection) => {
+    collectionsById[item.id] = { collectionName, ...item };
   });
-  return products;
+  return collectionsById;
 }, {});

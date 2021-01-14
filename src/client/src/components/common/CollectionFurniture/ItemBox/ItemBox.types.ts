@@ -1,5 +1,5 @@
-import { Collection } from '../../../../pages/SoftFurniture/SoftFurniture.types';
+import { FurnitureCollection } from '../../../../mocks/FurnitureCollections.types';
 
-export interface HeaderBoxProps {
-  collection: Collection;
+export interface ItemBoxProps {
+  item: FurnitureCollection;
 }

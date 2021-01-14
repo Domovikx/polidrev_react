@@ -1,5 +1,7 @@
+import { FurnitureCollections } from '../../mocks/FurnitureCollections.types';
+
 export interface Collection {
-  collection: string;
+  collection: keyof FurnitureCollections;
   title: string;
   description?: string;
   img?: string;

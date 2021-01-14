@@ -5,6 +5,7 @@ import LockOutlineIcon from 'mdi-react/LockOutlineIcon';
 import MapIcon from 'mdi-react/MapIcon';
 import MenuIcon from 'mdi-react/MenuIcon';
 import SofaIcon from 'mdi-react/SofaIcon';
+import ArrowLeftBoldCircleOutlineIcon from 'mdi-react/ArrowLeftBoldCircleOutlineIcon';
 import WalletOutlineIcon from 'mdi-react/WalletOutlineIcon';
 import WardrobeOutlineIcon from 'mdi-react/WardrobeOutlineIcon';
 import { IconButton } from '@material-ui/core';
@@ -14,6 +15,7 @@ import {
 } from '@material-ui/icons';
 
 export {
+  ArrowLeftBoldCircleOutlineIcon,
   CloseIcon,
   HomeIcon,
   IconButton,

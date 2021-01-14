@@ -1,12 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-  withStyles,
-} from '@material-ui/core';
+import { Grid, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import React from 'react';
 
 import { useStyles } from './HeaderBox.styles';

@@ -14,8 +14,9 @@ import { SofaIcon } from '../../../../assets/Icons';
 import { Locations } from '../../../../constants/locations';
 
 import { useStyles } from './ItemBox.styles';
+import { ItemBoxProps } from './ItemBox.types';
 
-export const ItemBox = (props: any): JSX.Element => {
+export const ItemBox = (props: ItemBoxProps): JSX.Element => {
   const { item } = props;
   const { cost, miniDescription, tittle, images, lot, id } = item;
 
