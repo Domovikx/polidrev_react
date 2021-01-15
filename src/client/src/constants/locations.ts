@@ -9,6 +9,8 @@ export enum Locations {
   CabinetFurniture = '/CabinetFurniture',
   WhereToBuy = '/WhereToBuy',
   Payment = '/Payment',
+  CardProduct_relative = '/CardProduct/',
+  CardProduct_id = '/CardProduct/:id',
 
   Auth = '/auth',
   Auth_Relative = '/auth/',

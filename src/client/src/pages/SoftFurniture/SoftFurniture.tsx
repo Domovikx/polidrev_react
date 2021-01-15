@@ -4,6 +4,7 @@ import { Box } from '@material-ui/core';
 import CommonFade from '../../components/common/CommonFade';
 import ScrollableTabs from '../../components/common/ScrollableTabs';
 import { imgPr2 } from '../../assets/Images';
+import { softFurnitureCollections } from '../../mocks/SoftFurnitureCollections';
 
 import { useStyles } from './SoftFurniture.styles';
 
@@ -18,7 +19,7 @@ export const SoftFurniture = (): JSX.Element => {
           style={{ backgroundImage: `url(${imgPr2})` }}
         />
 
-        <ScrollableTabs />
+        <ScrollableTabs collections={softFurnitureCollections} />
       </Box>
     </CommonFade>
   );
