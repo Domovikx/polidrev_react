@@ -41,9 +41,7 @@ export const CardProduct = (): JSX.Element => {
             {tittle}
           </Typography>
           <Typography variant="h5">{lot}</Typography>
-          <Typography variant="h6">
-            {cost} {cost && <>р.</>}
-          </Typography>
+          <Typography variant="h6">{cost && `${cost} р.`}</Typography>
           <Typography variant="body1">{description}</Typography>
         </div>
       </Grid>

@@ -1,5 +1,3 @@
-/** https://github.com/xiaolin/react-image-gallery */
-
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
 
@@ -12,12 +10,5 @@ export const Gallery = (props: ImgGalleryProps): JSX.Element => {
     thumbnail: url,
   }));
 
-  return (
-    <ImageGallery
-      items={items}
-      thumbnailPosition={'bottom'}
-      showPlayButton={false}
-      showNav={false}
-    />
-  );
+  return <ImageGallery items={items} showPlayButton={false} showNav={false} />;
 };
