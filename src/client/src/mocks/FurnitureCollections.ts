@@ -1,6 +1,6 @@
 import {
   CollectionsById,
-  FurnitureCollection,
+  Furniture,
   FurnitureCollections,
 } from './FurnitureCollections.types';
 
@@ -403,19 +403,7 @@ export const furnitureCollections: FurnitureCollections = {
   'sofa-bed': [
     {
       cost: 475,
-      description: `Размеры
-      - габаритные размеры 210х95см;
-      в разложенном виде 210х115см
-      - спальное место 190х115см.
-      
-      Обивочный материал:
-      ткань мебельная, кожзаменитель.Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.
-      
-      Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».
-      
-      Механизм раскладки «книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.
-      
-      Изделие соответствует «Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»`,
+      description: ``,
       id: `000019`,
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cgauAB8lVeXKgSMmo5CKt2U0tj9mk1Qj4GUv6NxkCMvKjGrKSuVo4KW0Ak9KdhaLOm_1RWYqYqgXWPhLqVAtCTez4FwhAhwsDi4k4l3Irh3C2Npc1clHAkHuIZFYvK2gBR5x22mVt7HexwUU7KAnA9=w577-h433-no?authuser=0',
@@ -423,10 +411,29 @@ export const furnitureCollections: FurnitureCollections = {
         'https://lh3.googleusercontent.com/pw/ACtC-3ckAphJ8Zh1ktLZwYcxB4eE8HhVGjgqs_ZIWmIrlmAOXo2CTLtUgW1bwylzS2koxfH5EjNX0HJJcFfkcRtHpnM3YNcXiUQXwLsVuHynj1ptW1KBw_dhzbCxU8qb3nPH_Zj_GqxG570VW1-PvExEmzEv=w577-h433-no?authuser=0',
       ],
       lot: 'Виола классика',
-      miniDescription: `Размеры
-      - габаритные размеры 210х95см;
-      в разложенном виде 210х115см
-      - спальное место 190х115см.`,
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
       tittle: `Диван-кровать "Виола"`,
     },
 
@@ -630,7 +637,7 @@ export const furnitureCollections: FurnitureCollections = {
 export const furnitureCollectionsById = Object.entries(
   furnitureCollections,
 ).reduce((collectionsById: CollectionsById, [collectionName, items]) => {
-  items.forEach((item: FurnitureCollection) => {
+  items.forEach((item: Furniture) => {
     collectionsById[item.id] = { collectionName, ...item };
   });
   return collectionsById;

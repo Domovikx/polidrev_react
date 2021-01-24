@@ -1,5 +1,5 @@
-import { FurnitureCollection } from '../../../../mocks/FurnitureCollections.types';
+import { Furniture } from '../../../../mocks/FurnitureCollections.types';
 
 export interface ItemBoxProps {
-  item: FurnitureCollection;
+  item: Furniture;
 }
