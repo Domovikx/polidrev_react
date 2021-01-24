@@ -82,6 +82,13 @@ export const CardProduct = (): JSX.Element => {
             </Typography>
           )}
 
+          {options?.carcass && (
+            <Typography variant="body1">
+              <b>Каркас: </b>
+              {options.carcass}
+            </Typography>
+          )}
+
           {options?.softElements && (
             <Typography variant="body1">
               <b>Мягкие элементы: </b>

@@ -5,15 +5,23 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     collection: 'sofa-bed',
     description: `В "Полидрев" механизмы разборки диван-кроватей выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
     img:
-      'https://lh3.googleusercontent.com/pw/ACtC-3ebWnnhdE0tFMNXUbqTBB4dY0X2RmBFOhC4Dq6C4oWsqFNJiZ26qZ4Pz5cYQsotMWNU75d9CqH8stNobL1ecl5IuWILyYZIsE5UEud92FKc3TYuzvvcp5zETsMceyzqq7W710emY0cuvOYjBMxopGZ1=w1077-h649-no?authuser=0',
+      'https://lh3.googleusercontent.com/pw/ACtC-3clTmFOnG1pJp0S0wHfbNQrNqMd4Uu5UOZVbFqi4yF9Zyaa9yaoK7ebaiOWw08LvWzkz7YwT7DOxetGR54DKqTS-yYyaHoZfaVYhb8az8llOweRLp1zI4mbaKEJJ_rhqThU_IhTNQn1SJIOoQ87nv8Q=w577-h433-no?authuser=0',
     subtitle: 'Купить Диван-кровать в Витебске',
-    title: 'Диван-кровать',
+    title: 'Диван прямой',
+  },
+  {
+    collection: 'corner-sofa',
+    description: `В "Полидрев" механизмы разборки углового дивана выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
+    img:
+      'https://lh3.googleusercontent.com/pw/ACtC-3eOwcEeCBQC19LRVILuRhaUFj-6NWkwmMNxxs7SD8TSk8kBKTJzTBJn3qGuou3jTJf_Vc8iVBBUrcQ6N9bokOvkiBmoAUo4S0lASGiUpHRcb7IHkPwSmSLfh4obXXjxNk8VuZNbdzJnMpLXF0Cd3aUT=w577-h433-no?authuser=0',
+    subtitle: 'Купить Угловой диван в Витебске',
+    title: 'Диван угловой',
   },
   {
     collection: 'settle',
     description: `В "Полидрев" механизмы разборки скамьи выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
     img:
-      'https://lh3.googleusercontent.com/pw/ACtC-3elpTFPRmlfSU9_YkWM-35bHkDjBwmnaUQzfbKGNz7iKAOqmmmdtuASycXzKfKXxdDg0EswACwUvbV_ZpGL01S2inbWX3ezAAGGotNvsySnBI8Qfc9PnYC15Xa_5gPu7QtqHFOa8PlZ22dsWdCaFowu=w700-h467-no?authuser=0',
+      'https://lh3.googleusercontent.com/pw/ACtC-3chXRujYUnfliip2x10DF2YgafIpXFVVEjRhNVH29_0-NcctmnB2AnKEH5EgtG96aIY07TqJA1LY3IQZb2fOqY_pCnih9yOqkWDsNn8r9Ycr5dFVHmQms0OKxloYTc8ny30g6dfOilQAmrBhUz666qz=w254-h168-no?authuser=0',
     subtitle: 'Купить Скамью в Витебске',
     title: 'Скамья',
   },
@@ -29,16 +37,8 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     collection: 'bench',
     description: `В "Полидрев" механизмы разборки банкетки выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
     img:
-      'https://lh3.googleusercontent.com/pw/ACtC-3dito7H_SV3jEeo5lessyxzQqDqJBC7UeP6r87CWCq6m5VLN6_9USLY2dalHVYpWJMeIN_TMS8lN4KvPPrSg8bsk8Lk6LhmMd9uMISPCMRL5VymmV6jjv0LyZsSczhZS5idwI5eOBmeAkv04OkQsYyz=w525-h337-no?authuser=0',
+      'https://lh3.googleusercontent.com/pw/ACtC-3cD1KybH7RcfOnTuK7UZOHG9DsNHEW6x9YG4UYOF4hSYI9uP9FQCuf_U_IJ-LQ-LtW6MXFA_VMjIJIlOAGoGcCvLn7uAzKhP19OTvo8P6eusDekEHbjUbBY4zLKj-vIJeGd2nBMgfLzpcwpihpYIuZO=w406-h329-no?authuser=0',
     subtitle: 'Купить Банкетку в Витебске',
     title: 'Банкетка',
-  },
-  {
-    collection: 'corner-sofa',
-    description: `В "Полидрев" механизмы разборки углового дивана выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
-    img:
-      'https://lh3.googleusercontent.com/pw/ACtC-3dYv0X8ylOLk82Owpo91f9FoNBK5NxtZVnBe4FwYdlENUx1fitab9cyjzYeIvX4jZGEhpNGBQ6XBb0Af0Zzo-M28tTv1_j2tyBpxhp4R2CzYiy9eFKXsB8hVkEn9Riy2jZYlkWEi04CzUod0kudkggT=w1238-h612-no?authuser=0',
-    subtitle: 'Купить Угловой диван в Витебске',
-    title: 'Угловой диван',
   },
 ];
