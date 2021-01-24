@@ -67,6 +67,10 @@ export const Routing = (): JSX.Element => (
           <MainLayout>
             <Switch>
               <Route path={Locations.Index} exact component={Home} />
+              <Route
+                path={Locations.SoftFurniture_id}
+                component={SoftFurniture}
+              />
               <Route path={Locations.SoftFurniture} component={SoftFurniture} />
               <Route
                 path={Locations.CabinetFurniture}

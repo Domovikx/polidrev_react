@@ -34,7 +34,7 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     title: 'Банкетка',
   },
   {
-    collection: 'corner sofa',
+    collection: 'corner-sofa',
     description: `В "Полидрев" механизмы разборки углового дивана выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
     img:
       'https://lh3.googleusercontent.com/pw/ACtC-3dYv0X8ylOLk82Owpo91f9FoNBK5NxtZVnBe4FwYdlENUx1fitab9cyjzYeIvX4jZGEhpNGBQ6XBb0Af0Zzo-M28tTv1_j2tyBpxhp4R2CzYiy9eFKXsB8hVkEn9Riy2jZYlkWEi04CzUod0kudkggT=w1238-h612-no?authuser=0',

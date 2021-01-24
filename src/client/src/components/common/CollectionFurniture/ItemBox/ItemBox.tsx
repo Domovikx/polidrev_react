@@ -36,7 +36,7 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
             </Avatar>
           }
           title={tittle}
-          subheader={lot}
+          subheader={`${lot}, ${id}`}
         />
 
         <CardMedia className={classes.media} image={images[0]} title={tittle} />

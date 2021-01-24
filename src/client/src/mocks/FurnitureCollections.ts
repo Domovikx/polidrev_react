@@ -80,7 +80,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
   ],
 
-  'corner sofa': [
+  'corner-sofa': [
     {
       cost: 920,
       description: `Размеры (типовые)

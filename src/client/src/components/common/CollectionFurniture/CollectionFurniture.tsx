@@ -22,7 +22,7 @@ export const CollectionFurniture = (
       <HeaderBox collection={collection} />
 
       {furnitureCollection && currentValue === id && (
-        <Grid className={classes.grid}>
+        <Grid className={classes.furnitureCollection}>
           {furnitureCollection.map((item, index: number) => (
             <ItemBox key={index} item={item} />
           ))}

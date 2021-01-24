@@ -16,12 +16,14 @@ export const CardProduct = (): JSX.Element => {
   const { id } = params;
 
   const {
-    images,
     cost,
     description,
+    images,
     lot,
     tittle,
   }: FurnitureCollection = furnitureCollectionsById[id];
+
+  window.scrollTo({ top: 0 });
 
   return (
     <Container className={classes.container}>
@@ -38,10 +40,10 @@ export const CardProduct = (): JSX.Element => {
         <ImageGallery images={images} />
         <div className={classes.content}>
           <Typography variant="h5" component="h2">
-            {tittle}
+            {`${tittle} `}
+            {cost && ` ( ${cost} р. )`}
           </Typography>
-          <Typography variant="h5">{lot}</Typography>
-          <Typography variant="h6">{cost && `${cost} р.`}</Typography>
+          <Typography variant="subtitle1">{`${lot}, ${id}`}</Typography>
           <Typography variant="body1">{description}</Typography>
         </div>
       </Grid>

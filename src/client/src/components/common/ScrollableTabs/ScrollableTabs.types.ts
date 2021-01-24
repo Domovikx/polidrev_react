@@ -8,5 +8,5 @@ export interface TabPanelProps {
 }
 
 export interface ScrollableTabsProps {
-  collections?: SoftFurnitureCollections;
+  collections: SoftFurnitureCollections;
 }

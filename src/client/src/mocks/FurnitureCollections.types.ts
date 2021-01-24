@@ -11,7 +11,7 @@ export interface FurnitureCollection {
 export interface FurnitureCollections {
   bench: FurnitureCollection[];
   'chair-bed': FurnitureCollection[];
-  'corner sofa': FurnitureCollection[];
+  'corner-sofa': FurnitureCollection[];
   settle: FurnitureCollection[];
   'sofa-bed': FurnitureCollection[];
 }
