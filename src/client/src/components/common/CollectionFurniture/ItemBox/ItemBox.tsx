@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   Card,
   CardActionArea,
   CardContent,
@@ -39,7 +40,13 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
           subheader={`${lot}, ${id}`}
         />
 
-        <CardMedia className={classes.media} image={images[0]} title={tittle} />
+        <Box className={classes.cardMediaWrapper}>
+          <CardMedia
+            className={classes.media}
+            image={images[0]}
+            title={tittle}
+          />
+        </Box>
 
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">

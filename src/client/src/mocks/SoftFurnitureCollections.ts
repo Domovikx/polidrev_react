@@ -9,6 +9,7 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     subtitle: 'Купить Диван-кровать в Витебске',
     title: 'Диван прямой',
   },
+
   {
     collection: 'corner-sofa',
     description: `В "Полидрев" механизмы разборки углового дивана выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
@@ -17,6 +18,7 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     subtitle: 'Купить Угловой диван в Витебске',
     title: 'Диван угловой',
   },
+
   {
     collection: 'settle',
     description: `В "Полидрев" механизмы разборки скамьи выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
@@ -25,6 +27,16 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     subtitle: 'Купить Скамью в Витебске',
     title: 'Скамья',
   },
+
+  {
+    collection: 'chair',
+    description: `В "Полидрев" механизмы разборки кресло-кроватей выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
+    img:
+      'https://lh3.googleusercontent.com/pw/ACtC-3eBvl6SfmwK-4nQ6FOfNM2-KZUNZZsgcUrivh4fXb_WRGGqBEnTGJlRcJkf0vi8Hwadv3xWiRpLJNLxNKuIBML_OD1iNTNTo92t4GZ3hc3Q1Yz0vz0byev_FYJ7jGFberUhgi6ft0pr5PXZJSRFNr3Y=w880-h928-no?authuser=0',
+    subtitle: 'Купить Кресло в Витебске',
+    title: 'Кресло',
+  },
+
   {
     collection: 'chair-bed',
     description: `В "Полидрев" механизмы разборки кресло-кроватей выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,
@@ -33,6 +45,7 @@ export const softFurnitureCollections: SoftFurnitureCollections = [
     subtitle: 'Купить Кресло-кровать в Витебске',
     title: 'Кресло-кровать',
   },
+
   {
     collection: 'bench',
     description: `В "Полидрев" механизмы разборки банкетки выполнены таким образом, чтобы быть достаточно простыми и надежными. Мебель надежна и безопасна в эксплуатации, что подтверждается Декларацией о соответствии ЕАЭС N RU Д-BY.МН33.В.00539`,

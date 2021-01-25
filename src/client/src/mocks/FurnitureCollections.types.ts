@@ -49,6 +49,7 @@ export interface Furniture {
 export interface FurnitureCollections {
   bench: Furniture[];
   'chair-bed': Furniture[];
+  chair: Furniture[];
   'corner-sofa': Furniture[];
   settle: Furniture[];
   'sofa-bed': Furniture[];

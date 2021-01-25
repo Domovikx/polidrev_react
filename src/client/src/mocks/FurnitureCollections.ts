@@ -10,6 +10,17 @@ export const furnitureCollections: FurnitureCollections = {
     {
       cost: null,
       description: `изготавливаются по размеру заказчика`,
+      id: `000036`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3dDeOJjJVUHoNnov2ffyb_RcQLP5qtBUEoXjUlPpiHRK9wKotN6DYEkhXYQfMjzRKtKTLV9Hd0Tx1voekAqcPlTHQsJmFmZHwh-R1QQ60doKBgh7ERFBuEcD8HMeqD8s5lFmFgISfmlaClitUK1LNHs=w1278-h456-no?authuser=0',
+      ],
+      lot: 'Банкетка 3 мест',
+      miniDescription: `изготавливаются по размеру заказчика`,
+      tittle: `Банкетка 3`,
+    },
+    {
+      cost: null,
+      description: `изготавливаются по размеру заказчика`,
       id: `000001`,
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cl5ufeJOsDsFwYq8V1Lw3yjuE53bcdKgZPNC0bAYNpMkEco-Lg9kAvLQ6zjXjgyWdrhnIX1on2Nl__xay-t-uq1YTkAIAsFiql-vmbS0LDEPPNV2nC_CDujil6GkmvOYipvdLUGXGgU074wN7gH_LT=w366-h340-no?authuser=0',
@@ -53,15 +64,54 @@ export const furnitureCollections: FurnitureCollections = {
     },
   ],
 
+  chair: [
+    {
+      cost: null,
+      description: ``,
+      id: `000033`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3eEl5QyWJk8n1xh3H2PAdw_i2TQ4coELgtWpBdFsb1-xiV8zrYfYfKP1pckVfZi75O7jwab5MXAtk7uZBy5GHB_sKvN5Gx4i9UlAC_GEtpFmoumwveiOWhEvEo3RgkcjfVnfhiXDGU1YnQthN8xyJyI=w895-h927-no?authuser=0',
+      ],
+      lot: 'кресло',
+      miniDescription: ``,
+      tittle: `Кресло`,
+    },
+
+    {
+      cost: null,
+      description: ``,
+      id: `000034`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3eBvl6SfmwK-4nQ6FOfNM2-KZUNZZsgcUrivh4fXb_WRGGqBEnTGJlRcJkf0vi8Hwadv3xWiRpLJNLxNKuIBML_OD1iNTNTo92t4GZ3hc3Q1Yz0vz0byev_FYJ7jGFberUhgi6ft0pr5PXZJSRFNr3Y=w880-h928-no?authuser=0',
+      ],
+      lot: 'кресло',
+      miniDescription: ``,
+      tittle: `Кресло`,
+    },
+
+    {
+      cost: null,
+      description: ``,
+      id: `000035`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3d2_WD7hRUh1NdoboR09LV2wZ8_lNeLoBDIEYWUACIMWpKIUNHVwrQ6n7JnkpE-uxW1gyjjSiD4urEha-siZaZciRdwPMNIzHHyvPGS1UbgeuOr3dODfQ7b_CBVzwiF66ktwbteJVj6ClK9SICmC8b_=w830-h927-no?authuser=0',
+      ],
+      lot: 'кресло',
+      miniDescription: ``,
+      tittle: `Кресло`,
+    },
+  ],
+
   'chair-bed': [
     {
       cost: 475,
       description: ``,
       id: `000005`,
       images: [
-        'https://lh3.googleusercontent.com/pw/ACtC-3fDgQWQ6_ADSShT-9a1XMWMnQvFvm0Iw5T53C32HsD_OJ1uPh2EufccJ0zfGb68AzKtSg3KVOvOfIdBnZs74x2HDzJIAgHNb24KET44_QI5L_p01USwxqRdZt6Ljysl8cv7asuHvuUqHSWtsLeZRjxu=w1160-h870-no?authuser=0',
-        'https://lh3.googleusercontent.com/pw/ACtC-3dawto-XQ9edqGEkyzEwtfyqpgjysE3O-r3YUQ51Q7G26gPz66XKWi2TyUSKLHH6Wh8DwdDsKw7ceaod1kpDj6KQkf8BA1X7_bESR6e4gbfeLYyExgnGszAoR4mk_qge_fcbDlZdW547Zbd7uqGBMC_=w1160-h870-no?authuser=0',
-        'https://lh3.googleusercontent.com/pw/ACtC-3cmgHllMzB6WT9JSycm--lJwIEjukunrWvCBu5dJSWEOueu7p4Wz86DiEfz9ebXLgV8GHLOKuseA4qAgvnuxdDSy27OTl-rV0MoAVU2isVa3pMWgdAzfoMK2vbfzOdj1Vx7pFemPA7yNJRbT0HY_aen=w653-h870-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3ebI3iRpqFQ8WspoPQnvYMulnLYBnFEDf-sAgRUXS9WE9UUf0KmDngmbegweW9MSYh7LOYddbyHY0jkQyjCv_swbHqdm_H_tQJ7MTZo8J2IUkK1PHFTt7e5G-SRR4kppOhqi5YwXf1HhGLsBQqA_2HCdg=w696-h927-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3eoXDoBfYx0GQQN84uiYVbxWPPihjuuwksitb4uxElQpdSecrO9lRKgPJfoIK3WTFwLzUf9DOONNXWXjIl42KHGAWnddL6U5eAGVvR4oHhlQDu077upkTqcOEqa5xZf9-fFBvWgjVYqkWWzcJGVRpussQ=w1236-h927-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3cVSO-e9_klahcBJi5ZGQTR22xtIt4jirrqzqRpkJKf3aGSvCa8ervLzPVlciwdI5bpoNHY0Fh3-QBrbF7IkJC8zTjfR-Fk1TX-yN3NIGguOXEt0gZfUwIa_lW8bcVcS6fq7E_4KAITyUaNKqIVuZiSXw=w696-h927-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3drNfBNCtgx8lBZUDEbGyHWJhNSLAZojpcewS0HAydPeG6TTpSuUpl79gLnjiJcdrvMeoCOaTAdQIh_B_ne-hKUYdM1HrY_sk3Cf0bA4CJyH9jQIxMlmVVJAUPHbx4UjmhwmUgH1-iWW6uHKswNJ8yt=w1236-h927-no?authuser=0',
       ],
       lot: 'Лада К/К',
       miniDescription: ``,
@@ -495,6 +545,40 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
+      cost: 475,
+      description: ``,
+      id: `000037`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3dWNIFmyd_fe9vQ6Fr8k745aslcGSWoLrD9vYtmjzMtD5mZ6DjWZNpbybiOWL97dweE-7xopSPuaCJJiNEtbFV-TnxIRERPawkZxB8N1eD5Gm1qn2iqqO-mzTuVMrmrR7IiVfIWJvNFCIz4-iBU2HFw=w1278-h580-no?authuser=0',
+      ],
+      lot: 'Виола классика',
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
+      tittle: `Диван-кровать "Виола"`,
+    },
+
+    {
       cost: 550,
       description: `ВОЗМОЖНО ИЗГОТОВЛЕНИЕ ПО ВАШЕМУ РАЗМЕРУ!!!`,
       id: `000020`,
@@ -602,6 +686,119 @@ export const furnitureCollections: FurnitureCollections = {
         'https://lh3.googleusercontent.com/pw/ACtC-3clTmFOnG1pJp0S0wHfbNQrNqMd4Uu5UOZVbFqi4yF9Zyaa9yaoK7ebaiOWw08LvWzkz7YwT7DOxetGR54DKqTS-yYyaHoZfaVYhb8az8llOweRLp1zI4mbaKEJJ_rhqThU_IhTNQn1SJIOoQ87nv8Q=w577-h433-no?authuser=0',
       ],
       lot: 'Август, лам.нак.',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'Сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 216,
+          width: 97,
+        },
+        dimensions2: {
+          length: 216,
+          width: 147,
+        },
+        mechanism:
+          '«Еврокнижка», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения сидения вперед и опусканием спинки.',
+        sleepingArea: {
+          length: 190,
+          width: 147,
+        },
+        softElements:
+          'Мягкие элементы изготовлены из поролона, синтепона, войлока, мебельного настила и т.д. Основой сидения и спального места является пружинный блок. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Диван-Кровать «Август» пр. АВ-001-01`,
+    },
+
+    {
+      cost: null,
+      description: ``,
+      id: `000038`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fwom2ln9p6gzaPy5V1-wQO-TKpWU5S0qa5-8_wAqnJmk-TiGcFGOSGA5LqisfsOMBbM-8lgAy5lIHqrAkUhj7FZgM936Ly-s9LeAaHa49JzEKuQTfPzgEMU-tBSxRHW2hfMWxw_niipTPSIXohZv4B=w1278-h822-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3f7Jdl6tMmnsx7C6PeLRRWs_SLyr2OITrfuAqginScUECL0lCmcaDQ0YcNLy5TeaiElN0Ya9DYXs-ecu5us5pnhcQUIQTMTVjxw3vFfRPPf8EwQiC_yLU9R1spZXXlt8y9yuQIeoshy62_x8W-Bty6h=w1278-h772-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fiwo2bk2IRFTNf7B3vDO2LWOCgj7zhF8ndhDiOxi1W9-AG888LMdgxtkVBK7q-i8zbtYA_DADjoAkNXnrl8rDmvd9rwLsrHjXT0Zo1F6CZobP7JkYqeLL7duo11VxZLqG7C6i4I_04nkaUg_hyAK4-=w1278-h669-no?authuser=0',
+      ],
+      lot: 'Август, мяг.лок.',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'Сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 216,
+          width: 97,
+        },
+        dimensions2: {
+          length: 216,
+          width: 147,
+        },
+        mechanism:
+          '«Еврокнижка», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения сидения вперед и опусканием спинки.',
+        sleepingArea: {
+          length: 190,
+          width: 147,
+        },
+        softElements:
+          'Мягкие элементы изготовлены из поролона, синтепона, войлока, мебельного настила и т.д. Основой сидения и спального места является пружинный блок. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Диван-Кровать «Август» пр. АВ-001-01`,
+    },
+
+    {
+      cost: null,
+      description: ``,
+      id: `000039`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3deOhq_FZBT_xk2nhgZvzVXwBs2sAoTSlWObI6fxwFrd0HS5giehNbOLFoNrdC4UL7sEVartwoXvTeFCfQY6ZOBGrXuvMPMa-t4si9Q4e3acq0zcPYXD3sWEk8GKIm5WKnOSlUmauLPVXQ5qZ5G-Smz=w1278-h544-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3f2HkRqR-sEhQ40InQQOURbOCMS9EC6rhX_lPUMUGIB1BlZ8DBKhmnBwJuH5139BOmuRLmNHxtw1uz5EbR4x3GE55Mn3EL96xDuaFOFtGL6L06m9VmSKJxSuJXyriXR0QXCo-aqlO5llL0jcEdGLZO3=w1278-h858-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3dIPgZFZYieqdGZUNUi2s8VQmwnPBqmhX5pjbRsgjvsL-_QL02HlMwjvPehU4epPxx8yNSS1c4R0Qh7qGSpskbGeFIp9W3qX94CHlv65Qk3bTqEU_XEqQakwzqdP_TDyZbHInJqGgUzXPbQs-hQzEnx=w1278-h795-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3c6m4cnGKAtWAEvP9kEJOsiLSCkFz6sNGYvhNVjZw5AX-1YC0KlNgf8ApaR4pnJ80EQ4CA2s7f2miiiwpXNbGV2t8Tvjd_q89QbhDLCTS-H7AaGc1DCqewebL0vOd4VV3E4HY_OasG7HEI_aoKsGsD2=w1278-h736-no?authuser=0',
+      ],
+      lot: 'Август, мяг.лок.',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'Сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 216,
+          width: 97,
+        },
+        dimensions2: {
+          length: 216,
+          width: 147,
+        },
+        mechanism:
+          '«Еврокнижка», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения сидения вперед и опусканием спинки.',
+        sleepingArea: {
+          length: 190,
+          width: 147,
+        },
+        softElements:
+          'Мягкие элементы изготовлены из поролона, синтепона, войлока, мебельного настила и т.д. Основой сидения и спального места является пружинный блок. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Диван-Кровать «Август» пр. АВ-001-01`,
+    },
+
+    {
+      cost: null,
+      description: ``,
+      id: `000040`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fVUox6yXkqTbT1hM3jeMqQAtxTPFS45OC1EQAw7ZF0zaNX7jtwop5mKpZkzKxKzbhaGGQSHtawxCfy6r-7iso5d85aynjjnOjMJjcLh6dNJl2K6gVeUdRJI_yJm_c932yqsWhsUC_rmp-rRE5zqyuZ=w1278-h564-no?authuser=0',
+      ],
+      lot: 'Август, мяг.лок.',
       miniDescription: ``,
       options: {
         carcass:
