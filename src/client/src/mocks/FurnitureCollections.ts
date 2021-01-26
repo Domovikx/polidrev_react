@@ -715,7 +715,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
+      cost: 730,
       description: ``,
       id: `000038`,
       images: [
@@ -753,7 +753,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
+      cost: 730,
       description: ``,
       id: `000039`,
       images: [
@@ -792,7 +792,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
+      cost: 730,
       description: ``,
       id: `000040`,
       images: [
