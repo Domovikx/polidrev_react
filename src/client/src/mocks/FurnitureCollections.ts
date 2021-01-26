@@ -545,7 +545,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 565,
       description: ``,
       id: `000037`,
       images: [
@@ -915,8 +915,8 @@ export const furnitureCollections: FurnitureCollections = {
       description: ``,
       id: `000026`,
       images: [
-        'https://lh3.googleusercontent.com/pw/ACtC-3fCgPOfwYZ0FoOQMFGkK48BacsJGfER0hWlRrGjE08GNXx_YS0tvEbqHwV1CfMKJ23kWMFHQX5Q1FrbU8N_Q9ApXamN-GBmIkiH-8lMAIgzm8xKjxFG-J5doIe_hKsubChZhLZOC9TJnpTJEdRef7rr=w1278-h719-no?authuser=0',
-        'https://lh3.googleusercontent.com/pw/ACtC-3eqy7OwJHeA3aCHZ4ild6jnis0YkLdcCS-bMzpM7CBtyY2kIhlAhJ9G0ADlc-QAcaEJyaUyz9LMJ6ZTLJzEaC6vMRiU1H9GEGIstX9LqYasKFFjCVE-U80pHkpj6w_3joptmayeN0is0VUNS6E4CoJX=w1278-h719-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3cNqeOYV0aAHtOm_jYAazvE-GUbXW9j_4Pn2bEsNJM8lc5_cQzP6jpXw6S_06NUeVn9rruLHkzUaKSy9v-l7Ykttyf9IVnMv7lvFRVKJ41mvD_xqcXZUA_hZTOUXi8s9Xug1HoZ4wr_TtZcjTT7cfMa1g=w1278-h719-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3d-u2PTCEtMz265XdgxFd3dHkXLAvU8v0fcjdnoYIupAuC0MOaBzJJdGd4tFlAnuLk0hYQOrUMzGpbBEfxaCwgBLybIDNgCi5i8bs6RB3fvWSQIU1jaETQrH6SztgnpuyYPJu7oG9HkH9C7mD23Boyg3A=w1278-h719-no?authuser=0',
       ],
       lot: 'Дачный',
       miniDescription: ``,
