@@ -7,6 +7,7 @@ import AuthLayout from './components/layouts/AuthLayout';
 import Home from './pages/Home';
 import Loader from './components/common/Loader';
 import MainLayout from './components/layouts/MainLayout';
+import AdminProducts from './pages/Admin/AdminProducts';
 import { Locations } from './constants/locations';
 
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
@@ -34,6 +35,12 @@ export const Routing = (): JSX.Element => (
           <AdminLayout>
             <Switch>
               <Route path={Locations.Admin} exact component={Admin} />
+              <Route
+                path={Locations.Admin_Products}
+                exact
+                component={AdminProducts}
+              />
+
               <Route path={Locations.All} component={PageNotFound} />
             </Switch>
           </AdminLayout>

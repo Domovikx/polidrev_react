@@ -23,4 +23,5 @@ export enum Locations {
 
   Admin = '/Admin',
   Admin_Relative = '/Admin/',
+  Admin_Products = '/Admin/Products',
 }
