@@ -5,6 +5,7 @@ import {
 } from './FurnitureCollections.types';
 
 // TODO - temp mocks data
+// 41
 export const furnitureCollections: FurnitureCollections = {
   bench: [
     {
@@ -170,6 +171,73 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3eFf6zJvJthI0GBKri0gRFz42zix_Llju_fVk2yNxmSfZgfWiwnIfukN6IV0ZbSqKSGOpMAEGftNqBNlB_yBhTVsZDcHfz7mKkVRGC2dbW19B8T5xvhNdbRWiiwBX0HIuyXwSCIvoSMrk_4cBNAypMH=w577-h433-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3fH9tvulJwyBgmun1sqbsYrFEa4C8VoK3TvadUuX8cze-oby5FW5kcsBTDqdZVD6du_iXj40NJoS_wdYmsmtso1tu7dc-stZVkTfxUYAFye-Q262rOKRTKtxagsmUxEsbBci_47x9tWIkKK9cPUvJa0=w577-h433-no?authuser=0',
+      ],
+      lot: 'Универсал',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП. Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является поролон повышенной жесткости и плотности. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 230,
+          width: 150,
+        },
+        mechanism:
+          'Механизм раскладки «дельфин», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения нижнего элемента (передней планки) вперед и поднятием вверх спального места, расположенного внутри выдвижного элемента. В боковой секции размещена секция для хранения спальных принадлежностей, с помощью механизма подъема она поднимается вверх.',
+        sleepingArea: {
+          length: 200,
+          width: 125,
+        },
+        softElements:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г.',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Угловой диван "Универсал"`,
+    },
+
+    {
+      cost: null,
+      description: `Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. Исполнение по расположению секций может быть как правое так и левое.`,
+      id: `000043`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3faEvi99EEV_T0Qng8k35uJ6Mf37o4etC0bOq-RkFohQAuKKdASdF-aaVO9UTVP6ziR8BjTRtnM5LHnQelhCh209wdK-tsaZvc6LU3giInCM5l5_OksPmNCoqs4Ds2olUQqh2pcSOmx6WJlEH_Wah-Y=w1278-h661-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fXqDv8xsgnzb36Bf-fjnPNa7EAjqrFKmXT4NhB0Q2M1_2MBJXzJsPErgemeGGIx2i_o_h0_QU2rYYt69ireKIdGD4ns_6AeK2LBlKka8xwjojJyx0YzuEFCFh8ydkKIXxp06lY86G--_YSDXBcaaBt=w1278-h821-no?authuser=0',
+      ],
+      lot: 'Универсал',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП. Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является поролон повышенной жесткости и плотности. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 230,
+          width: 150,
+        },
+        mechanism:
+          'Механизм раскладки «дельфин», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения нижнего элемента (передней планки) вперед и поднятием вверх спального места, расположенного внутри выдвижного элемента. В боковой секции размещена секция для хранения спальных принадлежностей, с помощью механизма подъема она поднимается вверх.',
+        sleepingArea: {
+          length: 200,
+          width: 125,
+        },
+        softElements:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г.',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Угловой диван "Универсал"`,
+    },
+
+    {
+      cost: null,
+      description: `Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. Исполнение по расположению секций может быть как правое так и левое.`,
+      id: `000042`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3cxAqVc3jU5khxcRWhf0CYDrZbrB1Mq5PaK1d7IkNagOv7N1G1uQNfF11iRQBuzqzWLCFDKu5PtoUe2mo4DRdanm3gMS23P4WMhAnuAU15fDdONvdLDgejSBlbO637wf5c4ETilOlSyivi89Ppo0iUZ=w1278-h592-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3crKpbyslUoMlYiB48CcigzCZKeynz9glnziwul-I6RvuLr21SGqHpm3M6EQ7Rd59fHv6qb1nIBMby0VfDBgTB8ONtRFdBp1OxdgFPvDVhdHbcNPYT4VTtR5XTdI4SAAsUQTewswg38g8_hXpQ9Nw5r=w1278-h639-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3eUFcQfbygCv1wUP_wi1WiRSPEza5mB7QGZsJnjBzSdIXzRx0YEt_8rbjFb3iegM9LMdqeyhBx3SW-GNy5f70k7x4GUCJe26qXjwB2R9A5cA0M8fLbuzm7GDigh6FcZ2biwhfIJZmVY6q6TyI7vb9Ir=w1278-h850-no?authuser=0',
       ],
       lot: 'Универсал',
       miniDescription: ``,
@@ -513,9 +581,44 @@ export const furnitureCollections: FurnitureCollections = {
       description: ``,
       id: `000019`,
       images: [
-        'https://lh3.googleusercontent.com/pw/ACtC-3cgauAB8lVeXKgSMmo5CKt2U0tj9mk1Qj4GUv6NxkCMvKjGrKSuVo4KW0Ak9KdhaLOm_1RWYqYqgXWPhLqVAtCTez4FwhAhwsDi4k4l3Irh3C2Npc1clHAkHuIZFYvK2gBR5x22mVt7HexwUU7KAnA9=w577-h433-no?authuser=0',
-        'https://lh3.googleusercontent.com/pw/ACtC-3eTDmMETCVYnSU5u9pAZ6V3jl8BUqZW1W59TaDJnwF5e3n6bkcZNe4jyc8r2k-CaEAy5l8_bEaOBi1DBM7MnyA9s5p4QdUgG5WuWw0NMhJuQsZ53ERfSatDtQOA3PozyCi8CE5YJtXT_YfTv9hTj9r4=w577-h433-no?authuser=0',
-        'https://lh3.googleusercontent.com/pw/ACtC-3ckAphJ8Zh1ktLZwYcxB4eE8HhVGjgqs_ZIWmIrlmAOXo2CTLtUgW1bwylzS2koxfH5EjNX0HJJcFfkcRtHpnM3YNcXiUQXwLsVuHynj1ptW1KBw_dhzbCxU8qb3nPH_Zj_GqxG570VW1-PvExEmzEv=w577-h433-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3eIhynJHVJc6179GqPy8ykJIUGol8Tai3K7hAwA8dqRceXmYS0lrwxTzYkoPwYW4Kege0yLVdHCAnzXJh2TMkV7cvERVl_HUJWxzNpNiQ8IYc2anasFxXsbXlEKHBGE_UfdJJ_w8cqxOSVJht7aGo0F=w1200-h555-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fq2U5JFAAiFYKQJgOxSkqdHpGTeC0h21AXiAOlj1T7asCvH_aNU2HLyfOX-ZVt6a5_EcRf90gwAmtsVdTasFwuBFY2lCk44uWLjpMWWbLBUdBH40gy1pxp0jwOPE9lLc1FB__up0YJ5om8WY-Spr_d=w1033-h717-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3e74E9k9tAPl1yOc52BCxRu-Zvb71Av5DevRKYcqm3BFPYPQ-JZLyilpzA2bhQT5-XxE9i0qmIN66p3WeI7XzX2o_e7pGYRHNxNNJbrkYvO4ztWopsQ7GOSbLb8qbz87peW9aol7WZtwi1yfN1M3ffU=w1168-h778-no?authuser=0',
+      ],
+      lot: 'Виола классика',
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
+      tittle: `Диван-кровать "Виола"`,
+    },
+
+    {
+      cost: 475,
+      description: ``,
+      id: `000041`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3cTMx0G3TNRbm85EIhD_tsC9lYntMSaUFehBLHOxs8qboFxfjieqMt6PpN0Q45g330TYBPC_40o0cp-GUHzcUz0hii2srNnvKXSlwBs24AVdZnxHXqZqG6XgIjp3Zp42NO4HEng1ZuoSb_2Q4I6sqI4=w1278-h806-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fmoZsxZYFMwaJvOo-oeBSZtlwPHIrh2JGVbb1MeDpHlxmFA-vrUiUORurkXkFEtEuE4OgdTvDF2HvKibfL6wvijZfYBxql1OiUYs-RvcuFI0kf870fcMHzyTAP7u6Rpe7Dk4N-yhw3N5pZ7bv_X5Cl=w1278-h548-no?authuser=0',
       ],
       lot: 'Виола классика',
       miniDescription: ``,
