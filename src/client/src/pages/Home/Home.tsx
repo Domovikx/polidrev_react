@@ -43,7 +43,9 @@ export const Home = (): JSX.Element => {
           </Typography>
 
           <List>
-            <ListItem>Торговый Дом «Витязь»</ListItem>
+            <ListItem>
+              Торговый Дом «Витязь» (секция мебели 8-029-547-47-04)
+            </ListItem>
             <ListItem>
               ОАО «Витебский Хозторг» в г.Витебск и в г.Новополоцк
             </ListItem>

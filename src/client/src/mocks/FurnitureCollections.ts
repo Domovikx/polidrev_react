@@ -67,7 +67,7 @@ export const furnitureCollections: FurnitureCollections = {
 
   chair: [
     {
-      cost: null,
+      cost: 350,
       description: ``,
       id: `000033`,
       images: [
@@ -75,11 +75,11 @@ export const furnitureCollections: FurnitureCollections = {
       ],
       lot: 'кресло',
       miniDescription: ``,
-      tittle: `Кресло`,
+      tittle: `Кресло универсал`,
     },
 
     {
-      cost: null,
+      cost: 380,
       description: ``,
       id: `000034`,
       images: [
@@ -87,11 +87,11 @@ export const furnitureCollections: FurnitureCollections = {
       ],
       lot: 'кресло',
       miniDescription: ``,
-      tittle: `Кресло`,
+      tittle: `Кресло универсал`,
     },
 
     {
-      cost: null,
+      cost: 410,
       description: ``,
       id: `000035`,
       images: [
@@ -99,7 +99,7 @@ export const furnitureCollections: FurnitureCollections = {
       ],
       lot: 'кресло',
       miniDescription: ``,
-      tittle: `Кресло`,
+      tittle: `Кресло универсал`,
     },
   ],
 
@@ -198,7 +198,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
+      cost: 990,
       description: `Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. Исполнение по расположению секций может быть как правое так и левое.`,
       id: `000043`,
       images: [
@@ -231,37 +231,37 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
-      description: `Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. Исполнение по расположению секций может быть как правое так и левое.`,
+      cost: 1320,
+      description: `Полочка делается по желанию заказчика (цена +150 руб.). Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок.
+      `,
       id: `000042`,
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cxAqVc3jU5khxcRWhf0CYDrZbrB1Mq5PaK1d7IkNagOv7N1G1uQNfF11iRQBuzqzWLCFDKu5PtoUe2mo4DRdanm3gMS23P4WMhAnuAU15fDdONvdLDgejSBlbO637wf5c4ETilOlSyivi89Ppo0iUZ=w1278-h592-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3crKpbyslUoMlYiB48CcigzCZKeynz9glnziwul-I6RvuLr21SGqHpm3M6EQ7Rd59fHv6qb1nIBMby0VfDBgTB8ONtRFdBp1OxdgFPvDVhdHbcNPYT4VTtR5XTdI4SAAsUQTewswg38g8_hXpQ9Nw5r=w1278-h639-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3eUFcQfbygCv1wUP_wi1WiRSPEza5mB7QGZsJnjBzSdIXzRx0YEt_8rbjFb3iegM9LMdqeyhBx3SW-GNy5f70k7x4GUCJe26qXjwB2R9A5cA0M8fLbuzm7GDigh6FcZ2biwhfIJZmVY6q6TyI7vb9Ir=w1278-h850-no?authuser=0',
       ],
-      lot: 'Универсал',
+      lot: 'Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
-          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП. Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является поролон повышенной жесткости и плотности. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП.',
         correspond:
-          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+          'Изделие соответствует «Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
         dimensions: {
-          length: 230,
-          width: 150,
+          length: 245,
+          width: 160,
         },
         mechanism:
-          'Механизм раскладки «дельфин», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения нижнего элемента (передней планки) вперед и поднятием вверх спального места, расположенного внутри выдвижного элемента. В боковой секции размещена секция для хранения спальных принадлежностей, с помощью механизма подъема она поднимается вверх.',
+          'Механизм раскладки «еврокнижка», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения сидения вперед и опусканием спинки.',
         sleepingArea: {
           length: 200,
-          width: 125,
+          width: 145,
         },
         softElements:
-          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г.',
-        upholstery:
-          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        upholstery: 'Ткань мебельная. Кож.зам.',
       },
-      tittle: `Угловой диван "Универсал"`,
+      tittle: `Угловой диван "Комфорт"`,
     },
 
     {
@@ -760,11 +760,11 @@ export const furnitureCollections: FurnitureCollections = {
         correspond:
           '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
         dimensions: {
-          length: 216,
+          length: 190,
           width: 97,
         },
         dimensions2: {
-          length: 216,
+          length: 190,
           width: 147,
         },
         mechanism:
