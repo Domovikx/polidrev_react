@@ -134,7 +134,37 @@ export const furnitureCollections: FurnitureCollections = {
       `,
       id: `000006`,
       images: [
-        'https://lh3.googleusercontent.com/pw/ACtC-3epWu_qwL3k9vYuelffK91Uw99X1MWtQA2rznx_bHyiRIWLydGSstiXnQltLN7d0FFW1dhP_bFebzBXJo1ko8EfvYFvXi3eTRzVURv1ZFLmILtlQI1iW4OLB41mSPNabfuaHKY_qpZzfPARh23KIBku=w313-h336-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3ewciO9dJuY-EIABEUwd-uDfOFEH3cI08Eur1VaqXHS6KvGCRb426zvXb-HhdRUTaFpRJZuvhtCtS8nUnJHeIgRjK5b2ftRqBvrMHlVHxxRpq8wQtzJ7jXCOCUHVAbZMarf-77U7rf8DPZkjYtN2M51=w640-h705-no?authuser=0',
+      ],
+      lot: 'Майский кр',
+      miniDescription: ``,
+      tittle: `Кресло для отдыха к угловому дивану "Майский"`,
+    },
+
+    {
+      cost: 380,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000044`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fwwutt-tURF_vGUWfhCnWaJ8qk5fn0uQSf2A_18rDGBtU38TadOhdnrs6eaee9MYfT6jx-N0IfJEeaOnKwpQuviqEGWrgJnH7pZTTtPfT4PH7_ma3QaVjhmqrbxMr4MUpBOLUC6v9KtwGjyCFdo5m5=w847-h927-no?authuser=0',
+      ],
+      lot: 'Майский кр',
+      miniDescription: ``,
+      tittle: `Кресло для отдыха к угловому дивану "Майский"`,
+    },
+
+    {
+      cost: 380,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000045`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fBmB3HEWMhnr0E58wEofnpPdAOgbsGasMnOlqkjKKiAdLojQWf8yp_R2QWOzsPs-LB1bBcptTZlNdRXKk5auhwidVsxRvLBBhNw3jgDAfUGRrv6Zaen4-d1zeOi9UEeBHUVGan9KbZKgcv75GSGQAi=w466-h486-no?authuser=0',
       ],
       lot: 'Майский кр',
       miniDescription: ``,
@@ -196,6 +226,112 @@ export const furnitureCollections: FurnitureCollections = {
           'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
       },
       tittle: `Угловой диван «Майский»`,
+    },
+
+    {
+      cost: 920,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      Исполнение по расположению секций может быть как правое так и левое.`,
+      id: `000047`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3cdO2sF5UFcJzsniuZA_VlK6e0ohCuQkgnPJAivoWDwJtA0JctWaq4dUB8cVfUhDcU-kNiPbRqeNLQbq9GR8g9JZEz9j40HcsafQ0eInBRo000_3zJ_W0EyrAysjo8Pl5FZWtuozgD9zy7rZ69C4Gf8=w1154-h550-no?authuser=0',
+      ],
+      lot: 'Майский',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП. Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является поролон повышенной жесткости и плотности. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». «Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 275,
+          width: 175,
+        },
+        mechanism:
+          '«дельфин», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения нижнего элемента (передней планки) вперед и поднятием вверх спального места, расположенного внутри выдвижного элемента.',
+        sleepingArea: {
+          length: 215,
+          width: 120,
+        },
+        softElements:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г.',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Угловой диван «Майский»`,
+    },
+
+    {
+      cost: null,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      Исполнение по расположению секций может быть как правое так и левое.`,
+      id: `000048`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fB6t-cQs_Lh3Dxgpu5_tTiJnqOSvJxL4uQR82hxUE4ztOY8L1gN-__zs4MQ-GXT-XoOmem5J4Bwa49L0jaHeuvpY9_irbLGMEOl0iutYChj0mrolOMx1BL3gLlUHcM6MyHYr5fZKvWnKEobsweaE-1=w1160-h578-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3f2CIwNzo3_z3QcPLIDKw-oDqJnWTUz-YMk8EaiDMhKSo98BQ1JLGZ0rqRQK6dacZt5AepAvS8hvM2brT5QaqCQS4Xcd0i5XBc5Jo02KAAL_skQmLSbpamClCKRmerWxLfmgcxAY0uXYfFIwNxrroys=w944-h719-no?authuser=0',
+      ],
+      lot: 'Майский',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП. Мягкие элементы изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является поролон повышенной жесткости и плотности. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». «Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 275,
+          width: 175,
+        },
+        mechanism:
+          '«дельфин», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения нижнего элемента (передней планки) вперед и поднятием вверх спального места, расположенного внутри выдвижного элемента.',
+        sleepingArea: {
+          length: 215,
+          width: 120,
+        },
+        softElements:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г.',
+        upholstery:
+          'Ткань мебельная. Каркас диван-кровати сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева, и ДВП.',
+      },
+      tittle: `Угловой диван «Майский»`,
+    },
+
+    {
+      cost: 1060,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000049`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3fl3lR9DP5F1RV2aGyph6MN8cOTMo5UZ47nZdBOqzhqxChBMPMV3Mt90SDtrrIZnZ8yqnUDdSw8nBZakRzUz_WaURDWKN7T3toOUPaGI0GIO_9Vi5bYnvgT6dHrUmXgbYGA0B652q4x3De_6uqlKnlU=w1101-h495-no?authuser=0',
+        'https://lh3.googleusercontent.com/pw/ACtC-3fviRuxMOEL9INIhZEsS02k210VDDRWUtJE40qGO2SW9KspyVymgxZQrbqaUMU9pHGdoVqEP6p3F5jNnDZljNLEFDHBgS3Y4Q4zX9AM-cESttRlYPxBWJSLhVvkohcYa0vrVg9fKKsim7-r38pQ6wpA=w1217-h638-no?authuser=0',
+      ],
+      lot: 'Комфорт без лам',
+      miniDescription: ``,
+      options: {
+        carcass:
+          'сделан из ламинированного ДСП или МДФ, пиломатериалов хвойных пород дерева и ДВП.',
+        correspond:
+          'Изделие соответствует «Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции». Декларация соответствия ТР/ТС ЕАЭС NRU Д-BY.МН33.В.00539 от 20.03.2018г. Гарантийный срок - 18 месяцев',
+        dimensions: {
+          length: 245,
+          width: 160,
+        },
+        mechanism:
+          'Механизм раскладки «еврокнижка», трансформация из положения «диван» в положение «кровать» осуществляется путем выдвижения сидения вперед и опусканием спинки.',
+        sleepingArea: {
+          length: 200,
+          width: 145,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Подушки для отдыха наполнены синтетическим пухом «файбертек».',
+        upholstery: 'Ткань мебельная. Кож.зам.',
+      },
+      tittle: `Угловой диван "Комфорт"`,
     },
 
     {
@@ -474,6 +610,7 @@ export const furnitureCollections: FurnitureCollections = {
       },
       tittle: `Угловой диван "Комфорт"`,
     },
+
     {
       cost: 1060,
       description: `
@@ -507,6 +644,7 @@ export const furnitureCollections: FurnitureCollections = {
       },
       tittle: `Угловой диван "Комфорт"`,
     },
+
     {
       cost: 1060,
       description: `
@@ -654,6 +792,193 @@ export const furnitureCollections: FurnitureCollections = {
   ],
 
   'sofa-bed': [
+    {
+      cost: 640,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000050`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3cVYDDrz-rgTivr4HzkwOCxAM8olRRkH1U6JCq5GUmIqCl5r2oVmtAayaOVhUhiBIkWmbD2-0_y4vzz2u_FQoHiURwQkAV514i1SW7BXMSyQatY1hUWu1kA9l_tWGj6QdSCu9x9-GLe4im2lEpLVDiv=w1180-h607-no?authuser=0',
+      ],
+      lot: 'Улыбка',
+      miniDescription: ``,
+      options: {
+        carcass: '',
+        correspond: '',
+        dimensions: {
+          length: 195,
+          width: 100,
+        },
+        mechanism: '',
+        sleepingArea: {
+          length: 192,
+          width: 130,
+        },
+        softElements: '',
+        upholstery: '',
+      },
+      tittle: `Диван-кровать "Улыбка"`,
+    },
+
+    {
+      cost: 475,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000051`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3dU7QAIeWsKe1JS2m3vLSmUYNaZXCkMM4K9ifQ_t3gvqm10vY2bwL_dVZbqZ_VGeAEbNlPz-n3V_xuU8PWckkwkRjYB9HTvQDVOlv5ZrjUtCA0-RPkkYS_ZuOBOc28k_jkPpryXbkqpxwRP5wFur_DP=w580-h600-no?authuser=0',
+      ],
+      lot: 'Виола классика',
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
+      tittle: `Диван-кровать "Виола"`,
+    },
+
+    {
+      cost: 475,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000052`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3duEWkS2HslNYtWoJZsXRESTqaK41vCZBdclbPfkADZ5Ai1ec74TdIbWX_6ITzjnZV9sd0B72JjyAb4Hnx5cNtbhuAyfDZfw769axreNHaBY17laFeuW-K7tiHcqiOOB4sTt7RvSrDhqhBl8QN6IOYN=w458-h204-no?authuser=0',
+      ],
+      lot: 'Виола классика',
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
+      tittle: `Диван-кровать "Виола"`,
+    },
+
+    {
+      cost: 475,
+      description: `
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000053`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3dQl8BKUSwSinquG-p3L4JfGLDYAHJrtuXKltSoo6grSlWGk7LLzytnQ9OSGGRP5ShOrtcqqPkw6VdDxmqiMEG5jP_Z2FEwd2QtZ_rbWEcQy15QuJ0fWcr4V15WSc9T6ul6lT8Y92wQI6b-P0izFi8l=w562-h512-no?authuser=0',
+      ],
+      lot: 'Виола классика',
+      miniDescription: ``,
+      options: {
+        correspond:
+          '«Техническому регламенту Таможенного союза ТР ТС 025/2012 «О безопасности мебельной продукции»',
+        dimensions: {
+          length: 210,
+          width: 95,
+        },
+        dimensions2: {
+          length: 210,
+          width: 115,
+        },
+        mechanism:
+          '«книжка», трансформация из положения «диван» в положение «кровать» осуществляется путем опускания спинки назад, и поднятием сидения вверх «до щелчка» и опусканием её вниз.',
+        sleepingArea: {
+          length: 190,
+          width: 115,
+        },
+        softElements:
+          'изготовлены из поролона, синтепона, войлока и т.д. Основой сидения и спального места является пружинный блок. Декоративные подушки наполнены синтетическим пухом «файбертек».',
+        upholstery:
+          'ткань мебельная, кожзаменитель. Каркас диван-кровати сделан из МДФ или ламинированного ДСП пиломатериалов хвойных пород дерева, фанеры, и ДВП.',
+      },
+      tittle: `Диван-кровать "Виола"`,
+    },
+
+    {
+      cost: 590,
+      description: `
+      пр. OB-001-01 гр.12
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000054`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3cimqvWb5yz2C7epSoefrLtOw0scmsYGWFpyLbTaz4w19Ykl-SEHqY1Jv9IM04CHtLX0V4H8SWuPlZOZ_MvQ_232k-Rjj6eeVpzvgMVZ6kSBx11UU4k4VGaL7AzQoxFGFHyY2nbI6DCfGTySzKtSHIT=w1143-h829-no?authuser=0',
+      ],
+      lot: 'Пружиня Д/К',
+      miniDescription: `пр. OB-001-01 гр.12`,
+      options: {
+        carcass: '',
+        correspond: '',
+        mechanism: '',
+        softElements: '',
+        upholstery: '',
+      },
+      tittle: `Диван-кровать Прыгажуня`,
+    },
+
+    {
+      cost: 590,
+      description: `
+      пр. OB-001-01 гр.12
+      Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
+      Срок изготовления от 5 рабочих дней. 
+      `,
+      id: `000055`,
+      images: [
+        'https://lh3.googleusercontent.com/pw/ACtC-3dlUZksXwkNL9Ghjaj7tVeNmig2LUlxKrP_-8UX_a1xFhEncOkY6bnXsRMZDlZeju2iZv4AV_eUfqyA_LDKxMQTI2UdpFD1KrWRTrw09lB96qJ4H35YW9mDKpIgivHCJZrpsvQn5SsFe7z5Ej-OklDf=w1075-h647-no?authuser=0',
+      ],
+      lot: 'Пружиня Д/К',
+      miniDescription: `пр. OB-001-01 гр.12`,
+      options: {
+        carcass: '',
+        correspond: '',
+        mechanism: '',
+        softElements: '',
+        upholstery: '',
+      },
+      tittle: `Диван-кровать Прыгажуня`,
+    },
+
     {
       cost: 475,
       description: `
