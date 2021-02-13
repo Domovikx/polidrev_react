@@ -1,6 +1,9 @@
 import { Container, Paper, Typography } from '@material-ui/core';
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
+import ButtonLogout from '../../../../components/common/ButtonLogout';
+import { Locations } from '../../../../constants/locations';
 import { Furniture } from '../../../../mocks/FurnitureCollections.types';
 
 import { useStyles } from './Product.styles';
@@ -26,6 +29,8 @@ export const Product = (props: props): JSX.Element => {
 
   return (
     <Container className={classes.container}>
+      <ButtonLogout />
+
       <Paper elevation={3} className={classes.paper}>
         <Typography variant="body1">
           <p>

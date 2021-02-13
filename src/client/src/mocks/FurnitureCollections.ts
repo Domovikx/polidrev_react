@@ -174,7 +174,7 @@ export const furnitureCollections: FurnitureCollections = {
 
   'chair-bed': [
     {
-      cost: 475,
+      cost: 520,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -194,7 +194,7 @@ export const furnitureCollections: FurnitureCollections = {
 
   'corner-sofa': [
     {
-      cost: 920,
+      cost: 1030,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -203,7 +203,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cNL-0-YFDrM04bLXhC7xqk_RvvBNecniJkF8So3RLAF2HSn4v4501Z61lMo1htwpwcvcTVLcrHQuKEMIYho3gfyy-CfJXL_CkD_NxOEkP9SkT7mfnnuBPbtAZkeB6qvGFBV67maUNxjTMeGFjhG31E=w612-h408-no?authuser=0',
       ],
-      lot: 'Майский',
+      lot: 'Угловой Майский',
       miniDescription: ``,
       options: {
         carcass:
@@ -229,7 +229,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 920,
+      cost: 1030,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -238,7 +238,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cdO2sF5UFcJzsniuZA_VlK6e0ohCuQkgnPJAivoWDwJtA0JctWaq4dUB8cVfUhDcU-kNiPbRqeNLQbq9GR8g9JZEz9j40HcsafQ0eInBRo000_3zJ_W0EyrAysjo8Pl5FZWtuozgD9zy7rZ69C4Gf8=w1154-h550-no?authuser=0',
       ],
-      lot: 'Майский',
+      lot: 'угловой Майский',
       miniDescription: ``,
       options: {
         carcass:
@@ -264,7 +264,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: null,
+      cost: 1030,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -274,7 +274,7 @@ export const furnitureCollections: FurnitureCollections = {
         'https://lh3.googleusercontent.com/pw/ACtC-3fB6t-cQs_Lh3Dxgpu5_tTiJnqOSvJxL4uQR82hxUE4ztOY8L1gN-__zs4MQ-GXT-XoOmem5J4Bwa49L0jaHeuvpY9_irbLGMEOl0iutYChj0mrolOMx1BL3gLlUHcM6MyHYr5fZKvWnKEobsweaE-1=w1160-h578-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3f2CIwNzo3_z3QcPLIDKw-oDqJnWTUz-YMk8EaiDMhKSo98BQ1JLGZ0rqRQK6dacZt5AepAvS8hvM2brT5QaqCQS4Xcd0i5XBc5Jo02KAAL_skQmLSbpamClCKRmerWxLfmgcxAY0uXYfFIwNxrroys=w944-h719-no?authuser=0',
       ],
-      lot: 'Майский',
+      lot: 'Угловой Майский',
       miniDescription: ``,
       options: {
         carcass:
@@ -300,7 +300,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1060,
+      cost: 1200,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -310,7 +310,7 @@ export const furnitureCollections: FurnitureCollections = {
         'https://lh3.googleusercontent.com/pw/ACtC-3fl3lR9DP5F1RV2aGyph6MN8cOTMo5UZ47nZdBOqzhqxChBMPMV3Mt90SDtrrIZnZ8yqnUDdSw8nBZakRzUz_WaURDWKN7T3toOUPaGI0GIO_9Vi5bYnvgT6dHrUmXgbYGA0B652q4x3De_6uqlKnlU=w1101-h495-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3fviRuxMOEL9INIhZEsS02k210VDDRWUtJE40qGO2SW9KspyVymgxZQrbqaUMU9pHGdoVqEP6p3F5jNnDZljNLEFDHBgS3Y4Q4zX9AM-cESttRlYPxBWJSLhVvkohcYa0vrVg9fKKsim7-r38pQ6wpA=w1217-h638-no?authuser=0',
       ],
-      lot: 'Комфорт без лам',
+      lot: 'Угловой Комфорт без лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -335,7 +335,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 920,
+      cost: 980,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -407,7 +407,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1320,
+      cost: 1300,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -419,7 +419,7 @@ export const furnitureCollections: FurnitureCollections = {
         'https://lh3.googleusercontent.com/pw/ACtC-3crKpbyslUoMlYiB48CcigzCZKeynz9glnziwul-I6RvuLr21SGqHpm3M6EQ7Rd59fHv6qb1nIBMby0VfDBgTB8ONtRFdBp1OxdgFPvDVhdHbcNPYT4VTtR5XTdI4SAAsUQTewswg38g8_hXpQ9Nw5r=w1278-h639-no?authuser=0',
         'https://lh3.googleusercontent.com/pw/ACtC-3eUFcQfbygCv1wUP_wi1WiRSPEza5mB7QGZsJnjBzSdIXzRx0YEt_8rbjFb3iegM9LMdqeyhBx3SW-GNy5f70k7x4GUCJe26qXjwB2R9A5cA0M8fLbuzm7GDigh6FcZ2biwhfIJZmVY6q6TyI7vb9Ir=w1278-h850-no?authuser=0',
       ],
-      lot: 'Комфорт лам',
+      lot: 'Угловой Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -478,7 +478,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1120,
+      cost: 1300,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -487,7 +487,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3eOwcEeCBQC19LRVILuRhaUFj-6NWkwmMNxxs7SD8TSk8kBKTJzTBJn3qGuou3jTJf_Vc8iVBBUrcQ6N9bokOvkiBmoAUo4S0lASGiUpHRcb7IHkPwSmSLfh4obXXjxNk8VuZNbdzJnMpLXF0Cd3aUT=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт лам',
+      lot: 'Угловой Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -512,7 +512,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1120,
+      cost: 1300,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -521,7 +521,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3d8HcjwI3zBeJrFQEgyvh7Y7htsODTW0WkJo3zrd7hQEQ78UuDlSYerfgwMfVfZ5Yzk8diPdEFqPQoF0dXtZbGttf-iEW_UX_zHHLF-lZMTLy9unM2dI9AUsiH45AvyJ4iPYyHFRfP99NE9IWhoMXkg=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт лам',
+      lot: 'Угловой Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -544,8 +544,9 @@ export const furnitureCollections: FurnitureCollections = {
       },
       tittle: `Угловой диван "Комфорт"`,
     },
+
     {
-      cost: 1120,
+      cost: 1300,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -554,7 +555,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3cHDbkMbHKBiLqE_EPUHEBVI49HOU8jRi-aWYq3rNUefTGv6xVRc17s3KnXIJsZ88k0dCNaLLjki1sQwRVfYzB9hXtHV1ivQCEzeyt5nxYaz8f1Dt1S_02UuFgpJEwckEwTa1eYq8vCzVpWuCim8gNg=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт лам',
+      lot: 'Угловой Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -577,8 +578,9 @@ export const furnitureCollections: FurnitureCollections = {
       },
       tittle: `Угловой диван "Комфорт"`,
     },
+
     {
-      cost: 1120,
+      cost: 1300,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -587,7 +589,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3emlerAnW3BCV7PNnDQ7F6PMzfVq28VyjgQIb9inT6sqlIzG31DWGJxQhFbcBuQthKeb5PhpiKA5l2jQkWjt3Hx08zdRRTCIe9IpI5QyEC1wQMY8TOFaa80SDweMJlHN5TrnVQQzR1xiOBjTQULlTTw=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт лам',
+      lot: 'Угловой Комфорт лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -612,7 +614,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1060,
+      cost: 1200,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -621,7 +623,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3ceW6uGMmOdnvhk7E4noNylpdlKu7VKZRvxoWTy4kWAJL4rl1-NEOXqIBfq9A8DQ9mqFCT3vYNyt5rs5tBsww3IgywaQyHyF12CIdmmeNrt2Uj66irL0Xk2XYL_NloYmniPJ1VQEdJoB9fIvJMKScce=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт без лам',
+      lot: 'Угловой Комфорт без лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -646,7 +648,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 1060,
+      cost: 1200,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -655,7 +657,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3f5mJGXzaZ4xeRCA5xT8N0bPmSORVRvKY_yKK9xI5Qb6GtS8yHc2qJtEAJRoBdpylBZK0-woHpehB5qz9oz9Ns6f4KyIKXlXBlpub0YO-D6C1DcqZTtD4pXOA114_KakeU2RgfwogMz39Bods8vSnpQ=w577-h433-no?authuser=0',
       ],
-      lot: 'Комфорт без лам',
+      lot: 'Угловой Комфорт без лам',
       miniDescription: ``,
       options: {
         carcass:
@@ -793,7 +795,7 @@ export const furnitureCollections: FurnitureCollections = {
 
   'sofa-bed': [
     {
-      cost: 640,
+      cost: 610,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -823,7 +825,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 490,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -860,7 +862,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 490,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -897,7 +899,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 490,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -980,7 +982,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 490,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1019,7 +1021,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 475,
+      cost: 490,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1057,7 +1059,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 565,
+      cost: 590,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1066,7 +1068,7 @@ export const furnitureCollections: FurnitureCollections = {
       images: [
         'https://lh3.googleusercontent.com/pw/ACtC-3dWNIFmyd_fe9vQ6Fr8k745aslcGSWoLrD9vYtmjzMtD5mZ6DjWZNpbybiOWL97dweE-7xopSPuaCJJiNEtbFV-TnxIRERPawkZxB8N1eD5Gm1qn2iqqO-mzTuVMrmrR7IiVfIWJvNFCIz4-iBU2HFw=w1278-h580-no?authuser=0',
       ],
-      lot: 'Виола классика',
+      lot: 'Виола с отстрочкой',
       miniDescription: ``,
       options: {
         correspond:
@@ -1094,7 +1096,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 550,
+      cost: 580,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1128,7 +1130,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 550,
+      cost: 580,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1164,7 +1166,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 630,
+      cost: 900,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1205,7 +1207,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 810,
+      cost: 900,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1244,7 +1246,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 730,
+      cost: 800,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1285,7 +1287,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 730,
+      cost: 800,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1327,7 +1329,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 730,
+      cost: 800,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1366,7 +1368,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 640,
+      cost: 610,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1397,7 +1399,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 640,
+      cost: 610,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1427,7 +1429,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 640,
+      cost: 610,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1458,7 +1460,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 520,
+      cost: 540,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
@@ -1481,7 +1483,7 @@ export const furnitureCollections: FurnitureCollections = {
     },
 
     {
-      cost: 520,
+      cost: 540,
       description: `
       Изготовить мебель можно в любом обивочном материале: мебельном кожзаменителе или ткани любых расцветок. 
       Срок изготовления от 5 рабочих дней. 
