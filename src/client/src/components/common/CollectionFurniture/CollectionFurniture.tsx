@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
 
-import { furnitureCollections } from '../../../mocks/FurnitureCollections';
+import { useFurnitureCollections } from '../../../hooks/useFurnitureCollections.hook';
 
 import { useStyles } from './CollectionFurniture.styles';
 import { CollectionFurnitureProps } from './CollectionFurniture.types';
@@ -14,8 +14,11 @@ export const CollectionFurniture = (
   const { collection, currentValue, id } = props;
   const classes = useStyles();
 
+  const furnitureCollections = useFurnitureCollections();
+
   // TODO - move to DB
-  const furnitureCollection = furnitureCollections[collection.collection];
+  const furnitureCollection =
+    furnitureCollections && furnitureCollections[collection.collection];
 
   return (
     <>

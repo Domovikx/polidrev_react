@@ -24,6 +24,6 @@
 
     "typeRoots": ["node_modules/@types", "src/types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/types"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/types", "src/mocks/FurnitureCollections.txt"],
   "exclude": ["node_modules", ".vscode"]
 }

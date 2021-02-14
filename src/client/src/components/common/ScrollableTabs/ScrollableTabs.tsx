@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import { Container } from '@material-ui/core';
@@ -24,7 +24,7 @@ export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
   const { id } = useParams<{ id: string }>();
   if (id) initValue = collections.findIndex((item) => item.collection === id);
 
-  const [value, setValue] = React.useState(initValue);
+  const [value, setValue] = useState(initValue);
 
   const currentCollection: Collection = collections[value];
 

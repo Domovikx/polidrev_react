@@ -3,6 +3,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import ButtonLogout from '../../../../components/common/ButtonLogout';
+import ButtonUpdateProducts from '../../../../components/common/ButtonUpdateProducts';
 import { Locations } from '../../../../constants/locations';
 import { Furniture } from '../../../../mocks/FurnitureCollections.types';
 
@@ -29,7 +30,10 @@ export const Product = (props: props): JSX.Element => {
 
   return (
     <Container className={classes.container}>
-      <ButtonLogout />
+      <div className={classes.blockBtn}>
+        <ButtonUpdateProducts />
+        <ButtonLogout />
+      </div>
 
       <Paper elevation={3} className={classes.paper}>
         <Typography variant="body1">

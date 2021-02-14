@@ -1,6 +1,6 @@
-import firebase from 'firebase';
 import { atom } from 'jotai';
 
+import { isUserService } from '../services/isUser.service';
 import { logoutService } from '../services/logout.service';
 import { signInService } from '../services/signIn.service';
 
@@ -14,9 +14,15 @@ export const authLoginAtom = atom(
     await logoutService();
     await signInService(props);
 
-    const user = firebase.auth().currentUser;
-    const userUid = user?.uid;
+    await set(isAuthAtom, isUserService());
+  },
+);
 
-    await set(isAuthAtom, userUid ? true : false);
+export const authLogoutAtom = atom(
+  (get) => get(isAuthAtom),
+  async (get, set) => {
+    await logoutService();
+
+    await set(isAuthAtom, false);
   },
 );
