@@ -1,4 +1,6 @@
 export interface Furniture {
+  collection: string;
+  idxArr: number;
   cost: number | null;
   description: string;
   id: string;

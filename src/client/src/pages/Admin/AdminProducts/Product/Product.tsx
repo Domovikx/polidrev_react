@@ -1,12 +1,11 @@
 import { Container, Paper, Typography } from '@material-ui/core';
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import ButtonLogout from '../../../../components/common/ButtonLogout';
 import ButtonUpdateProducts from '../../../../components/common/ButtonUpdateProducts';
-import { Locations } from '../../../../constants/locations';
-import { Furniture } from '../../../../mocks/FurnitureCollections.types';
+import { Furniture } from '../../../../types/furniture.types';
 
+import FieldPrice from './FieldPrice';
 import { useStyles } from './Product.styles';
 
 interface props {
@@ -42,7 +41,7 @@ export const Product = (props: props): JSX.Element => {
             <br />
             <b>Название:</b> {tittle}
             <br />
-            <b>цена:</b> {cost}
+            <FieldPrice furniture={furniture} />
           </p>
           <div>
             {images.map((item, index) => (

@@ -4,7 +4,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
   blockBtn: {
     textAlign: 'right',
   },
-  container: { margin: theme.spacing(2) },
+  container: {
+    '& .MuiFormControl-root.MuiTextField-root': {
+      margin: `${theme.spacing(2)}px 0`,
+    },
+    margin: theme.spacing(2),
+  },
   img: {
     maxWidth: '250px',
   },

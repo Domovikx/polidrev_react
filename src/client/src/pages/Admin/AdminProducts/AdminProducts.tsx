@@ -5,20 +5,36 @@ import { Furniture } from '../../../types/furniture.types';
 
 import Product from './Product';
 
-export const AdminProducts = (): JSX.Element => {
+export const AdminProducts = (): JSX.Element | null => {
   const furnitureCollections = useFurnitureCollections();
 
-  // TODO - move to DB, any
-  const collections: any = furnitureCollections
-    ? Object.values(furnitureCollections)
-    : [];
-  const furnitures: Furniture[] = collections.flat();
+  if (furnitureCollections) {
+    // TODO - move to DB, any
 
-  return (
-    <>
-      {furnitures.map((furniture, index: number) => (
-        <Product key={index} furniture={furniture} />
-      ))}
-    </>
-  );
+    const furnitures: Furniture[] = [];
+
+    // TODO: костыль
+    Object.entries(furnitureCollections).forEach(
+      ([collectionName, collections]: any) => {
+        collections.forEach((furniture: any, idx: number) => {
+          const newFurniture = { ...furniture };
+
+          newFurniture.collection = collectionName;
+          newFurniture.idxArr = idx;
+
+          furnitures.push(newFurniture);
+        });
+      },
+    );
+
+    return (
+      <>
+        {furnitures.map((furniture, index: number) => (
+          <Product key={index} furniture={furniture} />
+        ))}
+      </>
+    );
+  }
+
+  return null;
 };
