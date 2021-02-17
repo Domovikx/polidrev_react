@@ -5,8 +5,12 @@ import ButtonLogout from '../../../../components/common/ButtonLogout';
 import ButtonUpdateProducts from '../../../../components/common/ButtonUpdateProducts';
 import { Furniture } from '../../../../types/furniture.types';
 
-import FieldPrice from './FieldPrice';
+import FieldTittle from './FieldTittle';
+import FieldCost from './FieldCost';
 import { useStyles } from './Product.styles';
+import FieldLot from './FieldLot';
+import FieldMiniDescription from './FieldMiniDescription';
+import FieldDimensions from './FieldDimensions';
 
 interface props {
   furniture: Furniture;
@@ -16,16 +20,7 @@ export const Product = (props: props): JSX.Element => {
   const classes = useStyles();
 
   const { furniture } = props;
-  const {
-    id,
-    cost,
-    description,
-    images,
-    lot,
-    tittle,
-    miniDescription,
-    options,
-  } = furniture;
+  const { id, images, options } = furniture;
 
   return (
     <Container className={classes.container}>
@@ -36,13 +31,12 @@ export const Product = (props: props): JSX.Element => {
 
       <Paper elevation={3} className={classes.paper}>
         <Typography variant="body1">
-          <p>
-            <b>ID:</b> {id} <b>lot:</b> {lot}
-            <br />
-            <b>Название:</b> {tittle}
-            <br />
-            <FieldPrice furniture={furniture} />
-          </p>
+          <div>
+            <b>ID:</b> {id} <br />
+            <FieldLot furniture={furniture} />
+            <FieldTittle furniture={furniture} />
+            <FieldCost furniture={furniture} />
+          </div>
           <div>
             {images.map((item, index) => (
               <a
@@ -56,23 +50,8 @@ export const Product = (props: props): JSX.Element => {
             ))}
           </div>
 
-          {miniDescription && (
-            <>
-              <b>{`Мини описание: `}</b>
-              {miniDescription}
-              <br />
-            </>
-          )}
-
-          {options?.dimensions && (
-            <>
-              <b>Габаритные размеры: </b>
-              {options.dimensions.length} x {options.dimensions.width}
-              {options.dimensions.height && ` x ${options.dimensions.height}`}
-              {` см`}
-              <br />
-            </>
-          )}
+          <FieldMiniDescription furniture={furniture} />
+          <FieldDimensions furniture={furniture} />
 
           {options?.dimensions2 && (
             <>

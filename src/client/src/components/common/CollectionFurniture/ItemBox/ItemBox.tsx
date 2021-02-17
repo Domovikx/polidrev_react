@@ -37,7 +37,7 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
             </Avatar>
           }
           title={tittle}
-          subheader={`${lot}, ${id}`}
+          subheader={`lot: ${lot}, id:${id}`}
         />
 
         <Box className={classes.cardMediaWrapper}>
@@ -56,7 +56,7 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
                 <br />
               </>
             )}
-            {options?.dimensions && (
+            {options?.dimensions && options.dimensions.length != 0 && (
               <>
                 {`Габаритные размеры: `}
                 {options.dimensions.length} x {options.dimensions.width}
@@ -65,7 +65,7 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
                 <br />
               </>
             )}
-            {options?.dimensions2 && (
+            {options?.dimensions2 && options.dimensions2.length != 0 && (
               <>
                 {`В разложенном виде: `}
                 {options.dimensions2.length} x {options.dimensions2.width}
@@ -75,7 +75,7 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
                 <br />
               </>
             )}
-            {options?.sleepingArea && (
+            {options?.sleepingArea && options.sleepingArea.length != 0 && (
               <>
                 {`Спальное место: `}
                 {options.sleepingArea.length} x {options.sleepingArea.width}
@@ -85,9 +85,11 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
               </>
             )}
           </Typography>
-          <Typography gutterBottom variant="h5" component="h2" align="right">
-            {cost} {cost && <>р.</>}
-          </Typography>
+          {cost !== 0 && cost && (
+            <Typography gutterBottom variant="h5" component="h2" align="right">
+              {cost} р.
+            </Typography>
+          )}
         </CardContent>
       </CardActionArea>
     </Card>

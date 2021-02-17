@@ -1,3 +1,21 @@
+export enum Dimensions {
+  length = 'length',
+  width = 'width',
+  height = 'height',
+}
+
+export enum FurnitureEnum {
+  collection = 'collection',
+  idxArr = 'idxArr',
+  cost = 'cost',
+  description = 'description',
+  id = 'id',
+  images = 'images',
+  lot = 'lot',
+  miniDescription = 'miniDescription',
+  tittle = 'tittle',
+}
+
 export interface Furniture {
   collection: string;
   idxArr: number;
@@ -9,42 +27,42 @@ export interface Furniture {
   miniDescription: string;
   tittle: string;
 
-  options?: {
-    dimensions?: {
+  options: {
+    dimensions: {
       length: number;
       width: number;
-      height?: number;
+      height: number;
     };
 
-    dimensions2?: {
+    dimensions2: {
       length: number;
       width: number;
-      height?: number;
+      height: number;
     };
 
-    sleepingArea?: {
+    sleepingArea: {
       length: number;
       width: number;
-      height?: number;
+      height: number;
     };
 
-    seat?: {
+    seat: {
       height: number;
       depth: number;
     };
 
-    deliveryOption?: string; // Вариант доставки
-    carcass?: string; // Каркас
+    deliveryOption: string; // Вариант доставки
+    carcass: string; // Каркас
 
-    pillowFilling?: string; // Наполнение подушек
-    laundryBox?: boolean; // Бельевой ящик
-    decorativePillows?: boolean; // Декоративные подушки
+    pillowFilling: string; // Наполнение подушек
+    laundryBox: boolean; // Бельевой ящик
+    decorativePillows: boolean; // Декоративные подушки
 
-    upholstery?: string; // Обивочный материал
+    upholstery: string; // Обивочный материал
 
-    correspond?: string; // Изделие соответствует
-    mechanism?: string; // Механизм раскладки
-    softElements?: string; // Мягкие элементы
+    correspond: string; // Изделие соответствует
+    mechanism: string; // Механизм раскладки
+    softElements: string; // Мягкие элементы
   };
 }
 
@@ -55,6 +73,8 @@ export interface FurnitureCollections {
   'corner-sofa': Furniture[];
   settle: Furniture[];
   'sofa-bed': Furniture[];
+
+  [key: string]: Furniture[];
 }
 
 export interface CollectionsById {
