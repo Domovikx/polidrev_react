@@ -10,7 +10,7 @@ interface props {
   furniture: Furniture;
 }
 
-export const FieldMechanism = ({ furniture }: props): JSX.Element => {
+export const FieldImages = ({ furniture }: props): JSX.Element => {
   const { collection, idxArr } = furniture;
 
   const [furnitureCollections, setFurnitureCollections] = useAtom(
@@ -20,13 +20,16 @@ export const FieldMechanism = ({ furniture }: props): JSX.Element => {
   const product =
     furnitureCollections && furnitureCollections[collection][idxArr];
 
+  const fieldImages = product?.images.join(' ');
+
   const changeValue = ({ target }: Event) => {
-    const value = target.value;
+    const value = target.value.split(' ');
 
     setFurnitureCollections((prevState) => {
       if (prevState !== null && product) {
         const furnitureCollections = { ...prevState };
-        furnitureCollections[collection][idxArr].options.mechanism = value;
+
+        furnitureCollections[collection][idxArr].images = value;
         return furnitureCollections;
       }
       return prevState;
@@ -39,9 +42,9 @@ export const FieldMechanism = ({ furniture }: props): JSX.Element => {
       fullWidth
       size="small"
       type="text"
-      label="Механизм раскладки"
+      label="Фотографии"
       variant="outlined"
-      value={product?.options?.mechanism || ''}
+      value={fieldImages || ''}
       onChange={changeValue}
     />
   );

@@ -41,7 +41,7 @@ export const FieldCarcass = ({ furniture }: props): JSX.Element => {
       type="text"
       label="Каркас"
       variant="outlined"
-      value={product?.options?.carcass || 0}
+      value={product?.options?.carcass || ''}
       onChange={changeValue}
     />
   );

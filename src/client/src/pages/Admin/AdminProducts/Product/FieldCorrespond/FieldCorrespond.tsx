@@ -41,7 +41,7 @@ export const FieldCorrespond = ({ furniture }: props): JSX.Element => {
       type="text"
       label="Изделие соответствует"
       variant="outlined"
-      value={product?.options?.correspond || 0}
+      value={product?.options?.correspond || ''}
       onChange={changeValue}
     />
   );

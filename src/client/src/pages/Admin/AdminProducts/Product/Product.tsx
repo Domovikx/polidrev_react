@@ -18,6 +18,7 @@ import FieldCarcass from './FieldCarcass';
 import FieldSoftElements from './FieldSoftElements';
 import FieldMechanism from './FieldMechanism';
 import FieldCorrespond from './FieldCorrespond';
+import FieldImages from './FieldImages';
 
 interface props {
   furniture: Furniture;
@@ -27,7 +28,7 @@ export const Product = (props: props): JSX.Element => {
   const classes = useStyles();
 
   const { furniture } = props;
-  const { id, images } = furniture;
+  const { id, images, collection } = furniture;
 
   return (
     <Container className={classes.container}>
@@ -40,10 +41,12 @@ export const Product = (props: props): JSX.Element => {
         <Typography variant="body1">
           <div>
             <b>ID:</b> {id} <br />
+            <b>collection:</b> {collection} <br />
             <FieldLot furniture={furniture} />
             <FieldTittle furniture={furniture} />
             <FieldCost furniture={furniture} />
           </div>
+
           <div>
             {images.map((item, index) => (
               <a
@@ -56,6 +59,8 @@ export const Product = (props: props): JSX.Element => {
               </a>
             ))}
           </div>
+
+          <FieldImages furniture={furniture} />
 
           <FieldMiniDescription furniture={furniture} />
           <FieldDimensions furniture={furniture} />

@@ -41,7 +41,7 @@ export const FieldSoftElements = ({ furniture }: props): JSX.Element => {
       type="text"
       label="Мягкие элементы"
       variant="outlined"
-      value={product?.options?.softElements || 0}
+      value={product?.options?.softElements || ''}
       onChange={changeValue}
     />
   );

@@ -41,7 +41,7 @@ export const FieldUpholstery = ({ furniture }: props): JSX.Element => {
       type="text"
       label="Обивочный материал"
       variant="outlined"
-      value={product?.options?.upholstery || 0}
+      value={product?.options?.upholstery || ''}
       onChange={changeValue}
     />
   );
