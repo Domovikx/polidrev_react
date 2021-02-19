@@ -10,7 +10,7 @@ interface props {
   furniture: Furniture;
 }
 
-export const FieldLength = ({ furniture }: props): JSX.Element => {
+export const FieldHeight = ({ furniture }: props): JSX.Element => {
   const { collection, idxArr } = furniture;
 
   const [furnitureCollections, setFurnitureCollections] = useAtom(
@@ -28,7 +28,7 @@ export const FieldLength = ({ furniture }: props): JSX.Element => {
         const furnitureCollections = { ...prevState };
         furnitureCollections[collection][
           idxArr
-        ].options.dimensions.length = value;
+        ].options.dimensions2.height = value;
         return furnitureCollections;
       }
       return prevState;
@@ -39,9 +39,9 @@ export const FieldLength = ({ furniture }: props): JSX.Element => {
     <TextField
       size="small"
       type="number"
-      label="Длина (см)"
+      label="Высота (см)"
       variant="outlined"
-      value={product?.options?.dimensions?.length || 0}
+      value={product?.options?.dimensions2?.height || 0}
       onChange={changeValue}
     />
   );

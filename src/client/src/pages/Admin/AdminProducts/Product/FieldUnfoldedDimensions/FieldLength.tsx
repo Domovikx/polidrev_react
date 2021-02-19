@@ -28,7 +28,7 @@ export const FieldLength = ({ furniture }: props): JSX.Element => {
         const furnitureCollections = { ...prevState };
         furnitureCollections[collection][
           idxArr
-        ].options.dimensions.length = value;
+        ].options.dimensions2.length = value;
         return furnitureCollections;
       }
       return prevState;
@@ -41,7 +41,7 @@ export const FieldLength = ({ furniture }: props): JSX.Element => {
       type="number"
       label="Длина (см)"
       variant="outlined"
-      value={product?.options?.dimensions?.length || 0}
+      value={product?.options?.dimensions2?.length || 0}
       onChange={changeValue}
     />
   );

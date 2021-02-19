@@ -11,6 +11,7 @@ import { useStyles } from './Product.styles';
 import FieldLot from './FieldLot';
 import FieldMiniDescription from './FieldMiniDescription';
 import FieldDimensions from './FieldDimensions';
+import FieldUnfoldedDimensions from './FieldUnfoldedDimensions';
 
 interface props {
   furniture: Furniture;
@@ -52,16 +53,7 @@ export const Product = (props: props): JSX.Element => {
 
           <FieldMiniDescription furniture={furniture} />
           <FieldDimensions furniture={furniture} />
-
-          {options?.dimensions2 && (
-            <>
-              <b>Размеры в разложенном виде: </b>
-              {options.dimensions2.length} x {options.dimensions2.width}
-              {options.dimensions2.height && ` x ${options.dimensions2.height}`}
-              {` см`}
-              <br />
-            </>
-          )}
+          <FieldUnfoldedDimensions furniture={furniture} />
 
           {options?.sleepingArea && (
             <>

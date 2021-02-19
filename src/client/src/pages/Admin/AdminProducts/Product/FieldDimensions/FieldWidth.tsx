@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField } from '@material-ui/core';
 import { useAtom } from 'jotai';
 
@@ -11,37 +11,37 @@ interface props {
 }
 
 export const FieldWidth = ({ furniture }: props): JSX.Element => {
-  const [furnitureState, setState] = useState(furniture);
-  const { collection, idxArr } = furnitureState;
+  const { collection, idxArr } = furniture;
 
-  const [, setFurnitureCollections] = useAtom(furnitureCollectionsAtom);
+  const [furnitureCollections, setFurnitureCollections] = useAtom(
+    furnitureCollectionsAtom,
+  );
+
+  const product =
+    furnitureCollections && furnitureCollections[collection][idxArr];
 
   const changeValue = ({ target }: Event) => {
     const value = Number(target.value.trim());
 
-    setState((prevState) => {
-      const furnitureState = { ...prevState };
-      furnitureState.options.dimensions.width = value;
-
-      setFurnitureCollections((prevState) => {
-        if (prevState !== null) {
-          const furnitureCollections = { ...prevState };
-          furnitureCollections[collection][idxArr] = furnitureState;
-          return furnitureCollections;
-        }
-        return prevState;
-      });
-
-      return furnitureState;
+    setFurnitureCollections((prevState) => {
+      if (prevState !== null && product) {
+        const furnitureCollections = { ...prevState };
+        furnitureCollections[collection][
+          idxArr
+        ].options.dimensions.width = value;
+        return furnitureCollections;
+      }
+      return prevState;
     });
   };
 
   return (
     <TextField
+      size="small"
       type="number"
       label="Ширина (см)"
       variant="outlined"
-      value={furnitureState.options?.dimensions?.width || 0}
+      value={product?.options?.dimensions?.width || 0}
       onChange={changeValue}
     />
   );

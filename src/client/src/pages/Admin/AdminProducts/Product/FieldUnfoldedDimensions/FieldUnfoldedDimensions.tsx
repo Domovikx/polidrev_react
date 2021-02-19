@@ -10,9 +10,9 @@ interface props {
   furniture: Furniture;
 }
 
-export const FieldDimensions = ({ furniture }: props): JSX.Element => (
+export const FieldUnfoldedDimensions = ({ furniture }: props): JSX.Element => (
   <>
-    <b>Габаритные размеры: </b> <br />
+    <b>Габаритные размеры в разложенном виде: </b> <br />
     <FieldLength furniture={furniture} />
     <FieldWidth furniture={furniture} />
     <FieldHeight furniture={furniture} />
