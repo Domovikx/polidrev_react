@@ -16,7 +16,6 @@ export const fetchFurnitureCollectionsAtom = atom(
 
     const entries =
       fetchFurnitureCollections && Object.entries(fetchFurnitureCollections);
-    console.log('entries :>> ', entries);
 
     let count = 1;
 
