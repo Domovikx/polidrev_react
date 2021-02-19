@@ -12,6 +12,12 @@ import FieldLot from './FieldLot';
 import FieldMiniDescription from './FieldMiniDescription';
 import FieldDimensions from './FieldDimensions';
 import FieldUnfoldedDimensions from './FieldUnfoldedDimensions';
+import FieldSleepingArea from './FieldSleepingArea';
+import FieldUpholstery from './FieldUpholstery';
+import FieldCarcass from './FieldCarcass';
+import FieldSoftElements from './FieldSoftElements';
+import FieldMechanism from './FieldMechanism';
+import FieldCorrespond from './FieldCorrespond';
 
 interface props {
   furniture: Furniture;
@@ -21,7 +27,7 @@ export const Product = (props: props): JSX.Element => {
   const classes = useStyles();
 
   const { furniture } = props;
-  const { id, images, options } = furniture;
+  const { id, images } = furniture;
 
   return (
     <Container className={classes.container}>
@@ -54,57 +60,12 @@ export const Product = (props: props): JSX.Element => {
           <FieldMiniDescription furniture={furniture} />
           <FieldDimensions furniture={furniture} />
           <FieldUnfoldedDimensions furniture={furniture} />
-
-          {options?.sleepingArea && (
-            <>
-              <b>Спальное место: </b>
-              {options.sleepingArea.length} x {options.sleepingArea.width}
-              {options.sleepingArea.height &&
-                ` x ${options.sleepingArea.height}`}
-              {` см`}
-              <br />
-            </>
-          )}
-
-          {options?.upholstery && (
-            <>
-              <b>Обивочный материал: </b>
-              {options.upholstery}
-              <br />
-            </>
-          )}
-
-          {options?.carcass && (
-            <>
-              <b>Каркас: </b>
-              {options.carcass}
-              <br />
-            </>
-          )}
-
-          {options?.softElements && (
-            <>
-              <b>Мягкие элементы: </b>
-              {options.softElements}
-              <br />
-            </>
-          )}
-
-          {options?.mechanism && (
-            <>
-              <b>Механизм раскладки: </b>
-              {options.mechanism}
-              <br />
-            </>
-          )}
-
-          {options?.correspond && (
-            <>
-              <b>Изделие соответствует: </b>
-              {options.correspond}
-              <br />
-            </>
-          )}
+          <FieldSleepingArea furniture={furniture} />
+          <FieldUpholstery furniture={furniture} />
+          <FieldCarcass furniture={furniture} />
+          <FieldSoftElements furniture={furniture} />
+          <FieldMechanism furniture={furniture} />
+          <FieldCorrespond furniture={furniture} />
         </Typography>
       </Paper>
     </Container>
