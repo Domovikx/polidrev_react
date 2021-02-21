@@ -1,23 +1,25 @@
 import { AUTH, AuthAction, AuthState } from './auth.types';
 
 export const authState: AuthState = {
-  test: 'test',
-  token: null,
+  isAuth: false,
 };
 
 export const authReducer = (
   state: AuthState = authState,
   { type, payload }: AuthAction,
 ): AuthState => {
+  let newState;
+
   switch (type) {
-    case AUTH.REGISTER: // TODO
-      return state;
+    case AUTH.LOGIN: {
+      newState = { ...state, isAuth: true };
+      return newState;
+    }
 
-    case AUTH.LOGIN: // TODO
-      return state;
-
-    case AUTH.LOGOUT: // TODO
-      return state;
+    case AUTH.LOGOUT: {
+      newState = { ...state, isAuth: false };
+      return newState;
+    }
 
     default:
       return state;

@@ -1,30 +1,15 @@
-import React from 'react';
-import SwipeableViews from 'react-swipeable-views';
+import React, { useState } from 'react';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import { Box, Container, useTheme } from '@material-ui/core';
+import { Container } from '@material-ui/core';
+import { Link, useParams } from 'react-router-dom';
 
 import { Collection } from '../../../pages/SoftFurniture/SoftFurniture.types';
 import CollectionFurniture from '../CollectionFurniture';
+import { Locations } from '../../../constants/locations';
 
-import { ScrollableTabsProps, TabPanelProps } from './ScrollableTabs.types';
+import { ScrollableTabsProps } from './ScrollableTabs.types';
 import { useStyles } from './ScrollableTabs.styles';
-
-const TabPanel = (props: TabPanelProps) => {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box py={3}>{children}</Box>}
-    </div>
-  );
-};
 
 const a11yProps = (index: number) => ({
   'aria-controls': `full-width-tabpanel-${index}`,
@@ -33,17 +18,18 @@ const a11yProps = (index: number) => ({
 
 export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
   const { collections } = props;
-
   const classes = useStyles();
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+
+  let initValue = 0;
+  const { id } = useParams<{ id: string }>();
+  if (id) initValue = collections.findIndex((item) => item.collection === id);
+
+  const [value, setValue] = useState(initValue);
+
+  const currentCollection: Collection = collections[value];
 
   const handleChange = (newValue: number): void => {
     setValue(newValue);
-  };
-
-  const handleChangeIndex = (index: number) => {
-    setValue(index);
   };
 
   return (
@@ -57,31 +43,22 @@ export const ScrollableTabs = (props: ScrollableTabsProps): JSX.Element => {
         scrollButtons="on"
         classes={{ flexContainer: classes.flexContainer }}
       >
-        {collections?.map((item: Collection, index) => (
-          <Tab label={item.title} key={index} {...a11yProps(index)} />
+        {collections?.map((item: Collection, index: number) => (
+          <Tab
+            {...a11yProps(index)}
+            component={Link}
+            key={index}
+            label={item.title}
+            to={Locations.SoftFurniture_relative + item.collection}
+          />
         ))}
       </Tabs>
 
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        {collections?.map((item: Collection, index) => (
-          <TabPanel
-            dir={theme.direction}
-            index={index}
-            key={index}
-            value={index}
-          >
-            <CollectionFurniture
-              collection={item}
-              currentValue={value}
-              id={index}
-            />
-          </TabPanel>
-        ))}
-      </SwipeableViews>
+      <CollectionFurniture
+        collection={currentCollection}
+        currentValue={value}
+        id={value}
+      />
     </Container>
   );
 };

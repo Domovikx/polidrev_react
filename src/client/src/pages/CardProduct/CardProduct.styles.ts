@@ -5,11 +5,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
   },
   content: {
-    alignSelf: 'center',
+    alignSelf: 'start',
   },
   grid: {
     display: 'grid',
-    gap: theme.spacing(3),
+    gap: theme.spacing(2),
+    margin: `${theme.spacing(2)}px 0`,
     [theme.breakpoints.up('md')]: {
       gridTemplateColumns: `repeat(auto-fit, minmax(300px, 1fr))`,
     },
@@ -20,6 +21,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   iconButton: {
     color: theme.palette.primary.main,
+    marginRight: theme.spacing(2),
     position: 'absolute',
     right: 0,
     zIndex: 100,

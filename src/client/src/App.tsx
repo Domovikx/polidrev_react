@@ -1,6 +1,6 @@
 import * as React from 'react';
-import createSagaMiddleware from 'redux-saga';
 import firebase from 'firebase/app';
+import thunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { CssBaseline } from '@material-ui/core';
@@ -13,7 +13,6 @@ import Notifier from './components/common/Notifier';
 import { firebaseConfig } from './config/firebaseConfig';
 import { greenTheme } from './themes/green.theme';
 import { rootReducer } from './store/root.reducer';
-import { rootWatcher } from './saga/root.watcher';
 import { Routing } from './Routing';
 
 import 'firebase/auth';
@@ -21,14 +20,10 @@ import 'firebase/database';
 
 firebase.initializeApp(firebaseConfig);
 
-const sagaMiddleware = createSagaMiddleware();
-
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware)),
+  composeWithDevTools(applyMiddleware(thunk)),
 );
-
-sagaMiddleware.run(rootWatcher);
 
 export const App = (): JSX.Element => (
   <ErrorBoundary>

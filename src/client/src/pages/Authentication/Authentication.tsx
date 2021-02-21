@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar, Button, Container, Grid, Typography } from '@material-ui/core';
 import { Form, Formik, FormikProps } from 'formik';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import { authLoginAction } from '../../store/auth/auth.actions';
-import { AuthRegisterValues } from '../../store/auth/auth.types';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
 import { validationSchema } from '../../validation/validationSchemes/authentication.validationSchema';
+import { RootState } from '../../store/store.types';
+import { authLoginThunk } from '../../store/auth/auth.actions';
 
-import { LocalState } from './Authentication.types';
 import { useStyles } from './Authentication.styles';
+import { AuthRegisterValues, LocalState } from './Authentication.types';
 
 export const Authentication = (): JSX.Element => {
-  const classes = useStyles();
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
   const dispatch = useDispatch();
 
-  const [values, setValues] = React.useState<LocalState>({
+  const classes = useStyles();
+  const history = useHistory();
+
+  if (isAuth) {
+    history.push(Locations.Admin_Products);
+  }
+
+  const [values, setValues] = useState<LocalState>({
     showPassword: false,
   });
 
@@ -31,7 +38,7 @@ export const Authentication = (): JSX.Element => {
   };
 
   const submitHandler = (formValues: AuthRegisterValues) => {
-    dispatch(authLoginAction(formValues));
+    dispatch(authLoginThunk(formValues));
   };
 
   const handleClickShowPassword = () => {
@@ -109,18 +116,6 @@ export const Authentication = (): JSX.Element => {
                       className={classes.submit}
                     >
                       Авторизация
-                    </Button>
-                  </Grid>
-                </Grid>
-
-                <Grid item container justify="flex-end">
-                  <Grid item>
-                    <Button
-                      component={Link}
-                      to={Locations.Auth_Registration}
-                      className={classes.link}
-                    >
-                      Еще нет аккаунта? Регистрация
                     </Button>
                   </Grid>
                 </Grid>
