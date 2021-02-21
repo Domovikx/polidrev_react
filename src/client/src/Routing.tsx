@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Suspense } from 'react';
-import { useAtom } from 'jotai';
+import { useSelector } from 'react-redux';
 
 import AdminLayout from './components/layouts/AdminLayout';
 import AuthLayout from './components/layouts/AuthLayout';
@@ -10,7 +10,7 @@ import Loader from './components/common/Loader';
 import MainLayout from './components/layouts/MainLayout';
 import AdminProducts from './pages/Admin/AdminProducts';
 import { Locations } from './constants/locations';
-import { isAuthAtom } from './storeAtom/auth.atom';
+import { RootState } from './store/store.types';
 
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
 const Payment = React.lazy(() => import('./pages/Payment'));
@@ -24,7 +24,7 @@ const Admin = React.lazy(() => import('./pages/Admin'));
 const Authentication = React.lazy(() => import('./pages/Authentication'));
 
 export const Routing = (): JSX.Element => {
-  const [isAuth] = useAtom(isAuthAtom);
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
 
   return (
     <BrowserRouter>

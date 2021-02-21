@@ -4,18 +4,6 @@ export enum Dimensions {
   height = 'height',
 }
 
-export enum FurnitureEnum {
-  collection = 'collection',
-  idxArr = 'idxArr',
-  cost = 'cost',
-  description = 'description',
-  id = 'id',
-  images = 'images',
-  lot = 'lot',
-  miniDescription = 'miniDescription',
-  tittle = 'tittle',
-}
-
 export interface Furniture {
   collection: string;
   idxArr: number;
@@ -67,25 +55,16 @@ export interface Furniture {
 }
 
 export interface FurnitureCollections {
-  bench: Furniture[];
-  'chair-bed': Furniture[];
-  chair: Furniture[];
-  'corner-sofa': Furniture[];
-  settle: Furniture[];
-  'sofa-bed': Furniture[];
+  // bench: Furniture[];
+  // 'chair-bed': Furniture[];
+  // chair: Furniture[];
+  // 'corner-sofa': Furniture[];
+  // settle: Furniture[];
+  // 'sofa-bed': Furniture[];
 
   [key: string]: Furniture[];
 }
 
 export interface CollectionsById {
-  [key: string]: {
-    collectionName: string;
-    cost: number | null;
-    description: string;
-    id: string;
-    images: string[];
-    lot: string;
-    miniDescription: string;
-    tittle: string;
-  };
+  [key: string]: Furniture;
 }

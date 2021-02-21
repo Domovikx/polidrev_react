@@ -1,7 +1,9 @@
-import { Grid } from '@material-ui/core';
 import React from 'react';
+import { Grid } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useFurnitureCollections } from '../../../hooks/useFurnitureCollections.hook';
+import { RootState } from '../../../store/root.reducer';
+import { fetchFurnitureCollectionsThunk } from '../../../store/furnitureCollections/furnitureCollections.actions';
 
 import { useStyles } from './CollectionFurniture.styles';
 import { CollectionFurnitureProps } from './CollectionFurniture.types';
@@ -11,14 +13,19 @@ import ItemBox from './ItemBox';
 export const CollectionFurniture = (
   props: CollectionFurnitureProps,
 ): JSX.Element => {
-  const { collection, currentValue, id } = props;
   const classes = useStyles();
 
-  const furnitureCollections = useFurnitureCollections();
+  const { collection, currentValue, id } = props;
 
-  // TODO - move to DB
-  const furnitureCollection =
-    furnitureCollections && furnitureCollections[collection.collection];
+  const furnitureCollections = useSelector(
+    (state: RootState) => state.furnitureCollections.furnitureCollections,
+  );
+
+  const dispatch = useDispatch();
+  Object.keys(furnitureCollections).length === 0 &&
+    dispatch(fetchFurnitureCollectionsThunk());
+
+  const furnitureCollection = furnitureCollections[collection.collection];
 
   return (
     <>

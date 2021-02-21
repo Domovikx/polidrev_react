@@ -1,13 +1,22 @@
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useFurnitureCollections } from '../../../hooks/useFurnitureCollections.hook';
 import { furnitureMock } from '../../../mocks/Furniture.mock';
+import { fetchFurnitureCollectionsThunk } from '../../../store/furnitureCollections/furnitureCollections.actions';
+import { RootState } from '../../../store/root.reducer';
 import { Furniture } from '../../../types/furniture.types';
 
 import Product from './Product';
 
 export const AdminProducts = (): JSX.Element | null => {
-  const furnitureCollections = useFurnitureCollections();
+  const dispatch = useDispatch();
+
+  const furnitureCollections = useSelector(
+    (state: RootState) => state.furnitureCollections.furnitureCollections,
+  );
+
+  Object.keys(furnitureCollections).length === 0 &&
+    dispatch(fetchFurnitureCollectionsThunk());
 
   let count = 1;
 
@@ -15,11 +24,11 @@ export const AdminProducts = (): JSX.Element | null => {
     const furnitures: Furniture[] = [];
 
     Object.entries(furnitureCollections).forEach(
-      ([collectionName, collections]) => {
+      ([collection, collections]) => {
         collections.forEach((furniture: Furniture, idx: number) => {
           const newFurniture = { ...furnitureMock, ...furniture };
 
-          newFurniture.collection = collectionName;
+          newFurniture.collection = collection;
           newFurniture.idxArr = idx;
           newFurniture.id = String(count++);
 

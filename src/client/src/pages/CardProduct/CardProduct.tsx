@@ -1,23 +1,32 @@
 import React from 'react';
 import { Container, Grid, IconButton, Typography } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import ImageGallery from '../../components/common/ImageGallery';
 import { ArrowLeftBoldCircleOutlineIcon } from '../../assets/Icons';
-import { Furniture } from '../../mocks/FurnitureCollections.types';
-import { useFurnitureCollectionsById } from '../../hooks/useFurnitureCollectionsById.hook';
+import { fetchFurnitureCollectionsThunk } from '../../store/furnitureCollections/furnitureCollections.actions';
+import { RootState } from '../../store/root.reducer';
+import { CollectionsById } from '../../types/furniture.types';
 
 import { useStyles } from './CardProduct.styles';
 
 export const CardProduct = (): JSX.Element | null => {
+  const dispatch = useDispatch();
+
   const params = useParams<{ id: string }>();
   const classes = useStyles();
   const history = useHistory();
   const { id } = params;
 
-  const furnitureCollectionsById = useFurnitureCollectionsById();
+  const furnitureCollectionsById: CollectionsById = useSelector(
+    (state: RootState) => state.furnitureCollections.furnitureCollectionsById,
+  );
 
-  if (furnitureCollectionsById) {
+  Object.keys(furnitureCollectionsById).length === 0 &&
+    dispatch(fetchFurnitureCollectionsThunk());
+
+  if (Object.keys(furnitureCollectionsById).length !== 0) {
     const {
       cost,
       description,
@@ -25,7 +34,7 @@ export const CardProduct = (): JSX.Element | null => {
       lot,
       tittle,
       options,
-    }: Furniture = furnitureCollectionsById[id];
+    } = furnitureCollectionsById[id];
 
     window.scrollTo({ top: 0 });
 

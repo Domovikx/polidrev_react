@@ -4,13 +4,13 @@ import {
   FurnitureCollections,
 } from '../types/furniture.types';
 
-export const furnitureCollectionsByIdService = (
+export const furnitureCollectionsToFurnitureCollectionsById = (
   furnitureCollections: FurnitureCollections,
 ): CollectionsById =>
   Object.entries(furnitureCollections).reduce(
-    (collectionsById: CollectionsById, [collectionName, items]) => {
+    (collectionsById: CollectionsById, [collection, items]) => {
       items.forEach((item: Furniture) => {
-        collectionsById[item.id] = { collectionName, ...item };
+        collectionsById[item.id] = { ...item, collection };
       });
 
       return collectionsById;

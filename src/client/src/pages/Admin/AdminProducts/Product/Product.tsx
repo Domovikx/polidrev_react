@@ -5,9 +5,9 @@ import ButtonLogout from '../../../../components/common/ButtonLogout';
 import ButtonUpdateProducts from '../../../../components/common/ButtonUpdateProducts';
 import { Furniture } from '../../../../types/furniture.types';
 
+import { useStyles } from './Product.styles';
 import FieldTittle from './FieldTittle';
 import FieldCost from './FieldCost';
-import { useStyles } from './Product.styles';
 import FieldLot from './FieldLot';
 import FieldMiniDescription from './FieldMiniDescription';
 import FieldDimensions from './FieldDimensions';

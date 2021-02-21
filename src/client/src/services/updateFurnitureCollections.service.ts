@@ -4,13 +4,15 @@ import { FurnitureCollections } from '../types/furniture.types';
 
 export const updateFurnitureCollectionsService = async (
   furnitureCollections: FurnitureCollections,
-): Promise<void> => {
+): Promise<boolean | Error> => {
   try {
     await firebase
       .database()
       .ref(`/furnitureCollections/`)
       .update(furnitureCollections);
+
+    return true;
   } catch (error) {
-    console.log('error :>> ', error);
+    return new Error(error);
   }
 };

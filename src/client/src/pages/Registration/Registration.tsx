@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 import CommonEndAdornment from '../../components/common/CommonEndAdornment';
 import FormikTextField from '../../components/common/Form/FormikTextField';
-import { AuthRegisterValues } from '../../store/auth/auth.types';
 import { fieldName } from '../../constants/fieldName';
 import { fieldType } from '../../constants/fieldType';
 import { Locations } from '../../constants/locations';
 import { LockOutlineIcon } from '../../assets/Icons';
+import { AuthRegisterValues } from '../Authentication/Authentication.types';
 import { validationSchema } from '../../validation/validationSchemes/registration.validationSchema';
 
 import { LocalState } from './Registration.types';
@@ -26,7 +26,6 @@ export const Registration = (): JSX.Element => {
   const initialValues: AuthRegisterValues = {
     email: '',
     password: '',
-    passwordConfirm: '',
   };
 
   const submitHandler = (formValues: AuthRegisterValues) => {

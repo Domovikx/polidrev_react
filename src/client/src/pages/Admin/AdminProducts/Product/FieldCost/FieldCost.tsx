@@ -1,38 +1,29 @@
 import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
-import { useAtom } from 'jotai';
+import { useDispatch } from 'react-redux';
 
-import { Furniture, FurnitureEnum } from '../../../../../types/furniture.types';
+import { Furniture } from '../../../../../types/furniture.types';
 import { Event } from '../../../../../types/common.types';
-import { furnitureCollectionsAtom } from '../../../../../storeAtom/furniture.atom';
+import { setItemToChangeCollectionAction } from '../../../../../store/furnitureCollections/furnitureCollections.actions';
 
 interface props {
   furniture: Furniture;
 }
 
 export const FieldCost = ({ furniture }: props): JSX.Element => {
-  const [furnitureState, setState] = useState(furniture);
-  const { collection, idxArr } = furnitureState;
+  const dispatch = useDispatch();
 
-  const [, setFurnitureCollections] = useAtom(furnitureCollectionsAtom);
+  const [furnitureState, setState] = useState(furniture);
+  const { cost } = furnitureState;
 
   const changeValue = ({ target }: Event) => {
-    const cost = Number(target.value.trim());
-
-    setFurnitureCollections((prevState) => {
-      if (prevState !== null) {
-        const furnitureCollections = { ...prevState };
-        furnitureCollections[collection][idxArr][FurnitureEnum.cost] = cost;
-
-        return furnitureCollections;
-      }
-
-      return prevState;
-    });
+    const value = Number(target.value.trim());
 
     setState((prevState) => {
       const furnitureState = { ...prevState };
-      furnitureState[FurnitureEnum.cost] = cost;
+      furnitureState.cost = value;
+
+      dispatch(setItemToChangeCollectionAction(furnitureState));
 
       return furnitureState;
     });
@@ -43,7 +34,7 @@ export const FieldCost = ({ furniture }: props): JSX.Element => {
       type="number"
       label="Цена"
       variant="outlined"
-      value={furnitureState.cost}
+      value={cost}
       onChange={changeValue}
     />
   );

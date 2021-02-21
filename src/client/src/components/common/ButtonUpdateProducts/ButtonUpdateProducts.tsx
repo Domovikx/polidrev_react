@@ -1,18 +1,35 @@
-import { Button } from '@material-ui/core';
-import { useAtom } from 'jotai';
 import React from 'react';
+import { Button } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { updateFurnitureCollectionsAtom } from '../../../storeAtom/furniture.atom';
+import {
+  fetchFurnitureCollectionsThunk,
+  pushChangeCollectionThunk,
+} from '../../../store/furnitureCollections/furnitureCollections.actions';
+import { RootState } from '../../../store/root.reducer';
 
 export const ButtonUpdateProducts = (): JSX.Element => {
-  const [furnitureCollection, update] = useAtom(updateFurnitureCollectionsAtom);
+  const dispatch = useDispatch();
 
-  const updateProducts = async () => {
-    furnitureCollection && update(furnitureCollection);
+  const furnitureCollections = useSelector(
+    (state: RootState) => state.furnitureCollections,
+  );
+
+  const { changeCollection, furnitureCollectionsById } = furnitureCollections;
+
+  const handler = async () => {
+    await dispatch(
+      pushChangeCollectionThunk({
+        ...furnitureCollectionsById,
+        ...changeCollection,
+      }),
+    );
+
+    await dispatch(fetchFurnitureCollectionsThunk());
   };
 
   return (
-    <Button color="primary" onClick={updateProducts}>
+    <Button color="primary" onClick={handler}>
       Сохранить
     </Button>
   );

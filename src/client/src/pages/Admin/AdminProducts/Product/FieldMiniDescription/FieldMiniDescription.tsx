@@ -1,39 +1,29 @@
 import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
-import { useAtom } from 'jotai';
+import { useDispatch } from 'react-redux';
 
-import { Furniture, FurnitureEnum } from '../../../../../types/furniture.types';
+import { Furniture } from '../../../../../types/furniture.types';
 import { Event } from '../../../../../types/common.types';
-import { furnitureCollectionsAtom } from '../../../../../storeAtom/furniture.atom';
+import { setItemToChangeCollectionAction } from '../../../../../store/furnitureCollections/furnitureCollections.actions';
 
 interface props {
   furniture: Furniture;
 }
 
 export const FieldMiniDescription = ({ furniture }: props): JSX.Element => {
-  const [furnitureState, setState] = useState(furniture);
-  const { collection, idxArr } = furnitureState;
-  const field = FurnitureEnum.miniDescription;
+  const dispatch = useDispatch();
 
-  const [, setFurnitureCollections] = useAtom(furnitureCollectionsAtom);
+  const [furnitureState, setState] = useState(furniture);
+  const { miniDescription } = furnitureState;
 
   const changeValue = ({ target }: Event) => {
     const value = target.value.trimLeft();
 
-    setFurnitureCollections((prevState) => {
-      if (prevState !== null) {
-        const furnitureCollections = { ...prevState };
-        furnitureCollections[collection][idxArr][field] = value;
-
-        return furnitureCollections;
-      }
-
-      return prevState;
-    });
-
     setState((prevState) => {
       const furnitureState = { ...prevState };
-      furnitureState[field] = value;
+      furnitureState.miniDescription = value;
+
+      dispatch(setItemToChangeCollectionAction(furnitureState));
 
       return furnitureState;
     });
@@ -46,7 +36,7 @@ export const FieldMiniDescription = ({ furniture }: props): JSX.Element => {
       type="text"
       label="Мини описание"
       variant="outlined"
-      value={furnitureState[field]}
+      value={miniDescription}
       onChange={changeValue}
     />
   );

@@ -1,18 +1,17 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { useAtom } from 'jotai';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { Locations } from '../../../constants/locations';
-import { authLogoutAtom } from '../../../storeAtom/auth.atom';
+import { authLogoutThunk } from '../../../store/auth/auth.actions';
 
 export const ButtonLogout = (): JSX.Element => {
   const history = useHistory();
-
-  const [, logoutAction] = useAtom(authLogoutAtom);
+  const dispatch = useDispatch();
 
   const logout = async () => {
-    await logoutAction();
+    await dispatch(authLogoutThunk());
     await history.push(Locations.Index);
   };
 

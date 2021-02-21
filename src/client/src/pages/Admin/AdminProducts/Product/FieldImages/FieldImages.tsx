@@ -1,38 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
-import { useAtom } from 'jotai';
+import { useDispatch } from 'react-redux';
 
 import { Furniture } from '../../../../../types/furniture.types';
 import { Event } from '../../../../../types/common.types';
-import { furnitureCollectionsAtom } from '../../../../../storeAtom/furniture.atom';
+import { setItemToChangeCollectionAction } from '../../../../../store/furnitureCollections/furnitureCollections.actions';
 
 interface props {
   furniture: Furniture;
 }
 
 export const FieldImages = ({ furniture }: props): JSX.Element => {
-  const { collection, idxArr } = furniture;
+  const dispatch = useDispatch();
 
-  const [furnitureCollections, setFurnitureCollections] = useAtom(
-    furnitureCollectionsAtom,
-  );
+  const [furnitureState, setState] = useState(furniture);
+  const { images } = furnitureState;
 
-  const product =
-    furnitureCollections && furnitureCollections[collection][idxArr];
-
-  const fieldImages = product?.images.join(' ');
+  const fieldImages = images.join(' ') || '';
 
   const changeValue = ({ target }: Event) => {
     const value = target.value.split(' ');
 
-    setFurnitureCollections((prevState) => {
-      if (prevState !== null && product) {
-        const furnitureCollections = { ...prevState };
+    setState((prevState) => {
+      const furnitureState = { ...prevState };
+      furnitureState.images = value;
 
-        furnitureCollections[collection][idxArr].images = value;
-        return furnitureCollections;
-      }
-      return prevState;
+      dispatch(setItemToChangeCollectionAction(furnitureState));
+
+      return furnitureState;
     });
   };
 
@@ -42,9 +37,9 @@ export const FieldImages = ({ furniture }: props): JSX.Element => {
       fullWidth
       size="small"
       type="text"
-      label="Фотографии"
+      label="Ссылки на фотографии"
       variant="outlined"
-      value={fieldImages || ''}
+      value={fieldImages}
       onChange={changeValue}
     />
   );
