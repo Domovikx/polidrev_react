@@ -11,6 +11,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
   cardActionArea: {
     display: 'grid',
     height: '100%',
+    justifyContent: 'normal',
+  },
+  cardMediaWrapper: {
+    padding: `0 ${theme.spacing(2)}px`,
   },
   center: {
     textAlign: 'center',

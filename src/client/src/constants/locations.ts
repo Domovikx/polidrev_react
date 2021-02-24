@@ -6,9 +6,13 @@ export enum Locations {
   PageNotFound = '/PageNotFound',
 
   SoftFurniture = '/SoftFurniture',
+  SoftFurniture_relative = '/SoftFurniture/',
+  SoftFurniture_id = '/SoftFurniture/:id',
+
   CabinetFurniture = '/CabinetFurniture',
   WhereToBuy = '/WhereToBuy',
   Payment = '/Payment',
+
   CardProduct_relative = '/CardProduct/',
   CardProduct_id = '/CardProduct/:id',
 
@@ -19,4 +23,5 @@ export enum Locations {
 
   Admin = '/Admin',
   Admin_Relative = '/Admin/',
+  Admin_Products = '/Admin/Products',
 }

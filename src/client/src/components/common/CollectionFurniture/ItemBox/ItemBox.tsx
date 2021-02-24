@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   Card,
   CardActionArea,
   CardContent,
@@ -18,7 +19,7 @@ import { ItemBoxProps } from './ItemBox.types';
 
 export const ItemBox = (props: ItemBoxProps): JSX.Element => {
   const { item } = props;
-  const { cost, miniDescription, tittle, images, lot, id } = item;
+  const { cost, miniDescription, tittle, images, lot, id, options } = item;
 
   const classes = useStyles();
 
@@ -36,18 +37,59 @@ export const ItemBox = (props: ItemBoxProps): JSX.Element => {
             </Avatar>
           }
           title={tittle}
-          subheader={lot}
+          subheader={`lot: ${lot}, id:${id}`}
         />
 
-        <CardMedia className={classes.media} image={images[0]} title={tittle} />
+        <Box className={classes.cardMediaWrapper}>
+          <CardMedia
+            className={classes.media}
+            image={images[0]}
+            title={tittle}
+          />
+        </Box>
 
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {miniDescription}
+            {miniDescription && (
+              <>
+                {miniDescription}
+                <br />
+              </>
+            )}
+            {options?.dimensions && options.dimensions.length != 0 && (
+              <>
+                {`Габаритные размеры: `}
+                {options.dimensions.length} x {options.dimensions.width}
+                {options.dimensions.height && ` x ${options.dimensions.height}`}
+                {` см`}
+                <br />
+              </>
+            )}
+            {options?.dimensions2 && options.dimensions2.length != 0 && (
+              <>
+                {`В разложенном виде: `}
+                {options.dimensions2.length} x {options.dimensions2.width}
+                {options.dimensions2.height &&
+                  ` x ${options.dimensions2.height}`}
+                {` см`}
+                <br />
+              </>
+            )}
+            {options?.sleepingArea && options.sleepingArea.length != 0 && (
+              <>
+                {`Спальное место: `}
+                {options.sleepingArea.length} x {options.sleepingArea.width}
+                {options.sleepingArea.height &&
+                  ` x ${options.sleepingArea.height}`}
+                {` см`}
+              </>
+            )}
           </Typography>
-          <Typography gutterBottom variant="h5" component="h2" align="right">
-            {cost} {cost && <>р.</>}
-          </Typography>
+          {cost !== 0 && cost && (
+            <Typography gutterBottom variant="h5" component="h2" align="right">
+              {cost} р.
+            </Typography>
+          )}
         </CardContent>
       </CardActionArea>
     </Card>

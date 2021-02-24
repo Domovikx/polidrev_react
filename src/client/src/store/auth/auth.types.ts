@@ -1,31 +1,22 @@
 export interface AuthState {
-  test?: string;
-  token?: null | string;
+  isAuth: boolean;
 }
 
 export enum AUTH {
-  REGISTER = 'AUTH.REGISTER',
   LOGIN = 'AUTH.LOGIN',
   LOGOUT = 'AUTH.LOGOUT',
 }
 
-export interface AuthRegisterPayload {
+export interface AuthLoginPayload {
   email: string;
   password: string;
 }
 
 export interface AuthRegisterArgs {
-  payload: AuthRegisterPayload;
+  payload: AuthLoginPayload;
   type: AUTH;
 }
 
 export type AuthAction =
-  | { type: AUTH.REGISTER; payload: AuthRegisterPayload }
-  | { type: AUTH.LOGIN; payload: string }
-  | { type: AUTH.LOGOUT; payload: string };
-
-export interface AuthRegisterValues {
-  email: string;
-  password: string;
-  passwordConfirm?: string;
-}
+  | { type: AUTH.LOGIN; payload: any }
+  | { type: AUTH.LOGOUT; payload: any };
