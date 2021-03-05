@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Loader from './components/common/Loader';
 import MainLayout from './components/layouts/MainLayout';
 import AdminProducts from './pages/Admin/AdminProducts';
+import ServiceConditions from './pages/ServiceConditions';
 import { Locations } from './constants/locations';
 import { RootState } from './store/store.types';
 
@@ -92,6 +93,10 @@ export const Routing = (): JSX.Element => {
                 <Route
                   path={Locations.SoftFurniture}
                   component={SoftFurniture}
+                />
+                <Route
+                  path={Locations.ServiceConditions}
+                  component={ServiceConditions}
                 />
                 <Route
                   path={Locations.CabinetFurniture}

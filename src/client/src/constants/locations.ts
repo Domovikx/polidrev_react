@@ -9,6 +9,8 @@ export enum Locations {
   SoftFurniture_relative = '/SoftFurniture/',
   SoftFurniture_id = '/SoftFurniture/:id',
 
+  ServiceConditions = '/ServiceConditions',
+
   CabinetFurniture = '/CabinetFurniture',
   WhereToBuy = '/WhereToBuy',
   Payment = '/Payment',
