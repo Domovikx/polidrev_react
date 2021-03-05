@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'right',
   },
   container: {
-    '& .MuiFormControl-root.MuiTextField-root': {
+    '& .MuiFormControl-root': {
       margin: `${theme.spacing(2)}px`,
       marginLeft: 0,
     },

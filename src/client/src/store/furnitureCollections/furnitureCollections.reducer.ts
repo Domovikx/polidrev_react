@@ -48,6 +48,13 @@ export const furnitureCollectionsReducer = (
       return { ...state, changeCollection };
     }
 
+    case FURNITURE_COLLECTIONS.CHANGE_POSITION: {
+      const collectionsById: CollectionsById = payload;
+      console.log('CHANGE_POSITION payload :>> ', collectionsById);
+
+      return { ...state };
+    }
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { Furniture } from '../../types/furniture.types';
+import { CollectionsById, Furniture } from '../../types/furniture.types';
 
 export enum FURNITURE_COLLECTIONS {
   FETCH = 'FURNITURE_COLLECTIONS.FETCH',
@@ -6,6 +6,9 @@ export enum FURNITURE_COLLECTIONS {
   SET_BY_ID = 'FURNITURE_COLLECTIONS.SET_BY_ID',
   SET_ITEM_TO_CHANGE_COLLECTION = 'FURNITURE_COLLECTIONS.SET_ITEM_TO_CHANGE_COLLECTION',
   PUSH_CHANGE_COLLECTION = 'FURNITURE_COLLECTIONS.PUSH_CHANGE_COLLECTION',
+  CHANGE_SOME_COLLECTIONS = 'FURNITURE_COLLECTIONS.CHANGE_SOME_COLLECTIONS',
+
+  CHANGE_POSITION = 'FURNITURE_COLLECTIONS.CHANGE_POSITION',
 }
 
 export type FurnitureCollectionsAction =
@@ -18,5 +21,13 @@ export type FurnitureCollectionsAction =
     }
   | {
       type: FURNITURE_COLLECTIONS.PUSH_CHANGE_COLLECTION;
+      payload: any;
+    }
+  | {
+      type: FURNITURE_COLLECTIONS.CHANGE_SOME_COLLECTIONS;
+      payload: CollectionsById;
+    }
+  | {
+      type: FURNITURE_COLLECTIONS.CHANGE_POSITION;
       payload: any;
     };

@@ -85,3 +85,27 @@ export const setItemToChangeCollectionAction = (
   payload: furniture,
   type: FURNITURE_COLLECTIONS.SET_ITEM_TO_CHANGE_COLLECTION,
 });
+
+export const changePositionAction = (
+  currentFurniture: Furniture,
+  nextFurniture: Furniture,
+): FurnitureCollectionsAction => {
+  const id = currentFurniture.id;
+  const idxArr = currentFurniture.idxArr;
+
+  currentFurniture.id = nextFurniture.id;
+  currentFurniture.idxArr = nextFurniture.idxArr;
+
+  nextFurniture.id = id;
+  nextFurniture.idxArr = idxArr;
+
+  const collectionsById = {
+    [currentFurniture.id]: currentFurniture,
+    [nextFurniture.id]: nextFurniture,
+  };
+
+  return {
+    payload: collectionsById,
+    type: FURNITURE_COLLECTIONS.CHANGE_POSITION,
+  };
+};

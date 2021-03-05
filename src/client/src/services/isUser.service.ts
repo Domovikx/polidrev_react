@@ -7,7 +7,6 @@ export const isUserService = (): boolean => {
 
     return userUid ? true : false;
   } catch (error) {
-    console.log('error :>> ', error);
     return false;
   }
 };

@@ -8,4 +8,12 @@ export const useStyles = makeStyles(() => ({
     height: '400px',
     width: '100%',
   },
+
+  main: {
+    '& span.MuiButton-label': {
+      fontSize: '15px',
+      fontWeight: 'normal',
+      textTransform: 'initial',
+    },
+  },
 }));

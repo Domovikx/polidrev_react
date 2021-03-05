@@ -9,7 +9,7 @@ export interface Furniture {
   idxArr: number;
   cost: number | null;
   description: string;
-  id: string;
+  id: string | number;
   images: string[];
   lot: string;
   miniDescription: string;
@@ -55,13 +55,6 @@ export interface Furniture {
 }
 
 export interface FurnitureCollections {
-  // bench: Furniture[];
-  // 'chair-bed': Furniture[];
-  // chair: Furniture[];
-  // 'corner-sofa': Furniture[];
-  // settle: Furniture[];
-  // 'sofa-bed': Furniture[];
-
   [key: string]: Furniture[];
 }
 

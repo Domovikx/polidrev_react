@@ -19,6 +19,7 @@ import FieldSoftElements from './FieldSoftElements';
 import FieldMechanism from './FieldMechanism';
 import FieldCorrespond from './FieldCorrespond';
 import FieldImages from './FieldImages';
+import GroupBtnChangePosition from './GroupBtnChangePosition';
 
 interface props {
   furniture: Furniture;
@@ -42,6 +43,9 @@ export const Product = (props: props): JSX.Element => {
           <div>
             <b>ID:</b> {id} <br />
             <b>collection:</b> {collection} <br />
+            {/* <SelectPositions furniture={furniture} /> <br /> */}
+            <GroupBtnChangePosition furniture={furniture} />
+            <br />
             <FieldLot furniture={furniture} />
             <FieldTittle furniture={furniture} />
             <FieldCost furniture={furniture} />
