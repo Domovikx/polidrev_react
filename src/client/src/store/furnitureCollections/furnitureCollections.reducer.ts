@@ -20,7 +20,7 @@ export const furnitureCollectionsState: FurnitureCollectionsState = {
   furnitureCollections: {},
   furnitureCollectionsById: {},
 };
-
+//
 export const furnitureCollectionsReducer = (
   state = furnitureCollectionsState,
   { type, payload }: FurnitureCollectionsAction,
@@ -50,9 +50,18 @@ export const furnitureCollectionsReducer = (
 
     case FURNITURE_COLLECTIONS.CHANGE_POSITION: {
       const collectionsById: CollectionsById = payload;
-      console.log('CHANGE_POSITION payload :>> ', collectionsById);
 
-      return { ...state };
+      const furnitureCollectionsById = {
+        ...newState.furnitureCollectionsById,
+        ...collectionsById,
+      };
+
+      const changeCollection = {
+        ...newState.changeCollection,
+        ...collectionsById,
+      };
+
+      return { ...state, changeCollection, furnitureCollectionsById };
     }
 
     default:

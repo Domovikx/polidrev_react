@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { uid } from 'uid';
 
-import { furnitureMock } from '../../../mocks/Furniture.mock';
 import { fetchFurnitureCollectionsThunk } from '../../../store/furnitureCollections/furnitureCollections.actions';
 import { RootState } from '../../../store/root.reducer';
 import { Furniture } from '../../../types/furniture.types';
@@ -11,36 +12,24 @@ import Product from './Product';
 export const AdminProducts = (): JSX.Element | null => {
   const dispatch = useDispatch();
 
-  const furnitureCollections = useSelector(
-    (state: RootState) => state.furnitureCollections.furnitureCollections,
+  const furnitureCollectionsById = useSelector(
+    (state: RootState) => state.furnitureCollections.furnitureCollectionsById,
   );
 
-  Object.keys(furnitureCollections).length === 0 &&
-    dispatch(fetchFurnitureCollectionsThunk());
+  const initFurnitures: Furniture[] = [];
+  const [furnitures, setFurnitures] = useState(initFurnitures);
 
-  let count = 1;
+  useEffect(() => {
+    Object.keys(furnitureCollectionsById).length === 0
+      ? dispatch(fetchFurnitureCollectionsThunk())
+      : setFurnitures(Object.values(furnitureCollectionsById));
+  }, [furnitureCollectionsById]);
 
-  if (furnitureCollections) {
-    const furnitures: Furniture[] = [];
-
-    Object.entries(furnitureCollections).forEach(
-      ([collection, collections]) => {
-        collections.forEach((furniture: Furniture, idx: number) => {
-          const newFurniture = { ...furnitureMock, ...furniture };
-
-          newFurniture.collection = collection;
-          newFurniture.idxArr = idx;
-          newFurniture.id = String(count++);
-
-          furnitures.push(newFurniture);
-        });
-      },
-    );
-
+  if (furnitureCollectionsById) {
     return (
       <>
-        {furnitures.map((furniture, index: number) => (
-          <Product key={index} furniture={furniture} />
+        {furnitures.map((furniture) => (
+          <Product key={uid(8)} furniture={furniture} />
         ))}
       </>
     );
