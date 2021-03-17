@@ -1,6 +1,12 @@
 import React from 'react';
-import { Container, Grid, IconButton, Typography } from '@material-ui/core';
-import { useHistory, useParams } from 'react-router-dom';
+import {
+  Button,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from '@material-ui/core';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import ImageGallery from '../../components/common/ImageGallery';
@@ -122,6 +128,10 @@ export const CardProduct = (): JSX.Element | null => {
                 {options.correspond}
               </Typography>
             )}
+
+            <Button color="primary" component={Link} to="/ServiceConditions">
+              Гарантийное обязательство
+            </Button>
           </div>
         </Grid>
       </Container>
