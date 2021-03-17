@@ -90,22 +90,22 @@ export const changePositionAction = (
   currentFurniture: Furniture,
   nextFurniture: Furniture,
 ): FurnitureCollectionsAction => {
-  const id = currentFurniture.id;
-  const idxArr = currentFurniture.idxArr;
+  const idToChange = currentFurniture.id;
+  const idxArrToChange = currentFurniture.idxArr;
 
   currentFurniture.id = nextFurniture.id;
   currentFurniture.idxArr = nextFurniture.idxArr;
 
-  nextFurniture.id = id;
-  nextFurniture.idxArr = idxArr;
+  nextFurniture.id = idToChange;
+  nextFurniture.idxArr = idxArrToChange;
 
-  const collectionsById = {
+  const furnitures = {
     [currentFurniture.id]: currentFurniture,
     [nextFurniture.id]: nextFurniture,
   };
 
   return {
-    payload: collectionsById,
+    payload: furnitures,
     type: FURNITURE_COLLECTIONS.CHANGE_POSITION,
   };
 };
