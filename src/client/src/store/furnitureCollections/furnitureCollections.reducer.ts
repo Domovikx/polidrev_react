@@ -10,17 +10,15 @@ import {
 } from './furnitureCollections.types';
 
 export interface FurnitureCollectionsState {
-  changeCollection: CollectionsById;
   furnitureCollections: FurnitureCollections | { [key: string]: Furniture[] };
   furnitureCollectionsById: CollectionsById;
 }
 
 export const furnitureCollectionsState: FurnitureCollectionsState = {
-  changeCollection: {},
   furnitureCollections: {},
   furnitureCollectionsById: {},
 };
-//
+
 export const furnitureCollectionsReducer = (
   state = furnitureCollectionsState,
   { type, payload }: FurnitureCollectionsAction,
@@ -42,10 +40,10 @@ export const furnitureCollectionsReducer = (
 
     case FURNITURE_COLLECTIONS.SET_ITEM_TO_CHANGE_COLLECTION: {
       const furniture: Furniture = payload;
-      const changeCollection = newState.changeCollection;
-      changeCollection[furniture.id] = furniture;
+      const furnitureCollectionsById = newState.furnitureCollectionsById;
+      furnitureCollectionsById[furniture.id] = furniture;
 
-      return { ...state, changeCollection };
+      return { ...state, furnitureCollectionsById };
     }
 
     case FURNITURE_COLLECTIONS.CHANGE_POSITION: {
@@ -56,12 +54,7 @@ export const furnitureCollectionsReducer = (
         ...collectionsById,
       };
 
-      const changeCollection = {
-        ...newState.changeCollection,
-        ...collectionsById,
-      };
-
-      return { ...state, changeCollection, furnitureCollectionsById };
+      return { ...state, furnitureCollectionsById };
     }
 
     default:
