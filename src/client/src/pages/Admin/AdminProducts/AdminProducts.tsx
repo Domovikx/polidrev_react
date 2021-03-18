@@ -29,7 +29,7 @@ export const AdminProducts = (): JSX.Element | null => {
     return (
       <>
         {furnitures.map((furniture) => (
-          <Product key={uid(8)} furniture={furniture} />
+          <Product key={furniture.id} furnitureId={furniture.id} />
         ))}
       </>
     );

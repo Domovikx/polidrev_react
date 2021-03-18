@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
-import { Furniture } from '../../../../../types/furniture.types';
 import { Event } from '../../../../../types/common.types';
 import { setItemToChangeCollectionAction } from '../../../../../store/furnitureCollections/furnitureCollections.actions';
+import { useFurniture } from '../../../../../hooks/useFurniture';
 
 interface props {
-  furniture: Furniture;
+  furnitureId: string | number;
 }
 
-export const FieldLot = ({ furniture }: props): JSX.Element => {
+export const FieldLot = ({ furnitureId }: props): JSX.Element => {
   const dispatch = useDispatch();
 
-  const [furnitureState, setState] = useState(furniture);
-  const { lot } = furnitureState;
+  const { furniture, setFurniture } = useFurniture(furnitureId);
+  const { lot } = furniture;
 
   const changeValue = ({ target }: Event) => {
     const value = target.value.trimLeft();
 
-    setState((prevState) => {
+    setFurniture((prevState) => {
       const furnitureState = { ...prevState };
       furnitureState.lot = value;
 

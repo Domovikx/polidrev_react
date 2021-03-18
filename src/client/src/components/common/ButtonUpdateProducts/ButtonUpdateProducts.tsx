@@ -15,16 +15,10 @@ export const ButtonUpdateProducts = (): JSX.Element => {
     (state: RootState) => state.furnitureCollections,
   );
 
-  const { changeCollection, furnitureCollectionsById } = furnitureCollections;
+  const { furnitureCollectionsById } = furnitureCollections;
 
   const handler = async () => {
-    await dispatch(
-      pushChangeCollectionThunk({
-        ...furnitureCollectionsById,
-        ...changeCollection,
-      }),
-    );
-
+    await dispatch(pushChangeCollectionThunk(furnitureCollectionsById));
     await dispatch(fetchFurnitureCollectionsThunk());
   };
 
