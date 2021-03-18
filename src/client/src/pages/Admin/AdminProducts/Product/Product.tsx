@@ -1,9 +1,9 @@
-import { Container, Paper, Typography } from '@material-ui/core';
+import { Container, Paper } from '@material-ui/core';
 import * as React from 'react';
 
 import ButtonLogout from '../../../../components/common/ButtonLogout';
 import ButtonUpdateProducts from '../../../../components/common/ButtonUpdateProducts';
-import { Furniture } from '../../../../types/furniture.types';
+import { useFurniture } from '../../../../hooks/useFurniture';
 
 import { useStyles } from './Product.styles';
 import FieldTittle from './FieldTittle';
@@ -22,13 +22,13 @@ import FieldImages from './FieldImages';
 import GroupBtnChangePosition from './GroupBtnChangePosition';
 
 interface props {
-  furniture: Furniture;
+  furnitureId: string | number;
 }
 
-export const Product = (props: props): JSX.Element => {
+export const Product = ({ furnitureId }: props): JSX.Element => {
   const classes = useStyles();
 
-  const { furniture } = props;
+  const { furniture } = useFurniture(furnitureId);
   const { id, images, collection } = furniture;
 
   return (
@@ -39,43 +39,40 @@ export const Product = (props: props): JSX.Element => {
       </div>
 
       <Paper elevation={3} className={classes.paper}>
-        <Typography variant="body1">
-          <div>
-            <b>ID:</b> {id} <br />
-            <b>collection:</b> {collection} <br />
-            {/* <SelectPositions furniture={furniture} /> <br /> */}
-            <GroupBtnChangePosition furniture={furniture} />
-            <br />
-            <FieldLot furniture={furniture} />
-            <FieldTittle furniture={furniture} />
-            <FieldCost furniture={furniture} />
-          </div>
+        <div>
+          <b>ID:</b> {id} <br />
+          <b>collection:</b> {collection} <br />
+          <GroupBtnChangePosition furniture={furniture} />
+          <br />
+          <FieldLot furnitureId={furnitureId} />
+          <FieldTittle furnitureId={furnitureId} />
+          <FieldCost furnitureId={furnitureId} />
+        </div>
 
-          <div>
-            {images.map((item, index) => (
-              <a
-                href={item}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-              >
-                <img src={item} alt={item} className={classes.img} />
-              </a>
-            ))}
-          </div>
+        <div>
+          {images.map((item, index) => (
+            <a
+              href={item}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+            >
+              <img src={item} alt={item} className={classes.img} />
+            </a>
+          ))}
+        </div>
 
-          <FieldImages furniture={furniture} />
+        <FieldImages furnitureId={furnitureId} />
 
-          <FieldMiniDescription furniture={furniture} />
-          <FieldDimensions furniture={furniture} />
-          <FieldUnfoldedDimensions furniture={furniture} />
-          <FieldSleepingArea furniture={furniture} />
-          <FieldUpholstery furniture={furniture} />
-          <FieldCarcass furniture={furniture} />
-          <FieldSoftElements furniture={furniture} />
-          <FieldMechanism furniture={furniture} />
-          <FieldCorrespond furniture={furniture} />
-        </Typography>
+        <FieldMiniDescription furnitureId={furnitureId} />
+        <FieldDimensions furnitureId={furnitureId} />
+        <FieldUnfoldedDimensions furnitureId={furnitureId} />
+        <FieldSleepingArea furnitureId={furnitureId} />
+        <FieldUpholstery furnitureId={furnitureId} />
+        <FieldCarcass furnitureId={furnitureId} />
+        <FieldSoftElements furnitureId={furnitureId} />
+        <FieldMechanism furnitureId={furnitureId} />
+        <FieldCorrespond furnitureId={furnitureId} />
       </Paper>
     </Container>
   );

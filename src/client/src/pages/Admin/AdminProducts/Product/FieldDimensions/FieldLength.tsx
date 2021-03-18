@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
-import { Furniture } from '../../../../../types/furniture.types';
 import { Event } from '../../../../../types/common.types';
 import { setItemToChangeCollectionAction } from '../../../../../store/furnitureCollections/furnitureCollections.actions';
+import { useFurniture } from '../../../../../hooks/useFurniture';
 
 interface props {
-  furniture: Furniture;
+  furnitureId: string | number;
 }
 
-export const FieldLength = ({ furniture }: props): JSX.Element => {
+export const FieldLength = ({ furnitureId }: props): JSX.Element => {
   const dispatch = useDispatch();
 
-  const [furnitureState, setState] = useState(furniture);
-  const { options } = furnitureState;
+  const { furniture, setFurniture } = useFurniture(furnitureId);
+  const { options } = furniture;
 
   const length = options?.dimensions?.length || 0;
 
   const changeValue = ({ target }: Event) => {
     const value = Number(target.value.trim());
 
-    setState((prevState) => {
+    setFurniture((prevState) => {
       const furnitureState = { ...prevState };
       furnitureState.options.dimensions.length = value;
 
